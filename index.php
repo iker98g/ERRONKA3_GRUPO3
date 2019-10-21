@@ -14,7 +14,7 @@
         <form class="bg-secondary ">
           <h1>LOGIN</h1>
           <div class="form-group">
-            <input type="username" class="form-control" id="username" placeholder="Username"> 
+            <input type="text" class="form-control" id="username" placeholder="Username"> 
           </div>
           <div class="form-group">
             <input type="password" class="form-control" id="password" aria-describedby="passHelp" placeholder="Password">
