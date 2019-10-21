@@ -49,7 +49,7 @@ class usuario_model extends usuario_class{
             $new->setIdUsuario($row['idUsuario']);
             $new->setNombre($row['nombre']);
             $new->setApellido($row['apellido']);
-            $new->setUsuario($row['usuario']);
+            $new->setIdUsuario($row['usuario']);
             $new->setContrasena($row['contrasena']);
             $new->setAdmin($row['admin']);
             
