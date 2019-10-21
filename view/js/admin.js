@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
 	$.ajax({
        	type:"GET",
-       	url: "../controller/CUsers.php", 
+       	url: "../controller/CUserList.php", 
     	datatype: "json",  // type of the result
        	
     	success: function(result){  
