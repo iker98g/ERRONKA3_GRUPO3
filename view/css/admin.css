@@ -1,0 +1,9 @@
+.card-header{
+	font-size: 25px;
+	transition: font-size 0.1s;
+}
+
+.card-header:hover{
+	cursor: pointer;
+	font-size: 30px;
+}
