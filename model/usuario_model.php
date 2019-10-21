@@ -59,6 +59,28 @@ class usuario_model extends usuario_class{
         $this->CloseConnect();
     }
     
+    public function update()
+    {
+        $this->OpenConnect();
+        
+        $idUsuario=$this->getIdUsuario();
+        $nombre=$this->getNombre();
+        $apellido= $this->getApellido();
+        $usuario= $this->getUsuario();
+        $admin= $this->getAdmin();
+        
+        $sql = "CALL spModificarUsuario('$idUsuario','$nombre', '$apellido', '$usuario', '$admin')";
+        
+        if ($this->link->query($sql)>=1) // aldatu egiten da
+        {
+            return "El usuario se ha modificado con exito";
+        } else {
+            return "Fallo en la modificacion del usuario: (" . $this->link->errno . ") " . $this->link->error;
+        }
+        
+        $this->CloseConnect();
+    }
+    
     function getListJsonString() {
         
         $arr=array();

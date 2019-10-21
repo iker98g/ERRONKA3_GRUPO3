@@ -1,11 +1,11 @@
 $( document ).ready(function() {
 	
-	//Ajax de los datos de usuarios
+	// Ajax de los datos de usuarios
 
 	$.ajax({
        	type:"GET",
        	url: "../controller/CUsers.php", 
-    	datatype: "json",  //type of the result
+    	datatype: "json",  // type of the result
        	
     	success: function(result){  
        		
@@ -29,10 +29,64 @@ $( document ).ready(function() {
        									+"<td>"+user.apellido+"</td>"
        									+"<td>"+user.usuario+"</td>"
        									+"<td>"+adminBoolean+"</td>"
-       									+"<td><button type='button' class='btn btn-dark botonModificarUser m-1'><i class='fas fa-edit text-light'></i></button><button type='button' class='btn btn-dark botonDeleteUser text-light'><i class='fas fa-trash-alt'></i></button></td>"
+       									+"<td><button type='button' class='btn btn-dark botonModificarUser m-1' value='"+user.idUsuario+"'><i class='fas fa-edit text-light'></i></button><button type='button' class='btn btn-dark botonDeleteUser text-light' value='"+user.idUsuario+"'><i class='fas fa-trash-alt'></i></button></td>"
        						+"</tr>"		
        		});
        		$("#tablaUsers").append(newRow);
+       		
+       		  var idUsuario="";
+     		  var nombre="";
+     		  var apellido="";
+     		  var usuario="";
+     		  var admin="";
+     		  
+       		$('.botonModificarUser').click(function() {
+       			idUsuario=$(this).val();
+
+       		  
+       		$.each(users,function(index,userForm){
+       			if (userForm.idUsuario==idUsuario) {
+					nombre=userForm.nombre;
+					apellido=userForm.apellido;
+					usuario=userForm.usuario;
+					admin=userForm.admin;
+				}     			
+       		});
+       		
+       		$('#idUsuarioForm').val(idUsuario);
+       		$('#nombreForm').val(nombre);
+       		$('#apellidoForm').val(apellido);
+       		$('#usuarioForm').val(usuario);
+       		$('#adminForm').val(admin);
+       		  
+       		$('#modalModificarUser').modal('show'); 
+       		
+       		});
+       		
+       		$('.botonExecuteModificarUsers').click(function(){
+       			idUsuario=$('#idUsuarioForm').val();
+       			nombre=$('#nombreForm').val();
+       			apellido=$('#apellidoForm').val();
+       			usuario=$('#usuarioForm').val();
+       			admin=$('#adminForm').val();
+       			
+       			
+       			$.ajax({
+       		       	type: "GET",
+       		       	data:{ 'idUsuario':idUsuario, 'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'admin':admin},
+       		       	url: "../controller/CUpdateUser.php", 
+       		       	datatype: "json",  //type of the result
+       		       	success: function(result){  
+       		       		
+       		       		console.log(result);
+       		       		alert(result);
+       		       		location.reload(true);  //recarga la pagina
+       		       	},
+       		       	error : function(xhr) {
+       		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+       		   		}
+       		       });
+       		});
        		    		
      	},
        	error : function(xhr) {
@@ -40,12 +94,12 @@ $( document ).ready(function() {
    		}
   	});
 	
-	//Ajax de los datos de reservas
+	// Ajax de los datos de reservas
 
 	$.ajax({
        	type:"GET",
        	url: "../controller/CReservas.php", 
-    	datatype: "json",  //type of the result
+    	datatype: "json",  // type of the result
        	
     	success: function(result){  
        		
@@ -72,12 +126,12 @@ $( document ).ready(function() {
    		}
   	});
 	
-	//Ajax de los datos de habitaciones
+	// Ajax de los datos de habitaciones
 
 	$.ajax({
        	type:"GET",
        	url: "../controller/CHabitaciones.php", 
-    	datatype: "json",  //type of the result
+    	datatype: "json",  // type of the result
        	
     	success: function(result){  
        		
@@ -92,7 +146,7 @@ $( document ).ready(function() {
        									+"<td>"+room.tipo+"</td>"
        									+'<td><img width="150vh" src="'+room.imagen+'"</td>'
        									+"<td>"+room.precio+"</td>"
-       									+"<td><button type='button' class='btn btn-dark botonModificarHabitacion m-1'><i class='fas fa-edit text-light'></i></button><button type='button' class='btn btn-dark botonDeleteHabitacion text-light'><i class='fas fa-trash-alt'></i></button></td>"
+       									+"<td><button type='button' class='btn btn-dark botonModificarHabitacion m-1'><i class='fas fa-edit text-light'></i></button></td>"
        						+"</tr>"		
        		});
        		$("#tablaHabitaciones").append(newRow);

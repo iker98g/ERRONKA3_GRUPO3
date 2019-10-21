@@ -12,6 +12,8 @@
 <body>
 
 	<div class="container">
+	
+<!-- 	tablas -->
 		<div class="accordion" id="accordionExample">
 			<div class="card">
 				<a class="card-header" id="headingOne" data-toggle="collapse"
@@ -102,6 +104,55 @@
 				</div>
 			</div>
 		</div>
+	
+	<!-- Modal users-->
+<div class="modal fade" id="modalModificarUser" tabindex="-1" role="dialog" aria-labelledby="modalModificarUserlabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalModificarUserlabel">Modificar usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+            <!--form modificar -->
+       		<form>
+       			<div class="form-group">
+       				<label for="idUsuarioForm">ID</label>
+       				<input type="number" class="form-control" id="idUsuarioForm" aria-describedby="id" disabled>
+       			</div>
+       			<div class="form-group">
+       				<label for="nombreForm">Nombre</label>
+       				<input type="text" class="form-control" id="nombreForm" aria-describedby="nombre">
+       			</div>
+       			<div class="form-group">
+       				<label for="apellidoForm">Apellido</label>
+       				<input type="text" class="form-control" id="apellidoForm" aria-describedby="apellido">
+       			</div>
+       			<div class="form-group">
+       				<label for="usuarioForm">Usuario</label>
+       				<input type="text" class="form-control" id="usuarioForm" aria-describedby="usuario">
+       			</div>
+       			<div class="form-group">
+       				<label for="adminForm">Admin (0=No, 1=Si)</label>
+       				<input type="number" class="form-control" id="adminForm" aria-describedby="admin">
+       			</div>
+       		</form>
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary botonExecuteModificarUsers">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+	
 	</div>
 
 
