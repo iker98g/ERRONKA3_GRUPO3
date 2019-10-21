@@ -25,3 +25,7 @@ h1 {
 button {
     width: 10vw;
 }
+
+.card-body {
+    padding: 0;
+}
