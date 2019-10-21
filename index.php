@@ -25,13 +25,12 @@
             <label class="form-check-label" for="rememberCheck">Remember</label>
             <button type="submit" class="btn btn-primary">Sign in</button>
           </div>
-          
         </form>
       </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
-    <!--<script src="view/js/script.js" type="text/javascript"></script>-->
+    <script src="view/js/script.js" type="text/javascript"></script>
 </body>
 </html>
