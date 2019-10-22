@@ -11,13 +11,13 @@
 </head>
 <body>
     <div class="container">
-        <form class="bg-secondary ">
+        <form class="bg-secondary" action="./controller/cUsuario.php" method="POST">
           <h1>LOGIN</h1>
           <div class="form-group">
-            <input type="text" class="form-control" id="username" placeholder="Username"> 
+            <input type="text" class="form-control" id="usuario" placeholder="Username"> 
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" id="password" aria-describedby="passHelp" placeholder="Password">
+            <input type="password" class="form-control" id="contrase�a" aria-describedby="passHelp" placeholder="Password">
             <small id="passHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
           </div>
           <div class="form-check card-body d-flex justify-content-between align-items-center">
@@ -27,7 +27,7 @@
           </div>
         </form>
       </div>
-
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    

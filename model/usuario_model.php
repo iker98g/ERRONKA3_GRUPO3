@@ -59,6 +59,40 @@ class usuario_model extends usuario_class{
         $this->CloseConnect();
     }
     
+    public function findUsersAdmin()
+    {
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $usuario=$this->getUsuario();
+        $contrasena=$this->getContrasena();
+        
+        $sql = "CALL spFindUsersAdmin('$usuario', '$contrasena')"; // SQL sententzia - sentencia SQL
+        
+        $result = $this->link->query($sql); // result-en ddbb-ari eskatutako informazio dena gordetzen da
+        // se guarda en result toda la información solicitada a la bbdd
+        
+        return $result;
+        
+        /*while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            
+            $new=new usuario_class();
+            
+            $new->setAdmin($row['admin']);
+            
+            array_push($this->list, $new);
+        }
+        mysqli_free_result($result);
+        
+        if ($this->link->query($sql)) // insert egiten da
+        {
+            echo "Usuario encontrado";
+        } else {
+            echo "Fall� la busqueda del usuario: (" . $this->link->errno . ") " . $this->link->error;
+        }*/
+        
+        $this->CloseConnect();
+    }
+    
     function getListJsonString() {
         
         $arr=array();
