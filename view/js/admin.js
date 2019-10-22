@@ -87,6 +87,32 @@ $( document ).ready(function() {
        		   		}
        		       });
        		});
+       		
+       		$('.botonDeleteUser').click(function(){
+       			idUsuario=$(this).val();
+       			
+       			var r = confirm("Estas seguro de que quieres borrar este usuario?");
+       				if (r == true) {
+       					$.ajax({
+       	       		       	type: "GET",
+       	       		       	data:{ 'idUsuario':idUsuario},
+       	       		       	url: "../controller/CDeleteUser.php", 
+       	       		       	datatype: "json",  //type of the result
+       	       		       	success: function(result){  
+       	       		       		
+       	       		       		console.log(result);
+       	       		       		alert(result);
+       	       		       		location.reload(true);  //recarga la pagina
+       	       		       	},
+       	       		       	error : function(xhr) {
+       	       		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+       	       		   		}
+       	       		       });
+       				} else {
+       					alert("Operacion cancelada")
+       				}
+       			
+       		});
        		    		
      	},
        	error : function(xhr) {

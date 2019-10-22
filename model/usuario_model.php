@@ -81,6 +81,25 @@ class usuario_model extends usuario_class{
         $this->CloseConnect();
     }
     
+    public function delete()
+    {
+        $this->OpenConnect();
+        
+        $idUsuario=$this->getIdUsuario();
+        
+        
+        $sql = "CALL spDeleteUsuario('$idUsuario')";
+        
+        if ($this->link->query($sql)>=1) // aldatu egiten da
+        {
+            return "El usuario se ha borrado con exito";
+        } else {
+            return "Fallo en el borrado del usuario: (" . $this->link->errno . ") " . $this->link->error;
+        }
+        
+        $this->CloseConnect();
+    }
+    
     function getListJsonString() {
         
         $arr=array();
