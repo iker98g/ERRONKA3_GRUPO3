@@ -57,6 +57,28 @@ class habitacion_model extends habitacion_class{
         $this->CloseConnect();
     }
     
+    public function update()
+    {
+        $this->OpenConnect();
+        
+        $idHabitacion=$this->getIdHabitacion();
+        $tipo=$this->getTipo();
+        $imagen= $this->getImagen();
+        $precio= $this->getPrecio();
+       
+        
+        $sql = "CALL spModificarHabitacion('$idHabitacion','$tipo', '$imagen', '$precio')";
+        
+        if ($this->link->query($sql)>=1) // aldatu egiten da
+        {
+            return "La habitacion se ha modificado con exito";
+        } else {
+            return "Fallo en la modificacion de la habitacion: (" . $this->link->errno . ") " . $this->link->error;
+        }
+        
+        $this->CloseConnect();
+    }
+    
     function getListJsonString() {
         
         $arr=array();

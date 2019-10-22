@@ -153,6 +153,95 @@
 </div>
 	
 	
+	<!-- Modal reservas-->
+<!-- <div class="modal fade" id="modalModificarReserva" tabindex="-1" role="dialog" aria-labelledby="modalModificarReservalabel" aria-hidden="true"> -->
+<!--   <div class="modal-dialog" role="document"> -->
+<!--     <div class="modal-content"> -->
+<!--       <div class="modal-header"> -->
+<!--         <h5 class="modal-title" id="modalModificarReservalabel">Modificar usuario</h5> -->
+<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+<!--           <span aria-hidden="true">&times;</span> -->
+<!--         </button> -->
+<!--       </div> -->
+<!--       <div class="modal-body"> -->
+        
+            <!--form modificar -->
+<!--        		<form> -->
+<!--        			<div class="form-group"> -->
+<!--        				<label for="idUsuarioForm">ID</label> -->
+<!--        				<input type="number" class="form-control" id="idUsuarioForm" aria-describedby="id" disabled> -->
+<!--        			<div class="form-group"> -->
+<!--        				<label for="nombreForm">Nombre</label> -->
+<!--        				<input type="text" class="form-control" id="nombreForm" aria-describedby="nombre"> -->
+<!--        			</div> -->
+<!--        			<div class="form-group"> -->
+<!--        				<label for="apellidoForm">Apellido</label> -->
+<!--        				<input type="text" class="form-control" id="apellidoForm" aria-describedby="apellido"> -->
+<!--        			</div> -->
+<!--        			<div class="form-group"> -->
+<!--        				<label for="usuarioForm">Usuario</label> -->
+<!--        				<input type="text" class="form-control" id="usuarioForm" aria-describedby="usuario"> -->
+<!--        			</div> -->
+<!--        			<div class="form-group"> -->
+<!--        				<label for="adminForm">Admin (0=No, 1=Si)</label> -->
+<!--        				<input type="number" class="form-control" id="adminForm" aria-describedby="admin"> -->
+<!--        			</div> -->
+<!--        		</form> -->
+        
+        
+        
+<!--       </div> -->
+<!--       <div class="modal-footer"> -->
+<!--         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
+<!--         <button type="button" class="btn btn-primary botonExecuteModificarReservas">Confirmar</button> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </div>	 -->
+
+<!-- Modal habitaciones-->
+<div class="modal fade" id="modalModificarHabitacion" tabindex="-1" role="dialog" aria-labelledby="modalModificarHabitacionlabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalModificarHabitacionlabel">Modificar usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+            <!--form modificar -->
+       		<form>
+       			<div class="form-group">
+       				<label for="idUsuarioForm">ID</label>
+       				<input type="number" class="form-control" id="idHabitacionForm" aria-describedby="id" disabled>
+       			</div>
+       			<div class="form-group">
+       				<label for="tipoForm">Tipo</label>
+       				<input type="text" class="form-control" id="tipoForm" aria-describedby="tipo">
+       			</div>
+       			<div class="form-group">
+       				<label for="imagenForm">Imagen</label>
+       				<input type="text" class="form-control" id="imagenForm" aria-describedby="imagen">
+       			</div>
+       			<div class="form-group">
+       				<label for="precioForm">Precio</label>
+       				<input type="text" class="form-control" id="precioForm" aria-describedby="precio">
+       			</div>
+       		</form>
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary botonExecuteModificarHabitaciones">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>	
+	
 	</div>
 
 
