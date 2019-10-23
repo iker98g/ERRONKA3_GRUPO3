@@ -1,12 +1,11 @@
 <?php
-
 include_once ("../model/habitacion_model.php");
 
-$habitacion= new habitacion_model();
-$habitacion->setList();
+$habitaciones= new habitacion_model();
+$habitaciones->setList();
 
-$listaHabitacionJSON=$habitacion->getListJsonString(); //attributes PRIVATEs or PROTECTED
+session_start();
+$_SESSION["habitaciones"] = $habitaciones;
 
-echo $listaHabitacionJSON;
-
-unset ($habitacion);
+header("Location: ../view/hotel.php");
+?>
