@@ -1,14 +1,13 @@
 <?php
-
 include_once ("../model/usuario_model.php");
 
-$user= new usuario_model();
-$user->setList();
+$usuarios= new usuario_model();
+$usuarios->setList();
 
-foreach ($user->list as $object){
+foreach ($usuarios->list as $object){
     if($object->getUsuario()==$_POST["usuario"] && $object->getContrasena()==$_POST["contrasena"]){
         session_start();       
-        $_SESSION["usuario"] = $_POST["usuario"];
+        $_SESSION["usuario"] = $object->getUsuario();
         
         if($object->getAdmin()==1){
             header("Location: CAdmin.php");
