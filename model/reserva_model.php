@@ -59,6 +59,48 @@ class reserva_model extends reserva_class{
         $this->CloseConnect();
     }
     
+    public function update()
+    {
+        $this->OpenConnect();
+        
+        $idReserva=$this->getIdReserva();
+        $idHabitacion=$this->getIdHabitacion();
+        $idUsuario= $this->getIdUsuario();
+        $fechaInicio= $this->getFechaInicio();
+        $fechaFin= $this->getFechaFin();
+        $precioTotal= $this->getPrecioTotal();
+        
+        $sql = "CALL spModificarReserva('$idReserva','$idHabitacion', '$idUsuario', '$fechaInicio', '$fechaFin', '$precioTotal')";
+        
+        if ($this->link->query($sql)>=1) // aldatu egiten da
+        {
+            return "El usuario se ha modificado con exito";
+        } else {
+            return "Fallo en la modificacion del usuario: (" . $this->link->errno . ") " . $this->link->error;
+        }
+        
+        $this->CloseConnect();
+    }
+    
+    public function delete()
+    {
+        $this->OpenConnect();
+        
+        $idReserva=$this->getIdReserva();
+        
+        
+        $sql = "CALL spDeleteReserva('$idReserva')";
+        
+        if ($this->link->query($sql)>=1) // aldatu egiten da
+        {
+            return "La reserva se ha borrado con exito";
+        } else {
+            return "Fallo en el borrado de la reserva: (" . $this->link->errno . ") " . $this->link->error;
+        }
+        
+        $this->CloseConnect();
+    }
+    
     function getListJsonString() {
         
         $arr=array();

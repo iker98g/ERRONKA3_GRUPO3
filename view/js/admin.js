@@ -142,10 +142,94 @@ $( document ).ready(function() {
        									+"<td>"+reserva.fechaInicio+"</td>"
        									+"<td>"+reserva.fechaFin+"</td>"
        									+"<td>"+reserva.precioTotal+"</td>"
-       									+"<td><button type='button' class='btn btn-dark botonModificarReserva m-1'><i class='fas fa-edit text-light'></i></button><button type='button' class='btn btn-dark botonDeleteReserva text-light'><i class='fas fa-trash-alt'></i></button></td>"
+       									+"<td><button type='button' class='btn btn-dark botonModificarReserva m-1' value='"+reserva.idReserva+"'><i class='fas fa-edit text-light'></i></button><button type='button' class='btn btn-dark botonDeleteReserva text-light' value='"+reserva.idReserva+"'><i class='fas fa-trash-alt'></i></button></td>"
        						+"</tr>"		
        		});
        		$("#tablaReservas").append(newRow);
+       		
+       		var idReserva="";
+       		var idHabitacion="";
+       		var idUsuario="";
+       		var fechaInicio="";
+       		var fechaFin="";
+       		var precioTotal="";
+       		
+       		$('.botonModificarReserva').click(function() {
+       			idReserva=$(this).val();
+
+       		  
+       		$.each(reservas,function(index,reservaForm){
+       			if (reservaForm.idReserva==idReserva) {
+       				idHabitacion=reservaForm.idHabitacion;
+       				idUsuario=reservaForm.idUsuario;
+       				fechaInicio=reservaForm.fechaInicio;
+       				fechaFin=reservaForm.fechaFin;
+       				precioTotal=reservaForm.precioTotal;
+				}     			
+       		});
+       		
+       		$('#idReservaForm').val(idReserva);
+       		$('#idHabitacionReservaForm').val(idHabitacion);
+       		$('#idUsuarioReservaForm').val(idUsuario);
+       		$('#fechaInicioForm').val(fechaInicio);
+       		$('#fechaFinForm').val(fechaFin);
+       		$('#precioTotalForm').val(precioTotal);
+       		  
+       		$('#modalModificarReserva').modal('show'); 
+       		
+       		});
+       		
+       		$('.botonExecuteModificarReservas').click(function(){
+       			idReserva=$('#idReservaForm').val();
+       			idHabitacion=$('#idHabitacionReservaForm').val();
+       			idUsuario=$('#idUsuarioReservaForm').val();
+       			fechaInicio=$('#fechaInicioForm').val();
+       			fechaFin=$('#fechaFinForm').val();
+       			precioTotal=$('#precioTotalForm').val();
+       			
+       			
+       			$.ajax({
+       		       	type: "GET",
+       		       	data:{ 'idReserva':idReserva, 'idHabitacion':idHabitacion, 'idUsuario':idUsuario,'fechaInicio':fechaInicio, 'fechaFin':fechaFin, 'precioTotal':precioTotal},
+       		       	url: "../controller/CUpdateReserva.php", 
+       		       	datatype: "json",  //type of the result
+       		       	success: function(result){  
+       		       		
+       		       		console.log(result);
+       		       		alert(result);
+       		       		location.reload(true);  //recarga la pagina
+       		       	},
+       		       	error : function(xhr) {
+       		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+       		   		}
+       		       });
+       		});
+       		
+       		$('.botonDeleteReserva').click(function(){
+       			idReserva=$(this).val();
+       			
+       			var r = confirm("Estas seguro de que quieres borrar esta reserva?");
+       				if (r == true) {
+       					$.ajax({
+       	       		       	type: "GET",
+       	       		       	data:{ 'idReserva':idReserva},
+       	       		       	url: "../controller/CDeleteReserva.php", 
+       	       		       	datatype: "json",  //type of the result
+       	       		       	success: function(result){  
+       	       		       		
+       	       		       		console.log(result);
+       	       		       		alert(result);
+       	       		       		location.reload(true);  //recarga la pagina
+       	       		       	},
+       	       		       	error : function(xhr) {
+       	       		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+       	       		   		}
+       	       		       });
+       				} else {
+       					alert("Operacion cancelada")
+       				}
+       			
+       		});
      	},
        	error : function(xhr) {
    			alert("An error occured: " + xhr.status + " " + xhr.statusText);
