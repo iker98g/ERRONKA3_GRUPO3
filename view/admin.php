@@ -153,6 +153,103 @@
 </div>
 	
 	
+	<!-- Modal reservas-->
+<div class="modal fade" id="modalModificarReserva" tabindex="-1" role="dialog" aria-labelledby="modalModificarReservalabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalModificarReservalabel">Modificar usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+            <!--form modificar -->
+       		<form>
+       			<div class="form-group">
+       				<label for="idReservaForm">ID</label>
+       				<input type="number" class="form-control" id="idReservaForm" aria-describedby="id" disabled>
+       			<div class="form-group">
+       				<label for="idHabitacionReservaForm">Id Habitacion</label>
+       				<input type="number" class="form-control" id="idHabitacionReservaForm" aria-describedby="idHabitacionReserva">
+       			</div>
+       			<div class="form-group">
+       				<label for="idUsuarioReservaForm">Id Usuario</label>
+       				<input type="number" class="form-control" id="idUsuarioReservaForm" aria-describedby="idUsuarioReserva">
+       			</div>
+       			<div class="form-group row">
+  					<label for="fechaInicioForm" class="col-2 col-form-label">Fecha Inicio</label>
+  					<div class="col-10">
+    					<input class="form-control" type="date" id="fechaInicioForm">
+  					</div>
+				</div>
+				<div class="form-group row">
+  					<label for="fechaFinForm" class="col-2 col-form-label">Fecha Fin</label>
+  					<div class="col-10">
+    					<input class="form-control" type="date" id="fechaFinForm">
+  					</div>
+				</div>
+				<div class="form-group">
+       				<label for="precioTotalForm">Precio Total</label>
+       				<input type="number" class="form-control" id="precioTotalForm" aria-describedby="precioTotal">
+       			</div>
+       		</form>
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary botonExecuteModificarReservas">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>	
+
+<!-- Modal habitaciones-->
+<div class="modal fade" id="modalModificarHabitacion" tabindex="-1" role="dialog" aria-labelledby="modalModificarHabitacionlabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalModificarHabitacionlabel">Modificar usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+            <!--form modificar -->
+       		<form>
+       			<div class="form-group">
+       				<label for="idHabitacionForm">ID</label>
+       				<input type="number" class="form-control" id="idHabitacionForm" aria-describedby="id" disabled>
+       			</div>
+       			<div class="form-group">
+       				<label for="tipoForm">Tipo</label>
+       				<input type="text" class="form-control" id="tipoForm" aria-describedby="tipo">
+       			</div>
+       			<div class="form-group">
+       				<label for="imagenForm">Imagen</label>
+       				<input type="text" class="form-control" id="imagenForm" aria-describedby="imagen">
+       			</div>
+       			<div class="form-group">
+       				<label for="precioForm">Precio</label>
+       				<input type="text" class="form-control" id="precioForm" aria-describedby="precio">
+       			</div>
+       		</form>
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary botonExecuteModificarHabitaciones">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>	
+	
 	</div>
 
 
