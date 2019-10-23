@@ -12,7 +12,7 @@
 <body>
 
 	<div class="container">
-	
+
 <!-- 	tablas -->
 		<div class="accordion" id="accordionExample">
 			<div class="card">
@@ -24,9 +24,17 @@
 					
 				</a>
 				<!-- Tabla Usuarios -->
+				<!-- 	inserts -->
+
+					
 				<div id="collapseOne" class="collapse show"
 					aria-labelledby="headingOne" data-parent="#accordionExample">
 					<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<button type="button" class="btn btn-dark mb-3 insertUsuario">Insert Usuario</button>
+						</div>
+					</div>
 						<table class="table table-bordered">
 							<thead class="thead-dark">
 								<tr>
@@ -151,6 +159,49 @@
     </div>
   </div>
 </div>
+
+	<!-- Modal insert users-->
+<div class="modal fade" id="modalInsertUser" tabindex="-1" role="dialog" aria-labelledby="modalInsertUserlabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalInsertUserlabel">Modificar usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+            <!--form modificar -->
+       		<form>
+       			<div class="form-group">
+       				<label for="nombreFormInsert">Nombre</label>
+       				<input type="text" class="form-control" id="nombreFormInsert" aria-describedby="nombreInsert" required name="insertarUsu">
+       			</div>
+       			<div class="form-group">
+       				<label for="apellidoFormInsert">Apellido</label>
+       				<input type="text" class="form-control" id="apellidoFormInsert" aria-describedby="apellidoInsert" required name="insertarUsu">
+       			</div>
+       			<div class="form-group">
+       				<label for="usuarioFormInsert">Usuario</label>
+       				<input type="text" class="form-control" id="usuarioFormInsert" aria-describedby="usuarioInsert" required name="insertarUsu">
+       			</div>
+       			<div class="form-group">
+       				<label for="adminFormInsert">Admin (0=No, 1=Si)</label>
+       				<input type="number" class="form-control" id="adminFormInsert" aria-describedby="adminInsert" required name="insertarUsu">
+       			</div>
+       		</form>
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" disabled class="btn btn-primary botonExecuteInsertUsers">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
 	
 	
 	<!-- Modal reservas-->
@@ -181,7 +232,7 @@
        			<div class="form-group row">
   					<label for="fechaInicioForm" class="col-2 col-form-label">Fecha Inicio</label>
   					<div class="col-10">
-    					<input class="form-control" type="date" id="fechaInicioForm">
+    					<input class="form-control" type="date" dateformat="y M d" id="fechaInicioForm">
   					</div>
 				</div>
 				<div class="form-group row">
@@ -220,7 +271,7 @@
       <div class="modal-body">
         
             <!--form modificar -->
-       		<form>
+       		<form >
        			<div class="form-group">
        				<label for="idHabitacionForm">ID</label>
        				<input type="number" class="form-control" id="idHabitacionForm" aria-describedby="id" disabled>
@@ -251,10 +302,6 @@
 </div>	
 	
 	</div>
-
-
-
-
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/admin.js" type="text/javascript"></script>

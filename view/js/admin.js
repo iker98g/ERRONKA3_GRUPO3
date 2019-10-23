@@ -113,7 +113,50 @@ $( document ).ready(function() {
        				}
        			
        		});
-       		    		
+       		
+       		$('.insertUsuario').click(function(){
+       			$('#modalInsertUser').modal('show'); 
+       		}); 
+       		
+       		$('.botonExecuteInsertUsers').click(function(){
+       			nombre=$('#nombreFormInsert').val();
+       			apellido=$('#apellidoFormInsert').val();
+       			usuario=$('#usuarioFormInsert').val();
+       			admin=$('#adminFormInsert').val();
+       			
+       			
+       			$.ajax({
+       		       	type: "GET",
+       		       	data:{ 'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'admin':admin},
+       		       	url: "../controller/CInsertUser.php", 
+       		       	datatype: "json",  //type of the result
+       		       	success: function(result){  
+       		       		
+       		       		console.log(result);
+       		       		alert(result);
+       		       		location.reload(true);  //recarga la pagina
+       		       	},
+       		       	error : function(xhr) {
+       		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+       		   		}
+       		       });
+       		});
+       		
+       		//si los datos estan vacios no se puede hacer insert
+       		$('input[name = "insertarUsu"]').on('keyup', function() {
+       		    let empty = false;
+
+       		    $('input[name = "insertarUsu"]').each(function() {
+       		      empty = $(this).val().length == 0;
+       		    });
+
+       		    if (empty)
+       		      $('.botonExecuteInsertUsers').attr('disabled', 'disabled');
+       		    else
+       		      $('.botonExecuteInsertUsers').attr('disabled', false);
+       		  });
+       		
+       		
      	},
        	error : function(xhr) {
    			alert("An error occured: " + xhr.status + " " + xhr.statusText);
