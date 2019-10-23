@@ -88,7 +88,7 @@ class usuario_model extends usuario_class{
         $idUsuario=$this->getIdUsuario();
         
         
-        $sql = "CALL spDeleteUsuario('$idUsuario')";
+        $sql = "CALL spBorrarUsuario('$idUsuario')";
         
         if ($this->link->query($sql)>=1) // aldatu egiten da
         {

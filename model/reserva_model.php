@@ -89,7 +89,7 @@ class reserva_model extends reserva_class{
         $idReserva=$this->getIdReserva();
         
         
-        $sql = "CALL spDeleteReserva('$idReserva')";
+        $sql = "CALL spBorrarReserva('$idReserva')";
         
         if ($this->link->query($sql)>=1) // aldatu egiten da
         {
