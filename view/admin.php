@@ -165,7 +165,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalInsertUserlabel">Modificar usuario</h5>
+        <h5 class="modal-title" id="modalInsertUserlabel">Insertar usuario</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -209,7 +209,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalModificarReservalabel">Modificar usuario</h5>
+        <h5 class="modal-title" id="modalModificarReservalabel">Modificar Reserva</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -263,7 +263,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalModificarHabitacionlabel">Modificar usuario</h5>
+        <h5 class="modal-title" id="modalModificarHabitacionlabel">Modificar Habitacion</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
