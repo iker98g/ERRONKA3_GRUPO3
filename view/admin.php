@@ -17,7 +17,7 @@
 <script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
 </head>
 <body>
-<div id="vantaBG">
+<div id="vantaBG" class="fixed-bottom"></div>
 	<header>
 		<!-- NAV -->
 		<nav class="navbar navbar-dark bg-dark">
@@ -388,7 +388,7 @@
 <br>
 <br>
 
-</div>
+
 
 
 	<!-- FOOTER -->
@@ -413,8 +413,9 @@
 					class="fab fa-google-plus-g"></i></a></li>
 		</ul>
 	</footer>
-	<!-- FIN FOOTER -->
 	</div>
+	<!-- FIN FOOTER -->
+	
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
