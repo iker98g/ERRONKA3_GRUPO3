@@ -110,7 +110,7 @@ class usuario_model extends usuario_class{
         $contrasena= $this->getContrasena();
         $admin= $this->getAdmin();
         
-        $sql = "CALL spCrearUsuario('$nombre', '$apellido', '$usuario', '$admin', '$contrasena')";
+        $sql = "CALL spCrearUsuario('$nombre', '$apellido', '$usuario', '$contrasena', '$admin')";
         
         if ($this->link->query($sql)>=1) // aldatu egiten da
         {
