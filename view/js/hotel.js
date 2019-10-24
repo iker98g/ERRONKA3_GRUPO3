@@ -16,6 +16,7 @@ $( document ).ready(function() {
 			$.each(habitaciones,function(index,room){
 				newRow += '<img src="'+room.imagen+'" class="card-img-top" alt="..."></img>'
 							+"<h5>"+room.tipo+" class='card-title'</h5>"
+							+"<p>"+room.precio+" class='card-text'</h5>"
 							+"<button type='button' class='btn btn-primary></button>"
 			});
 			$(".card-body").append(newRow);

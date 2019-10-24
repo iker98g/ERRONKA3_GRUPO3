@@ -88,22 +88,28 @@
     <div class="row separacion">
         <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-descripcion-list" data-toggle="list" href="#list-descripcion" role="tab" aria-controls="descripcion">Descripción</a>
-                <a class="list-group-item list-group-item-action" id="list-habitaciones-list" data-toggle="list" href="#list-habitaciones" role="tab" aria-controls="habitaciones">Habitaciones</a>
-                <a class="list-group-item list-group-item-action" id="list-ubicacion-list" data-toggle="list" href="#list-ubicacion" role="tab" aria-controls="ubicacion">Ubicación</a>
-                <a class="list-group-item list-group-item-action" id="list-contacto-list" data-toggle="list" href="#list-contacto" role="tab" aria-controls="contacto">Contacto</a>
+                <a class="list-group-item list-group-item-action active letra" id="list-descripcion-list" data-toggle="list" href="#list-descripcion" role="tab" aria-controls="descripcion">Descripción</a>
+                <a class="list-group-item list-group-item-action letra" id="list-habitaciones-list" data-toggle="list" href="#list-habitaciones" role="tab" aria-controls="habitaciones">Habitaciones</a>
+                <a class="list-group-item list-group-item-action letra" id="list-ubicacion-list" data-toggle="list" href="#list-ubicacion" role="tab" aria-controls="ubicacion">Ubicación</a>
+                <a class="list-group-item list-group-item-action letra" id="list-contacto-list" data-toggle="list" href="#list-contacto" role="tab" aria-controls="contacto">Contacto</a>
+                <!-- <div class="card informacion" style="width: 23rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">INFORMACIÓN IMPORTANTE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam iste, quos similique sint voluptatem doloribus cupiditate, deleniti dolores, tempore qui hic! Molestiae est nihil quo.</p>
+                    </div>
+                </div> -->
             </div>
         </div>
         <div class="col-8">
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="list-descripcion" role="tabpanel" aria-labelledby="list-descripcion-list">
                     <h5>¿Quienes somos?</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In illo magnam dolorem reprehenderit, laboriosam commodi magni voluptatibus quasi ullam veritatis? Maiores dicta, laborum natus, voluptas laudantium reiciendis mollitia ipsa cumque commodi vel tempore. Maxime, facilis aliquam quasi, unde fugiat ipsum et voluptates soluta vel obcaecati quibusdam eveniet accusamus doloremque minus optio harum architecto temporibus in exercitationem sunt vitae provident aliquid? A, hic. Voluptas enim rerum ipsam minus vel facere aspernatur corrupti officiis voluptatum perspiciatis a, tempore porro quia. Quisquam earum, ab quis quaerat pariatur, dolorem est qui ut maxime voluptatem eius rem. Veniam neque cupiditate natus nulla repudiandae ratione, provident eligendi, ad eaque obcaecati, pariatur atque ex animi voluptas illo. Saepe voluptatum, earum recusandae quae eos cum dolor voluptates, porro iure consequatur quo! Aperiam aspernatur modi labore, iste consectetur quas velit unde alias reiciendis! Ad perspiciatis incidunt sit sint ipsam neque velit quisquam, quis voluptatem. Facere mollitia sed repellendus, quae eum adipisci veniam dolores ex? Delectus sequi, tempore voluptate non fugiat magni quasi fuga, enim porro consectetur incidunt aut autem assumenda culpa doloremque repudiandae accusamus. Eos velit harum deleniti consectetur. Neque corrupti asperiores accusantium? Iusto quasi, fugiat aliquam placeat ad corrupti accusantium suscipit deserunt quia, quos cum maiores a animi?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo tempore repudiandae mollitia voluptatum aperiam, voluptas amet esse nobis rerum quibusdam delectus facilis explicabo libero iste reprehenderit commodi necessitatibus nam obcaecati quia alias ipsum! Illo ullam exercitationem placeat distinctio commodi ex ipsam eveniet, iure reprehenderit quibusdam blanditiis fugit esse id, est culpa maiores quam earum a perspiciatis quis consequatur. Commodi placeat maxime quas neque error consequuntur enim harum voluptatibus! Quod fuga ullam eum vel. Provident, aliquam odio minus harum dolore tempore deserunt expedita, doloremque sed exercitationem officiis ducimus. Asperiores impedit tempore quae quo placeat perferendis adipisci, culpa rem ducimus nesciunt inventore? Delectus, obcaecati laborum alias suscipit, sit voluptas numquam temporibus non eius quam ducimus expedita autem adipisci? Molestiae enim alias aliquid dolores culpa sint accusamus fugit, excepturi voluptas quisquam sapiente sed perspiciatis at. Quisquam repellat fuga assumenda, dolorum quam voluptatibus obcaecati odit quod perspiciatis placeat repellendus nostrum, consequuntur recusandae adipisci dolor esse exercitationem tempore sapiente dicta corrupti nobis rerum ex, eius ea! Modi fugiat, libero ad eveniet accusamus atque laudantium. Accusamus nisi ut omnis veniam debitis. Architecto vero possimus minus quia voluptatum, nesciunt dolores sit veniam accusamus modi fugit natus adipisci, itaque sapiente doloribus mollitia necessitatibus autem? Delectus itaque aspernatur corrupti quam sapiente aliquam corporis officiis ab nihil dignissimos debitis qui, cupiditate aliquid eaque officia dolor architecto quas laborum nulla? Omnis, perspiciatis iste. Aperiam numquam illo qui officia hic quae facere iste id commodi delectus, quas modi illum! Aliquam quis nobis optio harum soluta! Sit vel voluptatem quae nostrum in hic vitae ut voluptas, illo atque eum commodi unde omnis nihil officiis, perferendis magni, quis praesentium eligendi aliquam asperiores. Fugit praesentium atque dolorum dolores accusamus id minus architecto alias deserunt veniam sequi nesciunt odit laudantium, aspernatur sit nemo ab reiciendis ea? Quia non blanditiis nostrum iste alias corporis sint id corrupti.</p>
                 </div>
                 <div class="tab-pane fade" id="list-habitaciones" role="tabpanel" aria-labelledby="list-habitaciones-list">
                     <h5>Habitaciones</h5>
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/estandar1.jpg" class="card-img-top" alt="...">
@@ -113,7 +119,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/estandar2.jpg" class="card-img-top" alt="...">
@@ -123,7 +129,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/estandar3.jpg" class="card-img-top" alt="...">
@@ -133,7 +139,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/estandar4.jpg" class="card-img-top" alt="...">
@@ -143,7 +149,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/suite1.jpg" class="card-img-top" alt="...">
@@ -153,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/suite2.jpg" class="card-img-top" alt="...">
@@ -163,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/suite3.jpg" class="card-img-top" alt="...">
@@ -173,7 +179,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/suite4.jpg" class="card-img-top" alt="...">
@@ -183,7 +189,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/superior1.jpg" class="card-img-top" alt="...">
@@ -193,7 +199,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/superior2.jpg" class="card-img-top" alt="...">
@@ -203,7 +209,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/superior3.jpg" class="card-img-top" alt="...">
@@ -213,7 +219,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/superior4.jpg" class="card-img-top" alt="...">
@@ -227,11 +233,11 @@
                 </div>
                 <div class="tab-pane fade" id="list-ubicacion" role="tabpanel" aria-labelledby="list-ubicacion-list">
                     <h5>Ubicación</h5>
-                    <iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.3889090433854!2d-2.925636384553234!3d43.26422757913655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fc5e5c211dd%3A0x6a7486dfa11cb52e!2sAyuntamiento%20de%20Bilbao!5e0!3m2!1ses!2ses!4v1571815421752!5m2!1ses!2ses" width="400" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.3889090433854!2d-2.925636384553234!3d43.26422757913655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fc5e5c211dd%3A0x6a7486dfa11cb52e!2sAyuntamiento%20de%20Bilbao!5e0!3m2!1ses!2ses!4v1571904434337!5m2!1ses!2ses" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
                 <div class="tab-pane fade" id="list-contacto" role="tabpanel" aria-labelledby="list-contacto-list">
                     <h5>Contáctanos</h5>
-                    <p>¿Tienes preguntas o quieres saber más sobre cómo reservar habitaciones? Contacta con nosotros a través de correo electrónico o teléfono.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore ratione, mollitia, saepe assumenda quae dolor enim natus eligendi laudantium nemo velit esse aliquid iusto non nesciunt voluptate accusamus dolorum corrupti sed, sint provident facilis. Dolores corporis fugit tempora odit aperiam asperiores nam eius vitae, nemo modi autem quasi sunt. Asperiores.</p>
                     <p>Correo electrónico: hotel_les@gmail.com</p>
                     <p>Teléfono: 944581043</p>      
                 </div>
@@ -243,7 +249,7 @@
 <!-- FIN MAIN -->    
 <!-- FOOTER -->
 <footer class="text-muted text-center text-small">
-    <p class="mb-1">&copy; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos dolores fuga accusantium iste quisquam explicabo atque praesentium voluptas eaque deleniti, maxime tempora et? Rerum placeat voluptate, maxime sequi itaque vel est totam neque voluptas soluta hic reprehenderit laborum doloribus ut iure sapiente quos blanditiis accusantium ullam? Temporibus, vitae mollitia.</p>
+    <p class="mb-1">&copy; Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla maiores ipsam in inventore voluptatibus. Labore, provident. Quos ratione accusantium facere? Rem assumenda, a adipisci possimus repudiandae ipsam mollitia debitis architecto.</p>
     <ul class="list-inline">
         <li class="list-inline-item"><a href="https://www.instagram.com/?hl=es"><i class="fab fa-instagram"></i></a></li>
         <li class="list-inline-item"><a href="https://es-es.facebook.com/"><i class="fab fa-facebook-square"></i></a></li>
