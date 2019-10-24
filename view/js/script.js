@@ -13,15 +13,15 @@ $( document ).ready(function() {
 		}else{
 			$.ajax({
    		       	type: "GET",
-   		       	data:{ 'user':user, 'pass':pass},
-   		       	url: "../controller/CUsuario.php",
+   		       	data: {'user':user,'pass':pass},
+   		       	url: "controller/CUsuario.php",
    		       	success: function(){  		       		
-
+   		       		alert("funciona");
    		       	},
-   		       	error : function(xhr) {
+   		       	error : function(xhr){
    		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
    		   		}
-   		       });
+   		    });
 		}
 		
 		
