@@ -1,5 +1,6 @@
 <?php
 include_once ("../model/usuario_model.php");
+include_once ("../model/habitacion_model.php");
 
 $usuario= new usuario_model();
 $usuario->setList();
@@ -12,10 +13,14 @@ foreach ($usuarios as $object){
         $_SESSION["usuario"] = $object->getUsuario();
         
         if($object->getAdmin()==1){
-            echo "admin";
-            header("Location: view/admin.php");
+            echo "http://tres.fpz1920.com/view/admin.php";
         }else {
-            header("Location: CHotel.php");
+            $habitaciones= new habitacion_model();
+            $habitaciones->setList();
+            
+            $_SESSION["habitaciones"] = $habitaciones->getList();
+            
+            echo "http://tres.fpz1920.com/view/hotel.php";
         }
     }
 }

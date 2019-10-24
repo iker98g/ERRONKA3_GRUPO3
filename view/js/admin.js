@@ -59,7 +59,7 @@ $( document ).ready(function() {
        		$('#usuarioForm').val(usuario);
        		$('#adminForm').val(admin);
        		  
-       		$('#modalModificarUser').modal('show'); 
+       		$('#modalModificarUser').appendTo("body").modal('show'); 
        		
        		});
        		
@@ -115,7 +115,7 @@ $( document ).ready(function() {
        		});
        		
        		$('.insertUsuario').click(function(){
-       			$('#modalInsertUser').modal('show'); 
+       			$('#modalInsertUser').appendTo("body").modal('show'); 
        		}); 
        		
        		$('.botonExecuteInsertUsers').click(function(){
@@ -219,7 +219,7 @@ $( document ).ready(function() {
        		$('#fechaFinForm').val(fechaFin);
        		$('#precioTotalForm').val(precioTotal);
        		  
-       		$('#modalModificarReserva').modal('show'); 
+       		$('#modalModificarReserva').appendTo("body").modal('show'); 
        		
        		});
        		
@@ -329,7 +329,7 @@ $( document ).ready(function() {
   		$('#imagenForm').val(imagen);
   		$('#precioForm').val(precio);
   		  
-  		$('#modalModificarHabitacion').modal('show'); 
+  		$('#modalModificarHabitacion').appendTo("body").modal('show'); 
   		
   		});
   		

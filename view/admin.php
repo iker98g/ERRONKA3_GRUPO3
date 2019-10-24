@@ -12,8 +12,12 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+<script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
 </head>
 <body>
+<div id="vantaBG">
 	<header>
 		<!-- NAV -->
 		<nav class="navbar navbar-dark bg-dark">
@@ -70,6 +74,7 @@
 									Usuario</button>
 							</div>
 						</div>
+						<div class="table-responsive">
 						<table class="table table-bordered">
 							<thead class="thead-dark">
 								<tr>
@@ -84,6 +89,7 @@
 							<tbody id="tablaUsers" class="text-center">
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -95,6 +101,7 @@
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 					data-parent="#accordionExample">
 					<div class="card-body">
+					<div class="table-responsive">
 						<table class="table table-bordered">
 							<thead class="thead-dark">
 								<tr>
@@ -110,6 +117,7 @@
 							<tbody id="tablaReservas" class="text-center">
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -121,6 +129,7 @@
 				<div id="collapseThree" class="collapse"
 					aria-labelledby="headingThree" data-parent="#accordionExample">
 					<div class="card-body">
+					<div class="table-responsive">
 						<table class="table table-bordered">
 							<thead class="thead-dark">
 								<tr>
@@ -134,6 +143,7 @@
 							<tbody id="tablaHabitaciones" class="text-center">
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -374,9 +384,9 @@
 			</div>
 		</div>
 
+</div>
 
 
-	</div>
 	<!-- FOOTER -->
 	<footer
 		class="text-muted text-center text-small fixed-bottom border-top bg-white shadow">
@@ -400,6 +410,8 @@
 		</ul>
 	</footer>
 	<!-- FIN FOOTER -->
+	</div>
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/admin.js" type="text/javascript"></script>
@@ -411,5 +423,18 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+		
+
+        <script>
+        VANTA.NET({
+          el: "#vantaBG",
+          color: 0x222222,
+          backgroundColor: 0xffffff,
+          points: 14.00,
+          maxDistance: 19.00,
+          spacing: 18.00
+        })
+        </script>
+
 </body>
 </html>
