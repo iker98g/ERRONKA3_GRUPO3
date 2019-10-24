@@ -74,9 +74,9 @@ class reserva_model extends reserva_class{
         
         if ($this->link->query($sql)>=1) // aldatu egiten da
         {
-            return "El usuario se ha modificado con exito";
+            return "La reserva se ha modificado con exito";
         } else {
-            return "Fallo en la modificacion del usuario: (" . $this->link->errno . ") " . $this->link->error;
+            return "Fallo en la modificacion de la reserva: (" . $this->link->errno . ") " . $this->link->error;
         }
         
         $this->CloseConnect();

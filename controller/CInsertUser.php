@@ -7,6 +7,7 @@ $user=new usuario_model();
 $nombre=filter_input(INPUT_GET,"nombre");
 $apellido= filter_input(INPUT_GET,"apellido");
 $usuario=filter_input(INPUT_GET,"usuario");
+$contrasena=filter_input(INPUT_GET,"contrasena");
 $admin=filter_input(INPUT_GET,"admin");
 
 
@@ -24,6 +25,11 @@ $admin=filter_input(INPUT_GET,"admin");
     if ($usuario!=null)
     {
         $user->setUsuario($usuario);
+    }
+    
+    if ($contrasena!=null)
+    {
+        $user->setContrasena($contrasena);
     }
     
     if ($admin!=null)

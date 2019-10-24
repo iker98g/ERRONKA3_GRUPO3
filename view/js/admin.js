@@ -122,12 +122,13 @@ $( document ).ready(function() {
        			nombre=$('#nombreFormInsert').val();
        			apellido=$('#apellidoFormInsert').val();
        			usuario=$('#usuarioFormInsert').val();
+       			contrasena=$('#passwordFormInsert').val();
        			admin=$('#adminFormInsert').val();
        			
        			
        			$.ajax({
        		       	type: "GET",
-       		       	data:{ 'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'admin':admin},
+       		       	data:{ 'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'contrasena':contrasena, 'admin':admin},
        		       	url: "../controller/CInsertUser.php", 
        		       	datatype: "json",  //type of the result
        		       	success: function(result){  

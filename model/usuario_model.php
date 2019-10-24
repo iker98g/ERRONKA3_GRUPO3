@@ -59,27 +59,6 @@ class usuario_model extends usuario_class{
         $this->CloseConnect();
     }
     
-    public function update()
-    {
-        $this->OpenConnect();
-        
-        $idUsuario=$this->getIdUsuario();
-        $nombre=$this->getNombre();
-        $apellido= $this->getApellido();
-        $usuario= $this->getUsuario();
-        $admin= $this->getAdmin();
-        
-        $sql = "CALL spModificarUsuario('$idUsuario','$nombre', '$apellido', '$usuario', '$admin')";
-        
-        if ($this->link->query($sql)>=1) // aldatu egiten da
-        {
-            return "El usuario se ha modificado con exito";
-        } else {
-            return "Fallo en la modificacion del usuario: (" . $this->link->errno . ") " . $this->link->error;
-        }
-        
-        $this->CloseConnect();
-    }
     
     public function delete()
     {
@@ -107,9 +86,10 @@ class usuario_model extends usuario_class{
         $nombre=$this->getNombre();
         $apellido= $this->getApellido();
         $usuario= $this->getUsuario();
+        $contrasena= $this->getContrasena();
         $admin= $this->getAdmin();
         
-        $sql = "CALL spCrearUsuario('$nombre', '$apellido', '$usuario', '$admin')";
+        $sql = "CALL spCrearUsuario('$nombre', '$apellido', '$usuario', '$contrasena', '$admin')";
         
         if ($this->link->query($sql)>=1) // aldatu egiten da
         {
@@ -120,6 +100,26 @@ class usuario_model extends usuario_class{
         
         $this->CloseConnect();
     }
+    
+    public function comprobarUser()
+    {
+        $this->OpenConnect();
+        
+        $usuario= $this->getUsuario();
+        $contrasena= $this->getContrasena();
+        
+        $sql = "CALL spComprobarUsuario('$usuario', '$contrasena')";
+        
+        if ($this->link->query($sql)>=1) // aldatu egiten da
+        {
+            return "";
+        } else {
+            return "";
+        }
+        
+        $this->CloseConnect();
+    }
+    
     
     function getListJsonString() {
         
