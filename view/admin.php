@@ -10,8 +10,43 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<header> 
+    <!-- NAV -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Hotel LES</a>
+        <div class="dropdown dropleft">
+            <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                alopez
+            <!-- <img src="img/cara.PNG" width="30" height="30" alt=""> -->
+			<i class="far fa-user-circle fa-lg"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-euro-sign"></i>    
+                    Moneda
+                </a>
+                <a class="dropdown-item" href="#">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Modo nocturno</label>
+                    </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-sign-out-alt"></i>    
+                    Cerrar sesión
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN NAV -->
+</header> 
 
-	<div class="container">
+	<div class="container mt-5">
+		<h1 class="text-center">PANEL DE ADMINISTRACION</h1>
+	</div>
+	
+	<div class="container mt-5">
 
 <!-- 	tablas -->
 		<div class="accordion" id="accordionExample">
@@ -309,7 +344,17 @@
 
 	
 	</div>
-
+<!-- FOOTER -->
+<footer class="text-muted text-center text-small fixed-bottom ml-5 mr-5">
+    <p class="mb-1">&copy; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos dolores fuga accusantium iste quisquam explicabo atque praesentium voluptas eaque deleniti, maxime tempora et? Rerum placeat voluptate, maxime sequi itaque vel est totam neque voluptas soluta hic reprehenderit laborum doloribus ut iure sapiente quos blanditiis accusantium ullam? Temporibus, vitae mollitia.</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="https://www.instagram.com/?hl=es"><i class="fab fa-instagram"></i></a></li>
+        <li class="list-inline-item"><a href="https://es-es.facebook.com/"><i class="fab fa-facebook-square"></i></a></li>
+        <li class="list-inline-item"><a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></li>
+        <li class="list-inline-item"><a href="https://support.google.com/plus/?hl=es-419#topic=9259565"><i class="fab fa-google-plus-g"></i></a></li>
+    </ul>
+</footer>
+<!-- FIN FOOTER -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/admin.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
