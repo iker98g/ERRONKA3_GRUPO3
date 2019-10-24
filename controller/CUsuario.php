@@ -1,10 +1,12 @@
 <?php
 include_once ("../model/usuario_model.php");
 
-$usuarios= new usuario_model();
-$usuarios->setList();
+$usuario= new usuario_model();
+$usuario->setList();
 
-foreach ($usuarios->getList() as $object){
+$usuarios = $usuario->getList();
+
+foreach ($usuarios as $object){
     if($object->getUsuario()==$_GET["user"] && $object->getContrasena()==$_GET["pass"]){
         session_start();       
         $_SESSION["usuario"] = $object->getUsuario();
