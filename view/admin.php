@@ -67,7 +67,7 @@
 					<div class="card-body">
 					<div class="row">
 						<div class="col">
-							<button type="button" class="btn btn-dark mb-3 insertUsuario">Insert Usuario</button>
+							<button type="button" class="btn btn-dark mb-3 insertUsuario">Nuevo Usuario</button>
 						</div>
 					</div>
 						<table class="table table-bordered">
