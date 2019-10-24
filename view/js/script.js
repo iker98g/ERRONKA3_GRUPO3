@@ -14,7 +14,7 @@ $( document ).ready(function() {
 			$.ajax({
    		       	type: "GET",
    		       	data:{ 'user':user, 'pass':pass},
-   		       	url: "controller/CUsuario.php",
+   		       	url: "../controller/CUsuario.php",
    		       	success: function(){  		       		
 
    		       	},
