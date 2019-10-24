@@ -231,6 +231,10 @@
        				<input type="text" class="form-control" id="usuarioFormInsert" aria-describedby="usuarioInsert" required name="insertarUsu">
        			</div>
        			<div class="form-group">
+       				<label for="passwordFormInsert">Contrasena</label>
+       				<input type="text" class="form-control" id="passwordFormInsert" aria-describedby="passwordInsert" required name="insertarUsu">
+       			</div>
+       			<div class="form-group">
        				<label for="adminFormInsert">Admin (0=No, 1=Si)</label>
        				<input type="number" class="form-control" id="adminFormInsert" aria-describedby="adminInsert" required name="insertarUsu">
        			</div>
