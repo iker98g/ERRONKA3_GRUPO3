@@ -5,7 +5,7 @@ $usuarios= new usuario_model();
 $usuarios->setList();
 
 foreach ($usuarios->list as $object){
-    if($object->getUsuario()==$_POST["usuario"] && $object->getContrasena()==$_POST["contrasena"]){
+    if($object->getUsuario()==$_GET["user"] && $object->getContrasena()==$_GET["pass"]){
         session_start();       
         $_SESSION["usuario"] = $object->getUsuario();
         
