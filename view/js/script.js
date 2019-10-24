@@ -15,9 +15,8 @@ $( document ).ready(function() {
    		       	type: "GET",
    		       	data: {'user':user,'pass':pass},
    		       	url: "controller/CUsuario.php",
-   		       	success: function(respuesta){  		       		
-   		       		alert("funciona");
-   		       		alert(respuesta);
+   		       	success: function(pagina){  		       		
+   		       		window.location.replace(pagina);
    		       	},
    		       	error : function(xhr){
    		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
