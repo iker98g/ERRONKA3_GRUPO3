@@ -12,7 +12,8 @@ foreach ($usuarios as $object){
         $_SESSION["usuario"] = $object->getUsuario();
         
         if($object->getAdmin()==1){
-            header("Location: ../view/admin.php");
+            echo "admin";
+            header("Location: view/admin.php");
         }else {
             header("Location: CHotel.php");
         }
