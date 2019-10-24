@@ -59,25 +59,29 @@ class usuario_model extends usuario_class{
         $this->CloseConnect();
     }
     
-    public function update()
+    public function setList()
     {
-        $this->OpenConnect();
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
-        $idUsuario=$this->getIdUsuario();
-        $nombre=$this->getNombre();
-        $apellido= $this->getApellido();
-        $usuario= $this->getUsuario();
-        $admin= $this->getAdmin();
+        $sql = "CALL spAllUsers()"; // SQL sententzia - sentencia SQL
         
-        $sql = "CALL spModificarUsuario('$idUsuario','$nombre', '$apellido', '$usuario', '$admin')";
+        $result = $this->link->query($sql); // result-en ddbb-ari eskatutako informazio dena gordetzen da
+        // se guarda en result toda la información solicitada a la bbdd
         
-        if ($this->link->query($sql)>=1) // aldatu egiten da
-        {
-            return "El usuario se ha modificado con exito";
-        } else {
-            return "Fallo en la modificacion del usuario: (" . $this->link->errno . ") " . $this->link->error;
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            
+            $new=new usuario_class();
+            
+            $new->setIdUsuario($row['idUsuario']);
+            $new->setNombre($row['nombre']);
+            $new->setApellido($row['apellido']);
+            $new->setUsuario($row['usuario']);
+            $new->setContrasena($row['contrasena']);
+            $new->setAdmin($row['admin']);
+            
+            array_push($this->list, $new);
         }
-        
+        mysqli_free_result($result);
         $this->CloseConnect();
     }
     
@@ -121,6 +125,26 @@ class usuario_model extends usuario_class{
         
         $this->CloseConnect();
     }
+    
+    public function comprobarUser()
+    {
+        $this->OpenConnect();
+        
+        $usuario= $this->getUsuario();
+        $contrasena= $this->getContrasena();
+        
+        $sql = "CALL spComprobarUsuario('$usuario', '$contrasena')";
+        
+        if ($this->link->query($sql)>=1) // aldatu egiten da
+        {
+            return "";
+        } else {
+            return "";
+        }
+        
+        $this->CloseConnect();
+    }
+    
     
     function getListJsonString() {
         
