@@ -112,6 +112,50 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		<!-- Modal habitaciones-->
+<div class="modal fade" id="modalModificarHabitacion" tabindex="1" role="dialog" aria-labelledby="modalModificarHabitacionlabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalModificarHabitacionlabel">Modificar Habitacion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+            <!--form modificar -->
+       		<form>
+       			<div class="form-group">
+       				<label for="idHabitacionForm">ID</label>
+       				<input type="number" class="form-control" id="idHabitacionForm" aria-describedby="id" disabled>
+       			</div>
+       			<div class="form-group">
+       				<label for="tipoForm">Tipo</label>
+       				<input type="text" class="form-control" id="tipoForm" aria-describedby="tipo">
+       			</div>
+       			<div class="form-group">
+       				<label for="imagenForm">Imagen</label>
+       				<input type="text" class="form-control" id="imagenForm" aria-describedby="imagen">
+       			</div>
+       			<div class="form-group">
+       				<label for="precioForm">Precio</label>
+       				<input type="text" class="form-control" id="precioForm" aria-describedby="precio">
+       			</div>
+       		</form>
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary botonExecuteModificarHabitaciones">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
 	
 	<!-- Modal users-->
 <div class="modal fade" id="modalModificarUser" tabindex="-1" role="dialog" aria-labelledby="modalModificarUserlabel" aria-hidden="true">
@@ -258,48 +302,7 @@
   </div>
 </div>	
 
-<!-- Modal habitaciones-->
-<div class="modal fade" id="modalModificarHabitacion" tabindex="-1" role="dialog" aria-labelledby="modalModificarHabitacionlabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalModificarHabitacionlabel">Modificar Habitacion</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-            <!--form modificar -->
-       		<form >
-       			<div class="form-group">
-       				<label for="idHabitacionForm">ID</label>
-       				<input type="number" class="form-control" id="idHabitacionForm" aria-describedby="id" disabled>
-       			</div>
-       			<div class="form-group">
-       				<label for="tipoForm">Tipo</label>
-       				<input type="text" class="form-control" id="tipoForm" aria-describedby="tipo">
-       			</div>
-       			<div class="form-group">
-       				<label for="imagenForm">Imagen</label>
-       				<input type="text" class="form-control" id="imagenForm" aria-describedby="imagen">
-       			</div>
-       			<div class="form-group">
-       				<label for="precioForm">Precio</label>
-       				<input type="text" class="form-control" id="precioForm" aria-describedby="precio">
-       			</div>
-       		</form>
-        
-        
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary botonExecuteModificarHabitaciones">Confirmar</button>
-      </div>
-    </div>
-  </div>
-</div>	
+
 	
 	</div>
 
