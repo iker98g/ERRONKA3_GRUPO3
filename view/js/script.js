@@ -14,13 +14,9 @@ $( document ).ready(function() {
 			$.ajax({
    		       	type: "GET",
    		       	data:{ 'user':user, 'pass':pass},
-   		       	url: "../controller/CLogin.php", 
-   		       	datatype: "json",  //type of the result
-   		       	success: function(result){  
-   		       		
-   		       		console.log(result);
-   		       		alert(result);
-   		       		location.reload(true);  //recarga la pagina
+   		       	url: "../controller/CUsuario.php",
+   		       	success: function(){  		       		
+
    		       	},
    		       	error : function(xhr) {
    		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
