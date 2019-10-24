@@ -74,6 +74,7 @@
 									Usuario</button>
 							</div>
 						</div>
+						<div class="table-responsive">
 						<table class="table table-bordered">
 							<thead class="thead-dark">
 								<tr>
@@ -88,6 +89,7 @@
 							<tbody id="tablaUsers" class="text-center">
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -99,6 +101,7 @@
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 					data-parent="#accordionExample">
 					<div class="card-body">
+					<div class="table-responsive">
 						<table class="table table-bordered">
 							<thead class="thead-dark">
 								<tr>
@@ -114,6 +117,7 @@
 							<tbody id="tablaReservas" class="text-center">
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -125,6 +129,7 @@
 				<div id="collapseThree" class="collapse"
 					aria-labelledby="headingThree" data-parent="#accordionExample">
 					<div class="card-body">
+					<div class="table-responsive">
 						<table class="table table-bordered">
 							<thead class="thead-dark">
 								<tr>
@@ -138,6 +143,7 @@
 							<tbody id="tablaHabitaciones" class="text-center">
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 			</div>
