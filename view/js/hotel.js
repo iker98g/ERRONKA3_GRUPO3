@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	
+	var newRow="";
 	//ajax habitaciones
 	$.ajax({
 		type:"GET",
@@ -7,35 +7,25 @@ $( document ).ready(function() {
 		datatype:"json",
 
 		success:function(result){
-			alert(result);
-			//var habitaciones=JSON.parse(result);
-			alert("hola");
+			var habitaciones=JSON.parse(result);
 			console.log(result);
-			alert("hola2")
-			var newRow="";
-			alert("hola3");
 
 			$.each(habitaciones,function(index,room){
-				/* newRow += "<div class='col-12 col-md-6 col-lg-4'>"
-								+"<div class='card'></div>"
-									+"<div class='card-body'></div>"
-										+"<img src='"+room.imagen+"'</img>"
-										+"<h5 class='card-title'>"+room.tipo+"</h5>"
-										+"<p class='card-text'>"+room.precio+"</p>";
- */
-				newRow+="<div class='col-12 col-md-6 col-lg-4'>
-				<div class='card'>
-					<div class='card-body'>
-						<img src='img/estandar1.jpg' class='card-img-top' alt='...'>
-						<h5 class='card-title'>Estandar</h5>
-						<p class='card-text'>65€</p>
-						<a href='#' class='btn btn-primary'>Reservar</a>
-					</div>
-				</div>
-			</div>"
+				//alert("estoy en each");
+				//alert(newRow);
+				newRow += "<div class='col-12 col-md-6 col-lg-4'>"
+								+"<div class='card'>"
+									+"<div class='container'>"
+										+'<img width="100%" height="200vh" src="'+room.imagen+'"</img>'
+										+"<h4>"+room.tipo+"</h4>"
+										+"<p>"+room.precio+"</p>"
+									+"</div>"
+								+"</div>"	
+							+"</div>";
+ 
 			}); 
-			alert(newRow);
 			$("#habitas").append(newRow);
-		},
-	});
+		}
+	})
+	
 });

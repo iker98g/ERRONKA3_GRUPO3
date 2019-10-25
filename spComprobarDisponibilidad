@@ -1,0 +1,9 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spComprobarDisponibilidad`(IN `pFechaInicio` DATE, IN `pFechaFin` DATE)
+    NO SQL
+SELECT reservas.idHabitacion FROM `reservas` 
+WHERE pFechaInicio BETWEEN reservas.fechaInicio AND reservas.fechaFin
+OR pFechaFin BETWEEN reservas.fechaInicio AND reservas.fechaFin
+OR reservas.fechaInicio BETWEEN pFechaInicio AND pFechaFin
+OR reservas.fechaFin BETWEEN pFechaInicio AND pFechaFin$$
+DELIMITER ;

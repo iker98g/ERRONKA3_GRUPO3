@@ -138,21 +138,9 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo tempore repudiandae mollitia voluptatum aperiam, voluptas amet esse nobis rerum quibusdam delectus facilis explicabo libero iste reprehenderit commodi necessitatibus nam obcaecati quia alias ipsum! Illo ullam exercitationem placeat distinctio commodi ex ipsam eveniet, iure reprehenderit quibusdam blanditiis fugit esse id, est culpa maiores quam earum a perspiciatis quis consequatur. Commodi placeat maxime quas neque error consequuntur enim harum voluptatibus! Quod fuga ullam eum vel. Provident, aliquam odio minus harum dolore tempore deserunt expedita, doloremque sed exercitationem officiis ducimus. Asperiores impedit tempore quae quo placeat perferendis adipisci, culpa rem ducimus nesciunt inventore? Delectus, obcaecati laborum alias suscipit, sit voluptas numquam temporibus non eius quam ducimus expedita autem adipisci? Molestiae enim alias aliquid dolores culpa sint accusamus fugit, excepturi voluptas quisquam sapiente sed perspiciatis at. Quisquam repellat fuga assumenda, dolorum quam voluptatibus obcaecati odit quod perspiciatis placeat repellendus nostrum, consequuntur recusandae adipisci dolor esse exercitationem tempore sapiente dicta corrupti nobis rerum ex, eius ea! Modi fugiat, libero ad eveniet accusamus atque laudantium. Accusamus nisi ut omnis veniam debitis. Architecto vero possimus minus quia voluptatum, nesciunt dolores sit veniam accusamus modi fugit natus adipisci, itaque sapiente doloribus mollitia necessitatibus autem? Delectus itaque aspernatur corrupti quam sapiente aliquam corporis officiis ab nihil dignissimos debitis qui, cupiditate aliquid eaque officia dolor architecto quas laborum nulla? Omnis, perspiciatis iste. Aperiam numquam illo qui officia hic quae facere iste id commodi delectus, quas modi illum! Aliquam quis nobis optio harum soluta! Sit vel voluptatem quae nostrum in hic vitae ut voluptas, illo atque eum commodi unde omnis nihil officiis, perferendis magni, quis praesentium eligendi aliquam asperiores. Fugit praesentium atque dolorum dolores accusamus id minus architecto alias deserunt veniam sequi nesciunt odit laudantium, aspernatur sit nemo ab reiciendis ea? Quia non blanditiis nostrum iste alias corporis sint id corrupti.</p>
                 </div>
                 <div class="tab-pane fade" id="list-habitaciones" role="tabpanel" aria-labelledby="list-habitaciones-list">
-                    <h5>Habitaghhgghgggghciones</h5>
-                    <h5>gelak</h5>
+                    <h5>Habitaciones</h5>
                     <div class="row" id="habitas">
-                    <h5>gelak</h5>
-                    
-                         <!-- <div class="col-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="img/estandar1.jpg" class="card-img-top" alt="...">
-                                    <h5 class="card-title">Estandar</h5>
-                                    <p class="card-text">65€</p>
-                                    <a href="#" class="btn btn-primary">Reservar</a>
-                                </div>
-                            </div>
-                        </div> -->
+                        <!-- AJAX AQUI -->
                     </div> 
                 </div>
                 <div class="tab-pane fade" id="list-ubicacion" role="tabpanel" aria-labelledby="list-ubicacion-list">
