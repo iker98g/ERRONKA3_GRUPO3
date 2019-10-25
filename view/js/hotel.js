@@ -16,7 +16,7 @@ $( document ).ready(function() {
 				newRow += "<div class='col-12 col-md-6 col-lg-4'>"
 								+"<div class='card'>"
 									+"<div class='container'>"
-										+'<img width="150vh" width="150vh" src="'+room.imagen+'"</img>'
+										+'<img width="150vh" height="150vh" src="'+room.imagen+'"</img>'
 										+"<h4>"+room.tipo+"</h4>"
 										+"<p>"+room.precio+"</p>"
 									+"</div>"
