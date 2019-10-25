@@ -411,7 +411,7 @@
 	<!-- FOOTER -->
 	<footer
 		class="text-muted text-center text-small fixed-bottom border-top bg-white shadow">
-		<p class="mb-1">&copy; Lorem ipsum dolor sit amet consectetur
+		<p class="mb-1 ml-5 mr-5 mt-3">&copy; Lorem ipsum dolor sit amet consectetur
 			adipisicing elit. Fugiat dignissimos dolores fuga accusantium iste
 			quisquam explicabo atque praesentium voluptas eaque deleniti, maxime
 			tempora et? Rerum placeat voluptate, maxime sequi itaque vel est
