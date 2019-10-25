@@ -139,7 +139,7 @@
                 </div>
                 <div class="tab-pane fade" id="list-habitaciones" role="tabpanel" aria-labelledby="list-habitaciones-list">
                     <h5>Habitaciones</h5>
-                    <div class="row" id="habitas">
+                    <div class="habitaciones" id="habitas">
                         <!-- AJAX AQUI -->
                     </div> 
                 </div>
