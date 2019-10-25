@@ -1,0 +1,5 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindByType`(IN `pTipo` VARCHAR(50))
+    NO SQL
+SELECT * FROM `habitaciones` WHERE habitaciones.tipo=pTipo$$
+DELIMITER ;
