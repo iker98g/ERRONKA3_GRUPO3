@@ -1,8 +1,8 @@
 <?php
 class connect_data {
     public $host='localhost';
-    public $userbbdd='tresfpz1_user';
-    public $passbbdd='iker98g@gmail.com';
+    public $userbbdd='root';
+    public $passbbdd='';
     public $ddbbname='tresfpz1_grupo3';
 }
 ?>
