@@ -7,13 +7,8 @@ $( document ).ready(function() {
 		datatype:"json",
 
 		success:function(result){
-			alert(result);
 			var habitaciones=JSON.parse(result);
-			alert("hola");
 			console.log(result);
-			alert("hola2")
-			
-			alert("hola3");
 
 			$.each(habitaciones,function(index,room){
 				//alert("estoy en each");
@@ -22,14 +17,13 @@ $( document ).ready(function() {
 								+"<div class='card'>"
 									+"<div class='container'>"
 										+"<img src='"+room.imagen+"'</img>"
-										+"<h5 class='card-title'>"+room.tipo+"</h5>"
-										+"<p class='card-text'>"+room.precio+"</p>"
+										+"<h4><b>"+room.tipo+"</h4></h5>"
+										+"<p>"+room.precio+"</p>"
 									+"</div>"
 								+"</div>"	
 							+"</div>";
  
 			}); 
-			alert(newRow);
 			$("#habitas").append(newRow);
 		}
 	})
