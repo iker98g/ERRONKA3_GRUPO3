@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once ("../model/usuario_model.php");
 include_once ("../model/habitacion_model.php");
 
@@ -9,9 +10,8 @@ $usuarios = $usuario->getList();
 
 foreach ($usuarios as $object){
     if($object->getUsuario()==$_GET["user"] && $object->getContrasena()==$_GET["pass"]){
-        session_start();       
+               
         $_SESSION["usuario"] = $object->getUsuario();
-        console.log($_SESSION["usuario"]);
         
         if($object->getAdmin()==1){
             echo "http://tres.fpz1920.com/view/admin.php";

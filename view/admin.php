@@ -15,7 +15,7 @@
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
 <script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
-<?php if (!isset($_SESSION)) { session_start(); }?>
+
 <?php $prueb = $_SESSION["usuario"]; ?>
 <script type="text/javascript">
 var prueb2 ='<?php echo $prueb; ?>'
