@@ -10,21 +10,19 @@ $( document ).ready(function() {
 			alert(result);
 			var habitaciones=JSON.parse(result);
 			console.log(result);
-			var newRow="hhhhhhhhhhhh";
+			var newRow="";
 
-		/* 	$.each(habitaciones,function(index,room){
+			/* $.each(habitaciones,function(index,room){
 				newRow += "<div class='col-12 col-md-6 col-lg-4'></div"
 								+"<div class='card'></div>"
 									+"<div class='card-body'></div>"
 										+'<img src="'+room.imagen+'"</img>'
 										+"<h5 class='card-title'>"+room.tipo+"</h5>"
-										+"<p class='card-text'>"+room.precio+"</p>"
+										+"<p class='card-text'>"+room.precio+"</p>";
 
 			}); */
-			$("#habitas").append(newRow);
+			miRow="<p>hhhh</p>"
+			$("#habitas").append(miRow);
 		},
-		error : function(xhr) {
-			alert("An error occured: " + xhr.status + " " + xhr.statusText);
-		}
 	});
 });

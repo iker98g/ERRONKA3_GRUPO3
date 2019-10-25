@@ -79,6 +79,32 @@ class habitacion_model extends habitacion_class{
         $this->CloseConnect();
     }
     
+    public function findByType()
+    {
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $tipo=$this->getTipo();
+        
+        $sql = "CALL spFindByType('$tipo')"; // SQL sententzia - sentencia SQL
+        
+        $result = $this->link->query($sql); // result-en ddbb-ari eskatutako informazio dena gordetzen da
+        // se guarda en result toda la información solicitada a la bbdd
+        
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            
+            $new=new habitacion_class();
+            
+            $new->setIdHabitacion($row['idHabitacion']);
+            $new->setTipo($row['tipo']);
+            $new->setImagen($row['imagen']);
+            $new->setPrecio($row['precio']);
+            
+            array_push($this->list, $new);
+        }
+        mysqli_free_result($result);
+        $this->CloseConnect();
+    }
+    
     function getListJsonString() {
         
         $arr=array();
