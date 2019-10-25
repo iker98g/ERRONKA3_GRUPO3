@@ -20,7 +20,7 @@ $( document ).ready(function() {
 				//alert(newRow);
 				newRow += "<div class='col-12 col-md-6 col-lg-4'>"
 								+"<div class='card'>"
-									+"<div class='card-body'>"
+									+"<div class='container'>"
 										+"<img src='"+room.imagen+"'</img>"
 										+"<h5 class='card-title'>"+room.tipo+"</h5>"
 										+"<p class='card-text'>"+room.precio+"</p>"
