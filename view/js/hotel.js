@@ -16,8 +16,8 @@ $( document ).ready(function() {
 			alert("hola3");
 
 			$.each(habitaciones,function(index,room){
-				alert("estoy en each");
-				alert(newRow);
+				//alert("estoy en each");
+				//alert(newRow);
 				newRow += "<div class='col-12 col-md-6 col-lg-4'>"
 								+"<div class='card'>"
 									+"<div class='card-body'>"
