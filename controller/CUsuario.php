@@ -10,7 +10,7 @@ $usuarios = $usuario->getList();
 foreach ($usuarios as $object){
     if($object->getUsuario()==$_GET["user"] && $object->getContrasena()==$_GET["pass"]){
         session_start();       
-        $_SESSION["usuario"] = $_GET["user"];
+        $_SESSION["usuario"] = $object->getUsuario();
         
         if($object->getAdmin()==1){
             echo "http://tres.fpz1920.com/view/admin.php";
