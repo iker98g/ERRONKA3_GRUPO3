@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +20,9 @@
         <a class="navbar-brand" href="#">Hotel LES</a>
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                alopez
-                <img src="img/cara.PNG" width="30" height="30" alt="">
+                <?php echo $_SESSION["usuario"]; ?>
+                <i class="far fa-user-circle fa-lg"></i>
+                <!--<img src="img/cara.PNG" width="30" height="30" alt=""> -->
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">

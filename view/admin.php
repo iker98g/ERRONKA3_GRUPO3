@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +18,8 @@
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
 <script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
+
+
 </head>
 <body>
 <div id="vantaBG" class="fixed-bottom"></div>
@@ -26,7 +31,7 @@
 				<button class="btn btn-light" type="button" id="dropdownMenuButton"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					
-					<p><?php echo  $_SESSION["usuario"]; ?></p>
+					<?php echo $_SESSION["usuario"]; ?>
 					
 					<!-- <img src="img/cara.PNG" width="30" height="30" alt=""> -->
 					<i class="far fa-user-circle fa-lg"></i>
