@@ -124,7 +124,6 @@ class usuario_model extends usuario_class{
         $this->CloseConnect();
     }
     
-    
     function getListJsonString() {
         
         $arr=array();
