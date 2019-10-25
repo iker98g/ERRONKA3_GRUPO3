@@ -108,7 +108,7 @@ class usuario_model extends usuario_class{
         $idUsuario=$this->getIdUsuario();
         $nombre=$this->getNombre();
         $apellido= $this->getApellido();
-        $usuario= $this->getIdUsuario();
+        $usuario= $this->getUsuario();
         $admin= $this->getAdmin();
         
         
