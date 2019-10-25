@@ -36,7 +36,7 @@ session_start();
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item cerrarSesion" href="#">
                     <i class="fas fa-sign-out-alt"></i>    
                     Cerrar sesión
                 </a>
