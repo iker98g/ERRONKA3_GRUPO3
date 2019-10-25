@@ -18,14 +18,14 @@
         <form class="bg-dark cardLogin shadow">
           <h1 class="text-light">LOGIN</h1>
           <div class="form-group">
-            <input type="text" class="form-control" id="username" placeholder="Username" required> 
+            <input type="text" class="form-control" id="username" placeholder="Username" name="loginInput" required> 
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" id="password" aria-describedby="passHelp" placeholder="Password" required>
+            <input type="password" class="form-control" id="password" aria-describedby="passHelp" placeholder="Password" name="loginInput" required>
             <small id="passHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
           </div>
           <div class="form-group text-center">
-            <button type="button" class="btn btn-primary btnLogin">Sign in</button>
+            <button type="button" class="btn btn-info btnLogin" disabled>Sign in</button>
           </div>
         </form>
       </div>
