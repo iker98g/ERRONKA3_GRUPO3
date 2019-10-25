@@ -19,11 +19,7 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
 <script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
 
-<?php $prueb = $_SESSION["usuario"]; ?>
-<script type="text/javascript">
-var prueb2 ='<?php echo $prueb; ?>'
-		alert(prueb2)
-</script>
+
 </head>
 <body>
 <div id="vantaBG" class="fixed-bottom"></div>
@@ -35,7 +31,7 @@ var prueb2 ='<?php echo $prueb; ?>'
 				<button class="btn btn-light" type="button" id="dropdownMenuButton"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					
-					
+					<?php echo $_SESSION["usuario"]; ?>
 					
 					<!-- <img src="img/cara.PNG" width="30" height="30" alt=""> -->
 					<i class="far fa-user-circle fa-lg"></i>
