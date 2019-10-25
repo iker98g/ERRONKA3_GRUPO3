@@ -15,18 +15,16 @@ $( document ).ready(function() {
 			var newRow="";
 			alert("hola3");
 
-			/* $.each(habitaciones,function(index,room){
-				newRow += "<div class='col-12 col-md-6 col-lg-4'></div"
+			$.each(habitaciones,function(index,room){
+				newRow += "<div class='col-12 col-md-6 col-lg-4'></div>"
 								+"<div class='card'></div>"
 									+"<div class='card-body'></div>"
-										+'<img src="'+room.imagen+'"</img>'
+										+"<img src='"+room.imagen+"'</img>"
 										+"<h5 class='card-title'>"+room.tipo+"</h5>"
 										+"<p class='card-text'>"+room.precio+"</p>";
 
-			}); */
-			miRow="<p>hhhh</p>"
-			alert(miRow);
-			$("#habitas").append(miRow);
+			}); 
+			$("#habitas").append(newRow);
 		},
 	});
 });
