@@ -17,7 +17,7 @@ $( document ).ready(function() {
 
 			$.each(habitaciones,function(index,room){
 				alert("estoy en each");
-				alert(newRow);
+				//alert(newRow);
 				newRow += "<div class='col-12 col-md-6 col-lg-4'>"
 								+"<div class='card'>"
 									+"<div class='card-body'>"
@@ -30,7 +30,7 @@ $( document ).ready(function() {
  
 			}); 
 			
-		},
+		}
 	})
 	alert(newRow);
 	$("#habitas").append(newRow);
