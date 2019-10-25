@@ -109,7 +109,8 @@
                 <div class="tab-pane fade" id="list-habitaciones" role="tabpanel" aria-labelledby="list-habitaciones-list">
                     <h5>Habitaciones</h5>
                     <div class="row" id="habitas">
-                        <!-- <div class="col-12 col-md-6 col-lg-4">
+                    
+                         <!-- <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <img src="img/estandar1.jpg" class="card-img-top" alt="...">
@@ -119,7 +120,7 @@
                                 </div>
                             </div>
                         </div> -->
-                    </div>
+                    </div> 
                 </div>
                 <div class="tab-pane fade" id="list-ubicacion" role="tabpanel" aria-labelledby="list-ubicacion-list">
                     <h5>Ubicación</h5>

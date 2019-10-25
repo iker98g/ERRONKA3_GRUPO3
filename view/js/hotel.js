@@ -10,7 +10,10 @@ $( document ).ready(function() {
 			alert(result);
 			var habitaciones=JSON.parse(result);
 			console.log(result);
-			var newRow="hhhhhhhhhhhh";
+			var newRow="<div class='col-12 col-md-6 col-lg-4'></div>"
+			+"<div class='card'></div>"
+				+"<div class='card-body'></div>"
+					+"<img src='img/estandar2.jpg'</img>";
 
 		/* 	$.each(habitaciones,function(index,room){
 				newRow += "<div class='col-12 col-md-6 col-lg-4'></div"
