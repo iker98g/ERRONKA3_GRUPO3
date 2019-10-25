@@ -19,6 +19,7 @@ $( document ).ready(function() {
 										+'<img width="100%" height="200vh" src="'+room.imagen+'"</img>'
 										+"<h4>"+room.tipo+"</h4>"
 										+"<p>"+room.precio+"</p>"
+										+'<button background-color="blue" type="button" value="Reservar"</button>'
 									+"</div>"
 								+"</div>"	
 							+"</div>";
