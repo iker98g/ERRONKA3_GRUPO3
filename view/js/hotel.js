@@ -7,17 +7,14 @@ $( document ).ready(function() {
 		datatype:"json",
 
 		success:function(result){
-			alert(result);
-			var habitaciones=JSON.parse(result);
-			alert("hola");
-			console.log(result);
-			alert("hola2")
 			
-			alert("hola3");
+			var habitaciones=JSON.parse(result);
+		
+			console.log(result);
 
 			$.each(habitaciones,function(index,room){
 				//alert("estoy en each");
-				//alert(newRow);
+
 				newRow += "<div class='col-12 col-md-6 col-lg-4'>"
 								+"<div class='card'>"
 									+"<div class='card-body'>"
@@ -29,9 +26,7 @@ $( document ).ready(function() {
 							+"</div>";
  
 			}); 
-			
 		},
 	})
-	alert(newRow);
 	$("#habitas").append(newRow);
 });
