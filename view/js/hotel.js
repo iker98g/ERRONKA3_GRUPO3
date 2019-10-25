@@ -24,6 +24,7 @@ $( document ).ready(function() {
 										+"<p class='card-text'>"+room.precio+"</p>";
 
 			}); 
+			alert(newRow);
 			$("#habitas").append(newRow);
 		},
 	});
