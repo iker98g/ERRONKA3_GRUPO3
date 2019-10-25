@@ -22,6 +22,7 @@ $( document ).ready(function() {
 
 			}); */
 			miRow="<p>hhhh</p>"
+			alert(miRow);
 			$("#habitas").append(miRow);
 		},
 	});
