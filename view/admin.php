@@ -17,7 +17,7 @@
 <script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
 </head>
 <body>
-<div id="vantaBG">
+<div id="vantaBG" class="fixed-bottom"></div>
 	<header>
 		<!-- NAV -->
 		<nav class="navbar navbar-dark bg-dark">
@@ -238,9 +238,21 @@
 									aria-describedby="usuario">
 							</div>
 							<div class="form-group">
-								<label for="adminForm">Admin (0=No, 1=Si)</label> <input
-									type="number" class="form-control" id="adminForm"
-									aria-describedby="admin">
+								<label for="adminForm">Admin</label> 
+								
+<!-- 								<input -->
+<!-- 									type="number" class="form-control" id="adminForm" -->
+<!-- 									aria-describedby="admin"> -->
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio"
+									name="radioAdmin" id="adminSi" value="1"> <label
+									class="form-check-label" for="adminSi">Si</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio"
+									name="radioAdmin" id="adminNo" value="0"> <label
+									class="form-check-label" for="adminNo">No</label>
 							</div>
 						</form>
 
@@ -294,10 +306,15 @@
 									type="text" class="form-control" id="passwordFormInsert"
 									aria-describedby="passwordInsert" required name="insertarUsu">
 							</div>
-							<div class="form-group">
-								<label for="adminFormInsert">Admin (0=No, 1=Si)</label> <input
-									type="number" class="form-control" id="adminFormInsert"
-									aria-describedby="adminInsert" required name="insertarUsu">
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio"
+									name="radioAdminInsert" id="adminSiInsert" value="1"> <label
+									class="form-check-label" for="adminSiInsert">Si</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio"
+									name="radioAdminInsert" id="adminNoInsert" value="0"> <label
+									class="form-check-label" for="adminNoInsert">No</label>
 							</div>
 						</form>
 
@@ -388,7 +405,7 @@
 <br>
 <br>
 
-</div>
+
 
 
 	<!-- FOOTER -->
@@ -413,8 +430,9 @@
 					class="fab fa-google-plus-g"></i></a></li>
 		</ul>
 	</footer>
-	<!-- FIN FOOTER -->
 	</div>
+	<!-- FIN FOOTER -->
+	
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

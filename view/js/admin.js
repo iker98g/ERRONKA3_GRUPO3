@@ -57,10 +57,17 @@ $( document ).ready(function() {
        		$('#nombreForm').val(nombre);
        		$('#apellidoForm').val(apellido);
        		$('#usuarioForm').val(usuario);
-       		$('#adminForm').val(admin);
+       		
+       		$('#adminNo').attr('checked', false);
+       		$('#adminSi').attr('checked', false);
+       		
        		  
        		$('#modalModificarUser').appendTo("body").modal('show'); 
-       		
+       		if(admin==0){
+       			$('#adminNo').attr('checked', true);
+       		}else{
+       			$('#adminSi').attr('checked', true);
+       		}
        		});
        		
        		$('.botonExecuteModificarUsers').click(function(){
@@ -68,7 +75,7 @@ $( document ).ready(function() {
        			nombre=$('#nombreForm').val();
        			apellido=$('#apellidoForm').val();
        			usuario=$('#usuarioForm').val();
-       			admin=$('#adminForm').val();
+       			admin=$('input[name="radioAdmin"]:checked').val();
        			
        			
        			$.ajax({
@@ -116,6 +123,11 @@ $( document ).ready(function() {
        		
        		$('.insertUsuario').click(function(){
        			$('#modalInsertUser').appendTo("body").modal('show'); 
+       			if(admin==0){
+           			$('#adminNoInsert').attr('checked', true);
+           		}else{
+           			$('#adminSiInsert').attr('checked', true);
+           		}
        		}); 
        		
        		$('.botonExecuteInsertUsers').click(function(){
@@ -123,7 +135,7 @@ $( document ).ready(function() {
        			apellido=$('#apellidoFormInsert').val();
        			usuario=$('#usuarioFormInsert').val();
        			contrasena=$('#passwordFormInsert').val();
-       			admin=$('#adminFormInsert').val();
+       			admin=$('input[name="radioAdminInsert"]:checked').val();
        			
        			
        			$.ajax({

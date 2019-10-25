@@ -101,20 +101,24 @@ class usuario_model extends usuario_class{
         $this->CloseConnect();
     }
     
-    public function comprobarUser()
+    public function update()
     {
         $this->OpenConnect();
         
+        $idUsuario=$this->getIdUsuario();
+        $nombre=$this->getNombre();
+        $apellido= $this->getApellido();
         $usuario= $this->getUsuario();
-        $contrasena= $this->getContrasena();
+        $admin= $this->getAdmin();
         
-        $sql = "CALL spComprobarUsuario('$usuario', '$contrasena')";
+        
+        $sql = "CALL spModificarUsuario('$idUsuario','$nombre', '$apellido', '$usuario', '$admin')";
         
         if ($this->link->query($sql)>=1) // aldatu egiten da
         {
-            return "";
+            return "El usuario se ha modificado con exito";
         } else {
-            return "";
+            return "Fallo en la modificacion del usuario: (" . $this->link->errno . ") " . $this->link->error;
         }
         
         $this->CloseConnect();
