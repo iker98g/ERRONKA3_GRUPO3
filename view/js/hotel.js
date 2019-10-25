@@ -17,15 +17,19 @@ $( document ).ready(function() {
 
 			$.each(habitaciones,function(index,room){
 				newRow += "<div class='col-12 col-md-6 col-lg-4'>"
-								+"<div class='card'></div>"
-									+"<div class='card-body'></div>"
+								+"<div class='card'>"
+									+"<div class='card-body'>"
 										+"<img src='"+room.imagen+"'</img>"
 										+"<h5 class='card-title'>"+room.tipo+"</h5>"
-										+"<p class='card-text'>"+room.precio+"</p>";
+										+"<p class='card-text'>"+room.precio+"</p>"
+									+"</div>"
+								+"</div>"	
+							+"</div>";
  
 			}); 
 			
 		},
 	})
+	alert(newRow);
 	$("#habitas").append(newRow);
 });
