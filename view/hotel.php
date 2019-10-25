@@ -44,6 +44,37 @@
 <!-- FIN HEADER -->     
 <!-- MAIN -->
 <main>
+ <!-- RESERVA FORM -->
+	<div class="container">
+        <form class="bg-secondary" method="GET">
+            <h1>RESERVA</h1>
+            <div class="form-group">
+                <input type="number" class="form-control" id="idUsuario" placeholder="Id usuario">
+                
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" id="fechaInicio" placeholder="Fecha inicio"> 
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" id="fechaFin" placeholder="Fecha fin" disabled>
+            </div>
+            <div class="form-group" id="tipo">
+                <select class="form-control" name="tipoHabitacion">
+                	<option id="elige" value="elige" selected>Elige el tipo de habitacion</option>
+                    <option id="suite" value="suite">Suite</option>
+                    <option id="estandar" value="estandar">Estandar</option>
+                    <option id="superior" value="superior">Superior</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" id="precioTotal" placeholder="Precio total" disabled>
+            </div>
+            <div class="form-check card-body">
+                <button type="submit" class="btn btn-primary" id="reserva">Reservar</button>
+            </div>
+        </form>
+    </div>
+    <!-- FIN RESERVA FORM -->
     <!-- CAROUSEL -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
