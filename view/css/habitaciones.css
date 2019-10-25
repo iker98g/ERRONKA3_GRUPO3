@@ -1,3 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------- FUNCIONALIDAD RESERVA --------- */
+/*.container {
+    margin-top: 25vh;
+}*/
+
+.bg-secondary {
+    width: 30vw;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px;
+    border-radius: .25rem;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 4vh;
+    padding-bottom: 3vh;
+}
+
+button {
+    width: 100%;
+}
+
+.card-body {
+    flex: 1 1 auto !important;
+    padding: 0 !important;
+}
+
+#elige {
+    display: none;
+}
+
+#tipo {
+    display: none;
+}
+
+#precioTotal {
+    display: none;
+}
+/* --------- FUNCIONALIDAD RESERVA --------- */
+
 main{
     margin-left: 30px;
     margin-right: 30px;

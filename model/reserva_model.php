@@ -101,6 +101,51 @@ class reserva_model extends reserva_class{
         $this->CloseConnect();
     }
     
+    public function insertReserva(){
+        
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $idHabitacion=$this->getIdHabitacion();
+        $idUsuario=$this->getIdusuario();
+        $fechaInicio=$this->getFechaInicio();
+        $fechaFin=$this->getFechaFin();
+        $precioTotal=$this->getPrecioTotal();
+        
+        $sql="CALL spInsertReserva($idHabitacion, $idUsuario, '$fechaInicio', '$fechaFin', $precioTotal)";
+        
+        $numFilas=$this->link->query($sql);
+        
+        if ($numFilas>=1) {
+            return "Insertado";
+        } else {
+            return "Error al insertar";
+        }
+        
+        $this->CloseConnect();
+    }
+    
+    public function comprobarDisponibilidad($fechaInicio, $fechaFin){
+        
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $sql="CALL spComprobarDisponibilidad('$fechaInicio', '$fechaFin')";
+        
+        $result = $this->link->query($sql); // result-en ddbb-ari eskatutako informazio dena gordetzen da
+        // se guarda en result toda la información solicitada a la bbdd
+        
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            
+            $new=new reserva_class();
+            
+            $new->setIdHabitacion($row['idHabitacion']);
+            
+            array_push($this->list, $new);
+        }
+        mysqli_free_result($result);
+        
+        $this->CloseConnect();
+    }
+    
     function getListJsonString() {
         
         $arr=array();
