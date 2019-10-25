@@ -8,11 +8,15 @@
     <script src="https://kit.fontawesome.com/661afcc94b.js"></script>
     <link href="view/css/style.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+	<script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
 </head>
 <body>
+	<div id="vantaBG" class="fixed-bottom"></div>
     <div class="container">
-        <form class="bg-secondary ">
-          <h1>LOGIN</h1>
+    <h1 class="text-dark display-1">HOTEL LES</h1>
+        <form class="bg-dark cardLogin shadow">
+          <h1 class="text-light">LOGIN</h1>
           <div class="form-group">
             <input type="text" class="form-control" id="username" placeholder="Username" required> 
           </div>
@@ -30,5 +34,16 @@
         <script src="view/js/script.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
+    
+    <script>
+        VANTA.NET({
+          el: "#vantaBG",
+          color: 0x222222,
+          backgroundColor: 0xffffff,
+          points: 14.00,
+          maxDistance: 19.00,
+          spacing: 18.00
+        })
+        </script>
 </body>
 </html>

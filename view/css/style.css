@@ -1,14 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    height: 100vh;
 }
 
-.container {
-    margin-top: 25vh;
+.container{
+	padding-top: 15vh;
 }
 
-.bg-secondary {
+.cardLogin {
     width: 30vw;
     margin-right: auto;
     margin-left: auto;
@@ -30,4 +30,9 @@ button {
     -ms-flex: 1 1 auto!important;
     flex: 1 1 auto!important;
     padding-right: 0!important;
+}
+
+#vantaBG{
+	height:100%;
+	z-index: -1;
 }

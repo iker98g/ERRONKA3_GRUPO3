@@ -50,7 +50,7 @@
 	</header>
 
 	<div class="container mt-5">
-		<h1 class="text-center">PANEL DE ADMINISTRACION</h1>
+		<h1 class="text-center display-3">PANEL DE ADMINISTRACION</h1>
 	</div>
 
 	<div class="container mt-5 mb-5">
