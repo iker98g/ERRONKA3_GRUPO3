@@ -9,8 +9,11 @@ $( document ).ready(function() {
 		success:function(result){
 			alert(result);
 			var habitaciones=JSON.parse(result);
+			alert("hola");
 			console.log(result);
+			alert("hola2")
 			var newRow="";
+			alert("hola3");
 
 			/* $.each(habitaciones,function(index,room){
 				newRow += "<div class='col-12 col-md-6 col-lg-4'></div"
