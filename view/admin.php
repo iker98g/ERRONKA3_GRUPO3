@@ -25,7 +25,9 @@
 			<div class="dropdown dropleft">
 				<button class="btn btn-light" type="button" id="dropdownMenuButton"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					alopez
+					
+					<?php echo  $_SESSION["usuario"]; ?>
+					
 					<!-- <img src="img/cara.PNG" width="30" height="30" alt=""> -->
 					<i class="far fa-user-circle fa-lg"></i>
 				</button>
