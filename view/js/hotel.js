@@ -10,9 +10,9 @@ $( document ).ready(function() {
 			alert(result);
 			var habitaciones=JSON.parse(result);
 			console.log(result);
-			var newRow="";
+			var newRow="hhhhhhhhhhhh";
 
-			$.each(habitaciones,function(index,room){
+		/* 	$.each(habitaciones,function(index,room){
 				newRow += "<div class='col-12 col-md-6 col-lg-4'></div"
 								+"<div class='card'></div>"
 									+"<div class='card-body'></div>"
@@ -20,7 +20,7 @@ $( document ).ready(function() {
 										+"<h5 class='card-title'>"+room.tipo+"</h5>"
 										+"<p class='card-text'>"+room.precio+"</p>"
 
-			});
+			}); */
 			$("#habitas").append(newRow);
 		},
 		error : function(xhr) {
