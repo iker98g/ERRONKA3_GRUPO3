@@ -139,7 +139,9 @@
                 </div>
                 <div class="tab-pane fade" id="list-habitaciones" role="tabpanel" aria-labelledby="list-habitaciones-list">
                     <h5>Habitaciones</h5>
+                    <h5>gelak</h5>
                     <div class="row" id="habitas">
+                    <h5>gelak</h5>
                     
                          <!-- <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
