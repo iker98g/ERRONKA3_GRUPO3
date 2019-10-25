@@ -8,7 +8,7 @@ $( document ).ready(function() {
 
 		success:function(result){
 			alert(result);
-			//var habitaciones=JSON.parse(result);
+			var habitaciones=JSON.parse(result);
 			alert("hola");
 			console.log(result);
 			alert("hola2")
