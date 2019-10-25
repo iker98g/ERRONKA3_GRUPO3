@@ -17,7 +17,7 @@ $( document ).ready(function() {
 								+"<div class='card'>"
 									+"<div class='container'>"
 										+"<img src='"+room.imagen+"'</img>"
-										+"<h4><b>"+room.tipo+"</h4></h5>"
+										+"<h4><b>"+room.tipo+"<b></h4>"
 										+"<p>"+room.precio+"</p>"
 									+"</div>"
 								+"</div>"	
