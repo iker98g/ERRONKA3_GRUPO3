@@ -98,7 +98,7 @@ $( document ).ready(function() {
 		  	$.ajax({
 		       	type: "GET",
 		       	data:{'fechaInicio':fechaInicio, 'fechaFin':fechaFin},
-		       	url: "../controller/CDisponibilidadReservas.php", 
+		       	url: "../controller/CDisponibilidadReserva.php", 
 		       	datatype: "json",  //type of the result
 		       	success: function(result){  
 					if(fechaInicio < fechaFin) {
