@@ -281,12 +281,12 @@ $( document ).ready(function() {
 	}
 
 	function calcularTotal(precioHabitacion) {
-		var fechaInicio=moment($("#fechaInicio").val());
-		var fechaFin=moment($("#fechaFin").val());
-		var totalFechas= fechaFin.diff(fechaInicio, 'days');
-		precioTotal=parseInt(precioHabitacion)*parseInt(totalFechas);
+		var fechaInicio=$("#fechaInicio").val();
+		var fechaFin=$("#fechaFin").val();
+		var totalMilisegundos = Date.parse(fechaFin) - Date.parse(fechaInicio);
+		var totalDias= totalMilisegundos / 1000 / 60 / 60 / 24;
+		precioTotal=parseInt(precioHabitacion)*parseInt(totalDias);
 		$('#precioTotal').val(precioTotal);
 		$("#precioTotal").fadeIn("slow");
-	}
-	
+	}	
 });
