@@ -94,66 +94,66 @@ $( document ).ready(function() {
 			if ($('#tipo').is(':visible')) {
 				calcularTotal(precioHabitacion);
 			}
+
+		  	$.ajax({
+		       	type: "GET",
+		       	data:{'fechaInicio':fechaInicio, 'fechaFin':fechaFin},
+		       	url: "../controller/CDisponibilidadReservas.php", 
+		       	datatype: "json",  //type of the result
+		       	success: function(result){  
+					if(fechaInicio < fechaFin) {
+						$( "#tipo" ).slideDown("slow");
+						
+						var habitacionesOcupadas = JSON.parse(result);
+	
+						console.log(habitacionesOcupadas);
+	
+						var countSuites = 0;
+						var countEstandares = 0;
+						var countSuperiores = 0;
+	
+						for(i=0; i<habitacionesOcupadas.length; i++) {
+							if(habitacionesOcupadas[i].idHabitacion > 0 && habitacionesOcupadas[i].idHabitacion < 5) {
+								countSuites++;
+								if(countSuites==4) {
+									$("#suite").hide();
+									console.log(countSuites);
+									countSuites = 0;
+									console.log(countSuites);
+								}
+							}else if(habitacionesOcupadas[i].idHabitacion > 4 && habitacionesOcupadas[i].idHabitacion < 9) {
+								countEstandares++;
+								console.log(countEstandares);
+								if(countEstandares==4) {
+									$("#estandar").attr('disabled','disabled');
+									console.log(countEstandares);
+									countEstandares = 0;
+									console.log(countEstandares);
+								}
+							}else if(habitacionesOcupadas[i].idHabitacion > 8 && habitacionesOcupadas[i].idHabitacion < 13) {
+								countSuperiores++;
+								console.log(countSuperiores);
+								if(countSuperiores==4) {
+									$("#superior").attr('disabled','disabled');
+									console.log(countSuperiores);
+									countSuperiores = 0;
+									console.log(countSuperiores);
+								}
+							}
+						}			
+					}
+	
+					$("select[name=tipoHabitacion]").change(function(){
+						var tipoHabitacion=$("select[name=tipoHabitacion]").val();
+						
+						callTipo(tipoHabitacion, habitacionesOcupadas);
+					});
+		       	},
+		       	error : function(xhr) {
+		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+		   		}
+		    });
 		}
-
-	  	$.ajax({
-	       	type: "GET",
-	       	data:{'fechaInicio':fechaInicio, 'fechaFin':fechaFin},
-	       	url: "../controller/CDisponibilidadReservas.php", 
-	       	datatype: "json",  //type of the result
-	       	success: function(result){  
-				if(fechaInicio < fechaFin) {
-					$( "#tipo" ).slideDown("slow");
-					
-					var habitacionesOcupadas = JSON.parse(result);
-
-					console.log(habitacionesOcupadas);
-
-					var countSuites = 0;
-					var countEstandares = 0;
-					var countSuperiores = 0;
-
-					for(i=0; i<habitacionesOcupadas.length; i++) {
-						if(habitacionesOcupadas[i].idHabitacion > 0 && habitacionesOcupadas[i].idHabitacion < 5) {
-							countSuites++;
-							if(countSuites==4) {
-								$("#suite").hide();
-								console.log(countSuites);
-								countSuites = 0;
-								console.log(countSuites);
-							}
-						}else if(habitacionesOcupadas[i].idHabitacion > 4 && habitacionesOcupadas[i].idHabitacion < 9) {
-							countEstandares++;
-							console.log(countEstandares);
-							if(countEstandares==4) {
-								$("#estandar").attr('disabled','disabled');
-								console.log(countEstandares);
-								countEstandares = 0;
-								console.log(countEstandares);
-							}
-						}else if(habitacionesOcupadas[i].idHabitacion > 8 && habitacionesOcupadas[i].idHabitacion < 13) {
-							countSuperiores++;
-							console.log(countSuperiores);
-							if(countSuperiores==4) {
-								$("#superior").attr('disabled','disabled');
-								console.log(countSuperiores);
-								countSuperiores = 0;
-								console.log(countSuperiores);
-							}
-						}
-					}			
-				}
-
-				$("select[name=tipoHabitacion]").change(function(){
-					var tipoHabitacion=$("select[name=tipoHabitacion]").val();
-					
-					callTipo(tipoHabitacion, habitacionesOcupadas);
-				});
-	       	},
-	       	error : function(xhr) {
-	   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
-	   		}
-	    });	  	
 	});
 
 	function callTipo(tipoHabitacion, habitacionesOcupadas) {
