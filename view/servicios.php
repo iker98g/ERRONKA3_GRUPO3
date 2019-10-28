@@ -29,7 +29,7 @@ session_start();
 <!-- FIN HEADER -->      
 <!-- MAIN -->
 <main>
-    <img src="img/servicios2.jpeg" alt="">
+    <img src="img/servicios.jpeg" alt="">
     <h2>Pequeñas cosas que harán tu estancia única</h2>
     <h3>Nos proponemos hacerte sentir como en casa y por eso cuidamos cada detalle.</h3>
     <h1 id="titulo">Servicios generales</h1>
