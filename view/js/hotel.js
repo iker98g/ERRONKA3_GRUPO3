@@ -101,7 +101,7 @@ $( document ).ready(function() {
 	  	$.ajax({
 	       	type: "GET",
 	       	data:{'fechaInicio':fechaInicio, 'fechaFin':fechaFin},
-	       	url: "../controller/cDisponibilidadReservas.php", 
+	       	url: "../controller/CDisponibilidadReservas.php", 
 	       	datatype: "json",  //type of the result
 	       	success: function(result){  
 				if(fechaInicio < fechaFin) {
@@ -162,7 +162,7 @@ $( document ).ready(function() {
 		$.ajax({
 	       	type: "GET",
 	       	data:{'tipo':tipoHabitacion},
-	       	url: "../controller/cTipoHabitacion.php", 
+	       	url: "../controller/CTipoHabitacion.php", 
 	       	datatype: "json",  //type of the result
 	       	success: function(result){ 
 				var tipoHabitaciones = JSON.parse(result);
@@ -269,7 +269,7 @@ $( document ).ready(function() {
 				type: "GET",
 				data:{'idHabitacion':idHabitacion, 'idUsuario':idUsuario, 'fechaInicio':fechaInicio, 
 				'fechaFin':fechaFin, 'precioTotal':precioTotal},
-				url: "../controller/cNewReserva.php", 
+				url: "../controller/CNewReserva.php", 
 				datatype: "json",  //type of the result
 				success: function(result){  
 					console.log(result);
