@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 	var newRow="";
+	var precioHabitacion;
 	//ajax habitaciones
 	$.ajax({
 		type:"GET",
