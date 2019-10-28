@@ -49,7 +49,7 @@ session_start();
 <!-- MAIN -->
 <main>
  <!-- RESERVA FORM -->
-	<div class="container">
+    <div id="form">
         <form class="bg-secondary" method="GET">
             <h1>RESERVA</h1>
             <div class="form-group">
@@ -64,7 +64,7 @@ session_start();
             </div>
             <div class="form-group" id="tipo">
                 <select class="form-control" name="tipoHabitacion">
-                	<option id="elige" value="elige" selected>Elige el tipo de habitacion</option>
+                    <option id="elige" value="elige" selected>Elige el tipo de habitacion</option>
                     <option id="suite" value="suite">Suite</option>
                     <option id="estandar" value="estandar">Estandar</option>
                     <option id="superior" value="superior">Superior</option>
