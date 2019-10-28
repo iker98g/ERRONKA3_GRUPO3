@@ -7,12 +7,10 @@ $( document ).ready(function() {
 		datatype:"json",
 
 		success:function(result){
+			
 			var habitaciones=JSON.parse(result);
-			console.log(result);
 
 			$.each(habitaciones,function(index,room){
-				//alert("estoy en each");
-				//alert(newRow);
 				newRow += "<div class='col-12 col-md-6 col-lg-4'>"
 								+"<div class='card'>"
 									+"<div class='container'>"
