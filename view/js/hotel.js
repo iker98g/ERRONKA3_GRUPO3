@@ -167,7 +167,7 @@ $( document ).ready(function() {
 				var tipoHabitaciones = JSON.parse(result);
 				var idHabitacion;
 				
-
+				
 				console.log(tipoHabitaciones);
 
 				if(tipoHabitacion=="suite") {
@@ -253,7 +253,7 @@ $( document ).ready(function() {
 			var idUsuario=$("#idUsuario").val();
 			var fechaInicio=$("#fechaInicio").val();
 			var fechaFin=$("#fechaFin").val();
-			$precioTotal=$("#precioTotal").val();
+			var precioTotal=$("#precioTotal").val();
 			
 			console.log(tipoHabitacion);
 			console.log(idHabitacion);
