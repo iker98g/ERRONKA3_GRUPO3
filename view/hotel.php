@@ -36,7 +36,7 @@ session_start();
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item cerrarSesion" href="javascript:void(0);">
                     <i class="fas fa-sign-out-alt"></i>    
                     Cerrar sesión
                 </a>
@@ -174,6 +174,7 @@ session_start();
     </ul>
 </footer>
 <!-- FIN FOOTER -->
+<script src="http://momentjs.com/downloads/moment.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- <script src="js/script.js" type="text/javascript"></script> -->
 <script src="js/hotel.js" type="text/javascript"></script>
