@@ -128,12 +128,12 @@ session_start();
                 <a class="list-group-item list-group-item-action letra" id="list-habitaciones-list" data-toggle="list" href="#list-habitaciones" role="tab" aria-controls="habitaciones">Habitaciones</a>
                 <a class="list-group-item list-group-item-action letra" id="list-ubicacion-list" data-toggle="list" href="#list-ubicacion" role="tab" aria-controls="ubicacion">Ubicación</a>
                 <a class="list-group-item list-group-item-action letra" id="list-contacto-list" data-toggle="list" href="#list-contacto" role="tab" aria-controls="contacto">Contacto</a>
-                <!-- <div class="card informacion" style="width: 23rem;">
+                <div class="card informacion" style="width: 23rem;">
                     <div class="card-body">
                         <h5 class="card-title">INFORMACIÓN IMPORTANTE</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam iste, quos similique sint voluptatem doloribus cupiditate, deleniti dolores, tempore qui hic! Molestiae est nihil quo.</p>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="col-8">
