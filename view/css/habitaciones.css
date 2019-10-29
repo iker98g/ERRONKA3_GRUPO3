@@ -117,8 +117,8 @@ main{
 	.informacion{
     position:absolute;
     bottom:0;
-    width: 20rem;
-    margin:5px;
+    width: 17rem;
+    margin:auto;
 	}
     
     .textoHotel{
