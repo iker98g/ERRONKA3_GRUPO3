@@ -136,7 +136,7 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-8 textoHotel">
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="list-descripcion" role="tabpanel" aria-labelledby="list-descripcion-list">
                     <h5>¿Quienes somos?</h5>

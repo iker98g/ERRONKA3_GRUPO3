@@ -91,10 +91,33 @@ main{
         display: none;
     }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     .mapa{
         width: 100px;
         height: 150px;
+    }
+    
+    #form {
+    position: sticky;
+	}
+	
+	.bg-secondary {
+    width: 100%;
+    margin-left:0;
+   
+	}
+	
+	p{
+	font-size:1.5vh;
+	}
+	
+	.informacion{
+    position:absolute;
+    bottom:0;
+	}
+    
+    .textoHotel{
+    padding-bottom:15vh;
     }
 }
 @media only screen and (max-width: 1000px) {
