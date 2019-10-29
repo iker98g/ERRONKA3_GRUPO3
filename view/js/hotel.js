@@ -166,18 +166,17 @@ $( document ).ready(function() {
 	       	success: function(result){ 
 				var tipoHabitaciones = JSON.parse(result);
 				var idHabitacion;
+				var libre;
 				
 				console.log(tipoHabitaciones);
 
-				if(habitacionesOcupadas.length == 0) {
-					idHabitacion=1;
-				}else {
 					if(tipoHabitacion=="suite") {
-						if (tipoHabitaciones.length == 0){
+						if (habitacionesOcupadas.length == 0){
 							idHabitacion=1;
+							libre=1;
 						}else {
 							for(i=0; i<tipoHabitaciones.length; i++) {
-								var libre=1;
+								libre=1;
 								console.log(tipoHabitaciones[i].idHabitacion);
 								for(j=0; j<habitacionesOcupadas.length; j++) {
 									if(tipoHabitaciones[i].idHabitacion == habitacionesOcupadas[j].idHabitacion) {
@@ -197,61 +196,66 @@ $( document ).ready(function() {
 								}	
 							}
 						}
-					}else if(tipoHabitacion=="estandar") {
-						if (tipoHabitaciones.length == 0){
-							idHabitacion=1;
-						}else {
-							for(i=0; i<tipoHabitaciones.length; i++) {
-								var libre=1;
-								console.log(tipoHabitaciones[i].idHabitacion);
-								for(j=0; j<habitacionesOcupadas.length; j++) {
-									if(tipoHabitaciones[i].idHabitacion == habitacionesOcupadas[j].idHabitacion) {
-										console.log("Habitacion " +tipoHabitaciones[i].idHabitacion + " ocupada.");
-										idHabitacion=0;
-										libre=0;
-										console.log(idHabitacion);
-									}else {
-										idHabitacion=tipoHabitaciones[i].idHabitacion;
-										console.log(idHabitacion);
-									}
-								}
-								
-								if(libre==1){
-									precioHabitacion=tipoHabitaciones[i].precio;
-									i=tipoHabitaciones.length;
-								}
-							}
-						}
-					}else if(tipoHabitacion=="superior") {
-						if (tipoHabitaciones.length == 0){
-							idHabitacion=1;
-						}else {
-							for(i=0; i<tipoHabitaciones.length; i++) {
-								var libre=1;
-								console.log(tipoHabitaciones[i].idHabitacion);
-								for(j=0; j<habitacionesOcupadas.length; j++) {
-									if(tipoHabitaciones[i].idHabitacion == habitacionesOcupadas[j].idHabitacion) {
-										console.log("Habitacion " +tipoHabitaciones[i].idHabitacion + " ocupada.");
-										idHabitacion=0;
-										libre=0;
-										console.log(idHabitacion);
-									}else {
-										idHabitacion=tipoHabitaciones[i].idHabitacion;
-										console.log(idHabitacion);
-									}
-								}
-								
-								if(libre==1){
-									precioHabitacion=tipoHabitaciones[i].precio;
-									i=tipoHabitaciones.length;
-								}
-							}
-						}
-					}
-				}
 
-				calcularTotal(precioHabitacion);
-				insertReserva(idHabitacion);
+						calcularTotal(precioHabitacion);
+						insertReserva(idHabitacion);
+					}else if(tipoHabitacion=="estandar") {
+						if (habitacionesOcupadas.length == 0){
+							idHabitacion=5;
+						}else {
+							for(i=0; i<tipoHabitaciones.length; i++) {
+								libre=1;
+								console.log(tipoHabitaciones[i].idHabitacion);
+								for(j=0; j<habitacionesOcupadas.length; j++) {
+									if(tipoHabitaciones[i].idHabitacion == habitacionesOcupadas[j].idHabitacion) {
+										console.log("Habitacion " +tipoHabitaciones[i].idHabitacion + " ocupada.");
+										idHabitacion=0;
+										libre=0;
+										console.log(idHabitacion);
+									}else {
+										idHabitacion=tipoHabitaciones[i].idHabitacion;
+										console.log(idHabitacion);
+									}
+								}
+								
+								if(libre==1){
+									precioHabitacion=tipoHabitaciones[i].precio;
+									i=tipoHabitaciones.length;
+								}
+							}
+						}
+
+						calcularTotal(precioHabitacion);
+						insertReserva(idHabitacion);
+					}else if(tipoHabitacion=="superior") {
+						if (habitacionesOcupadas.length == 0){
+							idHabitacion=9;
+						}else {
+							for(i=0; i<tipoHabitaciones.length; i++) {
+								libre=1;
+								console.log(tipoHabitaciones[i].idHabitacion);
+								for(j=0; j<habitacionesOcupadas.length; j++) {
+									if(tipoHabitaciones[i].idHabitacion == habitacionesOcupadas[j].idHabitacion) {
+										console.log("Habitacion " +tipoHabitaciones[i].idHabitacion + " ocupada.");
+										idHabitacion=0;
+										libre=0;
+										console.log(idHabitacion);
+									}else {
+										idHabitacion=tipoHabitaciones[i].idHabitacion;
+										console.log(idHabitacion);
+									}
+								}
+								
+								if(libre==1){
+									precioHabitacion=tipoHabitaciones[i].precio;
+									i=tipoHabitaciones.length;
+								}
+							}
+						}
+
+						calcularTotal(precioHabitacion);
+						insertReserva(idHabitacion);
+					}
 	       	},
 		   	error : function(xhr) {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
