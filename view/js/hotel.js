@@ -266,7 +266,7 @@ $( document ).ready(function() {
 	function insertReserva(idHabitacion) {
 		$("#reserva").click(function(){
 			var tipoHabitacion=$("select[name=tipoHabitacion]").val();
-			var idUsuario=$("#nombreUsuario").html();
+			var idUsuario=$("#nombreUsuario").data("id");
 			var fechaInicio=$("#fechaInicio").val();
 			var fechaFin=$("#fechaFin").val();
 			var precioTotal=$("#precioTotal").val();
