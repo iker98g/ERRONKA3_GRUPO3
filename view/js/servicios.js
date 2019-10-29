@@ -11,9 +11,9 @@ $( document ).ready(function() {
 		       		alert("Sesion cerrada");
 		       		window.location.replace(result); //recarga la pagina
 		       	},
-		       	error : function(xhr) {
+		       	/* error : function(xhr) {
 		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
-		   		}
+		   		} */
 		});
 	});
 
