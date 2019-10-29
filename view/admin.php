@@ -22,7 +22,7 @@ session_start();
 
 </head>
 <body>
-<!-- <div id="vantaBG" class="fixed-bottom"></div> -->
+<div id="vantaBG" class="fixed-bottom"></div>
 	<header>
 		<!-- NAV -->
 		<nav class="navbar navbar-dark bg-dark">
