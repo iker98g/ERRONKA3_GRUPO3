@@ -276,6 +276,8 @@ $( document ).ready(function() {
 			console.log(fechaInicio);
 			console.log(fechaFin);
 			console.log(precioTotal);
+
+			alert("Datos");
 			
 			/*$.ajax({
 				type: "GET",
