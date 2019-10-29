@@ -53,10 +53,10 @@ session_start();
     <div id="form">
         <form class="bg-secondary" method="GET">
             <h1>RESERVA</h1>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <input type="number" class="form-control" id="idUsuario" placeholder="Id usuario">
                 
-            </div>
+            </div>-->
             <div class="form-group">
                 <input type="date" class="form-control" id="fechaInicio" placeholder="Fecha inicio"> 
             </div>
