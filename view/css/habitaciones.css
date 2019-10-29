@@ -135,9 +135,10 @@ main{
     }
     
     .letra{
-	font-size:1vh;
-	width:10vh;
-}
+	font-size:1.5vh;
+	width:11vh;
+	padding:2vh;
+	}
 
 }
 
