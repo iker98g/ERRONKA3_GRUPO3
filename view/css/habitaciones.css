@@ -124,25 +124,14 @@ main{
     .textoHotel{
     padding-bottom:15vh;
     }
-
-}
-@media only screen and (max-width: 1000px) {
-    .mapa{
-        width: 400px;
-        height: 450px;
-    }
-}
-@media only screen and (max-width: 700px) {
+    
     .mapa{
         width: 200px;
-        height: 250px;
+        height: 200px;
     }
+
 }
-@media only screen and (max-width: 450px) {
-    .letra{
-        font-size: 8px;
-    }
-}
+
 
 
 
