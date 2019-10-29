@@ -21,7 +21,7 @@ session_start();
         <a div="servicios" href="servicios.php">Servicios</a>
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <a>alopez</a>
+                <a id="nombreUsuario">alopez</a>
                 <i class="far fa-user-circle fa-lg"></i>
                 <!--<img src="img/cara.PNG" width="30" height="30" alt=""> -->
             </button>
