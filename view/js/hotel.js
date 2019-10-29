@@ -166,15 +166,17 @@ $( document ).ready(function() {
 	       	success: function(result){ 
 				var tipoHabitaciones = JSON.parse(result);
 				var idHabitacion;
+				var libre;
 				
 				console.log(tipoHabitaciones);
 
 					if(tipoHabitacion=="suite") {
 						if (habitacionesOcupadas.length == 0){
 							idHabitacion=1;
+							libre=1;
 						}else {
 							for(i=0; i<tipoHabitaciones.length; i++) {
-								var libre=1;
+								libre=1;
 								console.log(tipoHabitaciones[i].idHabitacion);
 								for(j=0; j<habitacionesOcupadas.length; j++) {
 									if(tipoHabitaciones[i].idHabitacion == habitacionesOcupadas[j].idHabitacion) {
@@ -202,7 +204,7 @@ $( document ).ready(function() {
 							idHabitacion=5;
 						}else {
 							for(i=0; i<tipoHabitaciones.length; i++) {
-								var libre=1;
+								libre=1;
 								console.log(tipoHabitaciones[i].idHabitacion);
 								for(j=0; j<habitacionesOcupadas.length; j++) {
 									if(tipoHabitaciones[i].idHabitacion == habitacionesOcupadas[j].idHabitacion) {
@@ -230,7 +232,7 @@ $( document ).ready(function() {
 							idHabitacion=9;
 						}else {
 							for(i=0; i<tipoHabitaciones.length; i++) {
-								var libre=1;
+								libre=1;
 								console.log(tipoHabitaciones[i].idHabitacion);
 								for(j=0; j<habitacionesOcupadas.length; j++) {
 									if(tipoHabitaciones[i].idHabitacion == habitacionesOcupadas[j].idHabitacion) {
