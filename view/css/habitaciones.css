@@ -87,6 +87,10 @@ main{
     width: 23rem;
 }
 
+.titulosMenu{
+	font-size:3vh;
+}
+
 @media only screen and (max-width: 1300px) {
     #carouselExampleIndicators{
         display: none;
@@ -126,9 +130,14 @@ main{
     }
     
     .mapa{
-        width: 200px;
-        height: 200px;
+        width: 18vh;
+        height: 18vh;
     }
+    
+    .letra{
+	font-size:1vh;
+	width:10vh;
+}
 
 }
 
