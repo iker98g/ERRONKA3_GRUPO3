@@ -18,9 +18,10 @@ session_start();
     <!-- NAV -->
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Hotel LES</a>
+        <a div="servicios" href="servicios.php">Servicios</a>
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $_SESSION["usuario"]; ?>
+                <a id="nombreUsuario">alopez</a>
                 <i class="far fa-user-circle fa-lg"></i>
                 <!--<img src="img/cara.PNG" width="30" height="30" alt=""> -->
             </button>
@@ -49,13 +50,13 @@ session_start();
 <!-- MAIN -->
 <main>
  <!-- RESERVA FORM -->
-	<div class="container">
+    <div id="form">
         <form class="bg-secondary" method="GET">
             <h1>RESERVA</h1>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <input type="number" class="form-control" id="idUsuario" placeholder="Id usuario">
                 
-            </div>
+            </div>-->
             <div class="form-group">
                 <input type="date" class="form-control" id="fechaInicio" placeholder="Fecha inicio"> 
             </div>
@@ -64,7 +65,7 @@ session_start();
             </div>
             <div class="form-group" id="tipo">
                 <select class="form-control" name="tipoHabitacion">
-                	<option id="elige" value="elige" selected>Elige el tipo de habitacion</option>
+                    <option id="elige" value="elige" selected>Elige el tipo de habitacion</option>
                     <option id="suite" value="suite">Suite</option>
                     <option id="estandar" value="estandar">Estandar</option>
                     <option id="superior" value="superior">Superior</option>
@@ -127,12 +128,12 @@ session_start();
                 <a class="list-group-item list-group-item-action letra" id="list-habitaciones-list" data-toggle="list" href="#list-habitaciones" role="tab" aria-controls="habitaciones">Habitaciones</a>
                 <a class="list-group-item list-group-item-action letra" id="list-ubicacion-list" data-toggle="list" href="#list-ubicacion" role="tab" aria-controls="ubicacion">Ubicación</a>
                 <a class="list-group-item list-group-item-action letra" id="list-contacto-list" data-toggle="list" href="#list-contacto" role="tab" aria-controls="contacto">Contacto</a>
-                <!-- <div class="card informacion" style="width: 23rem;">
+                <div class="card informacion" style="width: 23rem;">
                     <div class="card-body">
                         <h5 class="card-title">INFORMACIÓN IMPORTANTE</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam iste, quos similique sint voluptatem doloribus cupiditate, deleniti dolores, tempore qui hic! Molestiae est nihil quo.</p>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="col-8">
@@ -175,9 +176,8 @@ session_start();
 </footer>
 <!-- FIN FOOTER -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- <script src="js/script.js" type="text/javascript"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
 <script src="js/hotel.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
 </body>
 </html>
