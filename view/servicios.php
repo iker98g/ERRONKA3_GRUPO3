@@ -18,10 +18,17 @@ session_start();
     <div class="topnav">
         <a class="menu blanco" href="hotel.php">Hotel LES</a>
         <a class="menu" href="#"> 
-            <button type="button">
-                <?php echo $_SESSION["usuario"]; ?>
-                <i class="far fa-user-circle fa-lg"></i>
-            </button>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">
+                    <?php echo $_SESSION["usuario"]; ?>
+                    <i class="far fa-user-circle fa-lg"></i>
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
         </a>
     </div>
     <!-- FIN NAV -->
