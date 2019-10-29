@@ -394,5 +394,16 @@ $( document ).ready(function() {
    		   		}
    		       });
 		});
+		
+		//media query
+
+			   var width = $(window).width();
+			   if(width <= 600){
+			       $('.tituloWeb').removeClass('display-3').addClass('display-5');
+			   }
+			   else{
+			       $('.tituloWeb').removeClass('display-5').addClass('display-3');
+			   }
+		
 	
 });
