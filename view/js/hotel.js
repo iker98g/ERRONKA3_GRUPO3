@@ -265,22 +265,12 @@ $( document ).ready(function() {
 
 	function insertReserva(idHabitacion) {
 		$("#reserva").click(function(){
-			var tipoHabitacion=$("select[name=tipoHabitacion]").val();
 			var idUsuario=$("#nombreUsuario").data("id");
 			var fechaInicio=$("#fechaInicio").val();
 			var fechaFin=$("#fechaFin").val();
 			var precioTotal=$("#precioTotal").val();
-
-			console.log(tipoHabitacion);
-			console.log(idHabitacion);
-			console.log(idUsuario);
-			console.log(fechaInicio);
-			console.log(fechaFin);
-			console.log(precioTotal);
-
-			alert("Datos");
 			
-			/*$.ajax({
+			$.ajax({
 				type: "GET",
 				data:{'idHabitacion':idHabitacion, 'idUsuario':idUsuario, 'fechaInicio':fechaInicio, 
 				'fechaFin':fechaFin, 'precioTotal':precioTotal},
@@ -292,7 +282,7 @@ $( document ).ready(function() {
 				error : function(xhr) {
 					alert("An error occured: " + xhr.status + " " + xhr.statusText);
 				}
-			});*/
+			});
 		});
 	}
 
