@@ -60,5 +60,6 @@ session_start();
     </ul>
 </footer>
 <!-- FIN FOOTER -->
+<script src="js/servicios.js" type="text/javascript"></script>
 </body>
 </html>
