@@ -24,9 +24,17 @@ session_start();
                     <i class="far fa-user-circle fa-lg"></i>
                 </button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#">
+                        <i class="fas fa-euro-sign"></i>    
+                        Moneda
+                    </a>
+                    <a href="#">
+                        <input type="checkbox"> Modo nocturno<br>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-sign-out-alt"></i>    
+                        Cerrar sesión
+                    </a>
                 </div>
             </div>
         </a>
