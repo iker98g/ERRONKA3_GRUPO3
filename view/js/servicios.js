@@ -1,5 +1,23 @@
 $( document ).ready(function() {
+	
+	//Cerrar sesión
+	$('.cerrarSesion').click(function(){
+		$.ajax({
+		       	type: "GET",
+		       	url: "../controller/CCerrarSesion.php", 
+		       	datatype: "json",  //type of the result
+		       	success: function(result){  
+		       		
+		       		alert("Sesion cerrada");
+		       		window.location.replace(result); //recarga la pagina
+		       	},
+		       	/* error : function(xhr) {
+		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+		   		} */
+		});
+	});
 
+	//Dropdown
 	window.onclick = function(event) {
 		if (!event.target.matches('.dropbtn')) {
 			var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -12,22 +30,6 @@ $( document ).ready(function() {
 			}
 		}
 	}
-
-	$('.cerrarSesion').click(function(){
-		$.ajax({
-		       	type: "GET",
-		       	url: "../controller/CCerrarSesion.php", 
-		       	datatype: "json",  //type of the result
-		       	success: function(result){  
-		       		
-		       		alert("Sesion cerrada");
-		       		window.location.replace(result); //recarga la pagina
-		       	},
-		       	error : function(xhr) {
-		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
-		   		}
-		});
-	});
 
 });
 	function myFunction() {
