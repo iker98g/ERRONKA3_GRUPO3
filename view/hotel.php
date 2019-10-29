@@ -21,7 +21,7 @@ session_start();
         <a div="servicios" href="servicios.php">Servicios</a>
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <a id="nombreUsuario" data-id="<?php echo $_SESSION["id"]; ?>">alopez</a>
+                <a id="nombreUsuario" data-id="<?php echo $_SESSION["id"]; ?>"><?php echo $_SESSION["usuario"]; ?></a>
                 <i class="far fa-user-circle fa-lg"></i>
                 <!--<img src="img/cara.PNG" width="30" height="30" alt=""> -->
             </button>
@@ -128,10 +128,10 @@ session_start();
                 <a class="list-group-item list-group-item-action letra" id="list-habitaciones-list" data-toggle="list" href="#list-habitaciones" role="tab" aria-controls="habitaciones">Habitaciones</a>
                 <a class="list-group-item list-group-item-action letra" id="list-ubicacion-list" data-toggle="list" href="#list-ubicacion" role="tab" aria-controls="ubicacion">Ubicación</a>
                 <a class="list-group-item list-group-item-action letra" id="list-contacto-list" data-toggle="list" href="#list-contacto" role="tab" aria-controls="contacto">Contacto</a>
-                <div class="card informacion" style="width: 23rem;">
+                <div class="card informacion">
                     <div class="card-body">
                         <h5 class="card-title">INFORMACIÓN IMPORTANTE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam iste, quos similique sint voluptatem doloribus cupiditate, deleniti dolores, tempore qui hic! Molestiae est nihil quo.</p>
+                        <p class="card-text infoImportante">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam iste, quos similique sint voluptatem doloribus cupiditate, deleniti dolores, tempore qui hic! Molestiae est nihil quo.</p>
                     </div>
                 </div>
             </div>
