@@ -22,7 +22,7 @@ session_start();
 
 </head>
 <body>
-<div id="vantaBG" class="fixed-bottom"></div>
+<!-- <div id="vantaBG" class="fixed-bottom"></div> -->
 	<header>
 		<!-- NAV -->
 		<nav class="navbar navbar-dark bg-dark">
@@ -57,7 +57,7 @@ session_start();
 	</header>
 
 	<div class="container mt-5">
-		<h1 class="text-center display-3">PANEL DE ADMINISTRACION</h1>
+		<h1 class="text-center display-3 tituloWeb">PANEL DE ADMINISTRACION</h1>
 	</div>
 
 	<div class="container mt-5 mb-5">
@@ -418,7 +418,7 @@ session_start();
 	<!-- FOOTER -->
 	<footer
 		class="text-muted text-center text-small fixed-bottom border-top bg-white shadow">
-		<p class="mb-1 ml-5 mr-5 mt-3">&copy; Lorem ipsum dolor sit amet consectetur
+		<p class="mb-1 ml-5 mr-5 mt-3 textoFooter">&copy; Lorem ipsum dolor sit amet consectetur
 			adipisicing elit. Fugiat dignissimos dolores fuga accusantium iste
 			quisquam explicabo atque praesentium voluptas eaque deleniti, maxime
 			tempora et? Rerum placeat voluptate, maxime sequi itaque vel est
