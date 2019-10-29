@@ -68,7 +68,7 @@ li{
 .dropdown {
     position: relative;
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 40px;
 }
 .dropdown-content {
     display: none;
