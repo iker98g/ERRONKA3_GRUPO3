@@ -120,7 +120,7 @@ class usuario_model extends usuario_class{
         } else {
             return "Fallo en la modificacion del usuario: (" . $this->link->errno . ") " . $this->link->error;
         }
-        
+       
         $this->CloseConnect();
     }
     

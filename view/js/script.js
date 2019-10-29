@@ -51,6 +51,16 @@ $( document ).ready(function() {
 		
 	});
 	
-	
+	//media query
+	$(window).resize(function(){
+		   var width = $(window).width();
+		   if(width <= 600){
+		       $('.tituloWeb').removeClass('display-1').addClass('display-4');
+		   }
+		   else{
+		       $('.tituloWeb').removeClass('display-4').addClass('display-1');
+		   }
+		})
+		.resize();
 	
 });
