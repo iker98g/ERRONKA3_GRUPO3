@@ -17,11 +17,11 @@ session_start();
     <!-- NAV -->
     <div class="topnav">
         <a class="menu blanco" href="hotel.php">Hotel LES</a>
-        <a class="menu dropdown" href="#"> 
-            <button onclick="myFunction()" class="dropbtn">
-                <?php echo $_SESSION["usuario"]; ?>
-                <i class="far fa-user-circle fa-lg"></i>
-            </button>
+        <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">
+                    <?php echo $_SESSION["usuario"]; ?>
+                    <i class="far fa-user-circle fa-lg"></i>
+                </button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="#">
                         <i class="fas fa-euro-sign"></i>    
@@ -35,7 +35,7 @@ session_start();
                         Cerrar sesión
                     </a>
                 </div>
-        </a>
+            </div>
     </div>
     <!-- FIN NAV -->
 </header> 
