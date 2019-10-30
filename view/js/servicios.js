@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
 	//Dropdown
-	window.onclick = function(event) {
+	$('.dropdown').click ( function(event) {
 		if (!event.target.matches('.dropbtn')) {
 			var dropdowns = document.getElementsByClassName("dropdown-content");
 			var i;
@@ -12,7 +12,7 @@ $( document ).ready(function() {
 				}
 			}
 		}
-	}
+	});
 
 	//Cerrar sesion
 	$('.cerrarSesion').click(function(){
