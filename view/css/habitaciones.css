@@ -45,6 +45,10 @@ button {
 }
 /* --------- FUNCIONALIDAD RESERVA --------- */
 
+#servicios{
+    text-decoration: none;
+}
+
 main{
     margin-left: 30px;
     margin-right: 30px;
