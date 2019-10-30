@@ -56,7 +56,7 @@ class reserva_model extends reserva_class{
             
             $usuario=new usuario_model();
             $usuario->setIdUsuario($row['idUsuario']);
-            $new->objUsuario= $usuario->findIdUsuario();
+            $new->objUsuario= $usuario; //$usuario->findIdUsuario();
             
             array_push($this->list, $new);
         }
