@@ -16,6 +16,7 @@ $( document ).ready(function() {
 
 	//Cerrar sesion
 	$('.cerrarSesion').click(function(){
+		alert("cerrar sesion");
 		$.ajax({
 		       	type: "GET",
 		       	url: "../controller/CCerrarSesion.php", 
