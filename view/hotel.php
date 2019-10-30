@@ -20,8 +20,6 @@ session_start();
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Hotel LES</a>
         <a href="servicios.php" class="btn btn-light" role="button" aria-pressed="true">Servicios</a>
-        <!-- <a id="servicios" href="servicios.php">Servicios</a> -->
-        <!-- <button type="button" class="btn btn-light" href="servicios.php" style="width:9px; height:40px">Servicios</button> -->
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <a id="nombreUsuario" data-id="<?php echo $_SESSION["id"]; ?>"><?php echo $_SESSION["usuario"]; ?></a>
