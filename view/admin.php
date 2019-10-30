@@ -7,7 +7,8 @@ session_start();
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Admin</title>
+<title>Hotel LES</title>
+<link rel="icon" type="image/png" href="img/favicon.ico">
 <script src="https://kit.fontawesome.com/661afcc94b.js"
 	crossorigin="anonymous"></script>
 <link href="css/admin.css" rel="stylesheet" type="text/css" />
