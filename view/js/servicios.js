@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 	
 	//Cerrar sesión
-	/* $('.cerrarSesion').click(function(){
+	$('.cerrarSesion').click(function(){
 		$.ajax({
 		       	type: "GET",
 		       	url: "../controller/CCerrarSesion.php", 
@@ -16,9 +16,9 @@ $( document ).ready(function() {
 		   		}
 		});
 	});
- */
+
 	//Dropdown
-	window.onclick = function(event) {
+	/* window.onclick = function(event) {
 		if (!event.target.matches('.dropbtn')) {
 			var dropdowns = document.getElementsByClassName("dropdown-content");
 			var i;
@@ -29,7 +29,7 @@ $( document ).ready(function() {
 				}
 			}
 		}
-	}
+	} */
 
 });
 	function myFunction() {
