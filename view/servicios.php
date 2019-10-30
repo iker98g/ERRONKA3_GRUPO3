@@ -28,7 +28,7 @@ session_start();
                         <i class="fas fa-euro-sign"></i>    
                         Moneda
                     </a>
-                    <a href="#">
+                    <a href="#" id="darkModeSwitch">
                         <input type="checkbox"> Modo nocturno<br>
                     </a>
                     <a class="cerrarSesion" href="javascript:void(0);">
