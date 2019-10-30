@@ -26,11 +26,14 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-$$
+CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spAllHabitaciones` ()  NO SQL
+SELECT * FROM habitaciones$$
 
-$$
+CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spAllReservas` ()  NO SQL
+SELECT * FROM reservas$$
 
-$$
+CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spAllUsers` ()  NO SQL
+SELECT * FROM usuarios$$
 
 CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spBorrarReserva` (IN `pId` INT)  NO SQL
 DELETE FROM reservas
@@ -54,9 +57,11 @@ VALUES (pNombre, pApellido, pUsuario, pContrasena, pAdmin)$$
 CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spFindByType` (IN `pTipo` VARCHAR(50))  NO SQL
 SELECT * FROM `habitaciones` WHERE habitaciones.tipo=pTipo$$
 
-$$
+CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spFindIdHabitacion` (IN `id` INT)  NO SQL
+SELECT * FROM `habitaciones` WHERE `habitaciones`.`idHabitacion`=id$$
 
-$$
+CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spFindIdUsuario` (IN `id` INT)  NO SQL
+SELECT * FROM `usuarios` WHERE `usuarios`.`idUsuario`=id$$
 
 CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spFindUser` (IN `pUsername` VARCHAR(50))  NO SQL
 SELECT * FROM `usuarios` WHERE usuarios.usuario = pUsername$$
