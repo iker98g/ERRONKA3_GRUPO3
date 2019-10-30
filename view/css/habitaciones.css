@@ -4,6 +4,10 @@ body {
     box-sizing: border-box;
 }
 
+.bg{
+	background-color: white;
+}
+
 /* --------- FUNCIONALIDAD RESERVA --------- */
 #form {
     position: absolute;

@@ -13,6 +13,7 @@ session_start();
     <link href="css/servicios.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<div class="bg">
 <!-- HEADER -->
 <header> 
     <!-- NAV -->
@@ -76,5 +77,6 @@ session_start();
 <!-- FIN FOOTER -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/servicios.js" type="text/javascript"></script>
+</div>
 </body>
 </html>

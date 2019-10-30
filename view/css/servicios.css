@@ -4,6 +4,10 @@ body {
     box-sizing: border-box;
     font-family: Arial;
 }
+
+.bg{
+	background-color: white;
+}
 .topnav{
     background: black;
     display: flex;
