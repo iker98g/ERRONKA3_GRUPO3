@@ -1,5 +1,11 @@
 <?php
-include_once ("connect_data.php");  // klase honetan gordetzen dira datu basearen datuak. erabiltzailea...
+//Klase honetan gordetzen dira datu basearen datuak. erabiltzailea...
+if ($_SERVER['SERVER_NAME']=="localhost") {
+    include_once ("connect_data_local.php");
+}else {
+    include_once ("connect_data_remote.php");
+}
+
 include_once ("habitacion_class.php");
 
 class habitacion_model extends habitacion_class{

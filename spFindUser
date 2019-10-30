@@ -1,5 +1,0 @@
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindUser`(IN `pUsername` VARCHAR(50))
-    NO SQL
-SELECT * FROM `usuarios` WHERE usuarios.usuario = pUsername$$
-DELIMITER ;
