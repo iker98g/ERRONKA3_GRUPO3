@@ -5,6 +5,7 @@ if ($_SERVER['SERVER_NAME']=="localhost") {
 }else {
     include_once ("connect_data_remote.php");
 }
+
 include_once ("usuario_class.php");
 
 class usuario_model extends usuario_class{
