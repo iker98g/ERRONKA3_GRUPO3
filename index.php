@@ -27,10 +27,74 @@
             <small id="passHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
           </div>
           <div class="form-group text-center">
-            <button type="button" class="btn btn-info btnLogin" disabled>Sign in</button>
+          	<button type="button" class="btn btn-info btnLogin" disabled>Log in</button>
+            <button type="button" class="btn btn-info btnSignin">Sign in</button>
           </div>
         </form>
       </div>
+      
+      	<!-- Modal insert users-->
+		<div class="modal fade" id="modalInsertUser" tabindex="-1"
+			role="dialog" aria-labelledby="modalInsertUserlabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalInsertUserlabel">Insertar usuario</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+
+						<!--form modificar -->
+						<form>
+							<div class="form-group">
+								<label for="nombreFormInsert">Nombre</label> <input type="text"
+									class="form-control" id="nombreFormInsert"
+									aria-describedby="nombreInsert" required name="insertarUsu">
+							</div>
+							<div class="form-group">
+								<label for="apellidoFormInsert">Apellido</label> <input
+									type="text" class="form-control" id="apellidoFormInsert"
+									aria-describedby="apellidoInsert" required name="insertarUsu">
+							</div>
+							<div class="form-group">
+								<label for="usuarioFormInsert">Usuario</label> <input
+									type="text" class="form-control" id="usuarioFormInsert"
+									aria-describedby="usuarioInsert" required name="insertarUsu">
+							</div>
+							<div class="form-group">
+								<label for="passwordFormInsert">Contrasena</label> <input
+									type="text" class="form-control" id="passwordFormInsert"
+									aria-describedby="passwordInsert" required name="insertarUsu">
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio"
+									name="radioAdminInsert" id="adminSiInsert" value="1" disabled> 
+									<label class="form-check-label" for="adminSiInsert">Si</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio"
+									name="radioAdminInsert" id="adminNoInsert" value="0" disabled checked> <label
+									class="form-check-label" for="adminNoInsert">No</label>
+							</div>
+						</form>
+
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Cerrar</button>
+						<button type="button" disabled
+							class="btn btn-primary botonExecuteInsertUsers">Confirmar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+      
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="view/js/script.js" type="text/javascript"></script>
