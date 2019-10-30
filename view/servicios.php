@@ -13,6 +13,7 @@ session_start();
     <link href="css/servicios.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<div class="bg">
 <!-- HEADER -->
 <header> 
     <!-- NAV -->
@@ -28,7 +29,7 @@ session_start();
                         <i class="fas fa-euro-sign"></i>    
                         Moneda
                     </a>
-                    <a href="#">
+                    <a href="#" id="darkModeSwitch">
                         <input type="checkbox"> Modo nocturno<br>
                     </a>
                     <a class="cerrarSesion" href="javascript:void(0);">
@@ -76,5 +77,6 @@ session_start();
 <!-- FIN FOOTER -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/servicios.js" type="text/javascript"></script>
+</div>
 </body>
 </html>

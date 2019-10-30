@@ -14,12 +14,13 @@ session_start();
     <link href="css/habitaciones.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<div class="bg">
 <!-- HEADER -->
 <header> 
     <!-- NAV -->
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Hotel LES</a>
-        <a div="servicios" href="servicios.php">Servicios</a>
+        <a href="servicios.php" class="btn btn-light" role="button" aria-pressed="true">Servicios</a>
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <a id="nombreUsuario" data-id="<?php echo $_SESSION["id"]; ?>"><?php echo $_SESSION["usuario"]; ?></a>
@@ -33,8 +34,8 @@ session_start();
                 </a>
                 <a class="dropdown-item" href="#">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Modo nocturno</label>
+                        <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
+                        <label class="custom-control-label" for="darkModeSwitch">Modo nocturno</label>
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -180,5 +181,6 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
 <script src="js/hotel.js" type="text/javascript"></script>
+</div>
 </body>
 </html>

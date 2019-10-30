@@ -43,8 +43,8 @@ session_start();
 					</a> <a class="dropdown-item" href="#">
 						<div class="custom-control custom-switch">
 							<input type="checkbox" class="custom-control-input"
-								id="customSwitch1"> <label class="custom-control-label"
-								for="customSwitch1">Modo nocturno</label>
+								id="darkModeSwitch"> <label class="custom-control-label"
+								for="darkModeSwitch">Modo nocturno</label>
 						</div>
 					</a>
 					<div class="dropdown-divider"></div>

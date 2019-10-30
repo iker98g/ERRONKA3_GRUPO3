@@ -4,8 +4,12 @@ body {
     box-sizing: border-box;
     font-family: Arial;
 }
+
+.bg{
+	background-color: white;
+}
 .topnav{
-    background: black;
+    background: #343a40;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -59,15 +63,15 @@ li{
     list-style: none;
 }
 .dropbtn {
-    background-color: #3498DB;
-    color: white;
+    background-color: #f8f9fa;
+    color: black;
     padding: 20px;
     font-size: 16px;
     border: none;
     cursor: pointer;
 }
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
+    background-color: #6c757d;
 }
 .dropdown {
     position: relative;

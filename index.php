@@ -29,7 +29,7 @@
           </div>
           <div class="form-group text-center">
           	<button type="button" class="btn btn-info btnLogin" disabled>Log in</button>
-            <button type="button" class="btn btn-info btnSignin">Sign in</button>
+            <button type="button" class="btn btn-info btnSignin">Sign Up</button>
           </div>
         </form>
       </div>

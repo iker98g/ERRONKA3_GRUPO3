@@ -295,4 +295,7 @@ $( document ).ready(function() {
 		$('#precioTotal').val(precioTotal);
 		$("#precioTotal").fadeIn("slow");
 	}	
+	
+	
+	
 });

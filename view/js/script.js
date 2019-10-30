@@ -51,6 +51,39 @@ $( document ).ready(function() {
 		
 	});
 	
+	$(document).keypress(function(event) {
+	    var keycode = event.keyCode || event.which;
+	    if(keycode == '13') {
+	    	user=$('#username').val();
+			pass=$('#password').val();
+			
+			if(user.length==0 || pass.length==0 ){
+				alert("Los campos no pueden estar vacios")
+			}else{
+				$.ajax({
+	   		       	type: "GET",
+	   		       	data: {'user':user,'pass':pass},
+	   		       	url: "controller/CUsuario.php",
+	   		       	success: function(pagina){  		
+	   		       		console.log(pagina);
+	   		       		
+	   		       		if(pagina==""){
+	   		       			alert("Usuario o Contraseña erroneos")
+	   		       		}else{
+	   		       			window.location.replace(pagina);
+	   		       		}
+	   		       		
+	   		       		
+	  		       		
+	   		       	},
+	   		       	error : function(xhr){
+	   		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+	   		   		}
+	   		    });
+			}
+	    }
+	});
+	
 	//media query
 	$(window).resize(function(){
 		   var width = $(window).width();
