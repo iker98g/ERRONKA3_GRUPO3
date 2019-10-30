@@ -32,7 +32,7 @@ session_start();
                     </a>
                     <a class="cerrarSesion" href="javascript:void(0);">
                         <i class="fas fa-sign-out-alt"></i>    
-                        Cerrar sesión
+                        Cerrar sesióngggg
                     </a>
                 </div>
             </div>
