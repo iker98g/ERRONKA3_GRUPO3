@@ -2,6 +2,7 @@ $( document ).ready(function() {
 
 	//Dropdown
 	$('.dropdown').click ( function(event) {
+		alert("dropdown");
 		if (!event.target.matches('.dropbtn')) {
 			var dropdowns = document.getElementsByClassName("dropdown-content");
 			var i;
