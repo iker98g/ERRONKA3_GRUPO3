@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial;
 }
 .topnav{
     background: black;
@@ -27,7 +28,7 @@ main{
 }
 img{
     width: 80%;
-    height: 400px;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -95,4 +96,29 @@ li{
     display: block;
 }
 
+@media only screen and (max-width: 600px) {	
+
+h2{
+	font-size: 20px;
+}
+
+h3{
+	font-size: 15px;
+}
+
+#titulo{
+	font-size: 30px;
+}
+
+td{
+	font-size: 15px;
+	padding:5px;
+}
+
+p{
+	font-size:10px;
+}
+
+
+}
 
