@@ -6,6 +6,7 @@ class reserva_model extends reserva_class{
     
     private $link;
     private $list = array();
+    private $objUsuario;
     
     function getList() {
         return $this->list;
@@ -52,6 +53,10 @@ class reserva_model extends reserva_class{
             $new->setFechaInicio($row['fechaInicio']);
             $new->setFechaFin($row['fechaFin']);
             $new->setPrecioTotal($row['precioTotal']);
+            
+            $usuario=new usuario_model();
+            $usuario->setIdUsuario($row['idUsuario']);
+            $new->objUsuario= $usuario->findIdUsuario();
             
             array_push($this->list, $new);
         }
