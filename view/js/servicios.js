@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
 	//Dropdown
-	$('.dropdown').click ( function(event) {
+	/* $('.dropdown').click ( function(event) {
 		alert("dropdown");
 		if (!event.target.matches('.dropbtn')) {
 			var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -14,7 +14,7 @@ $( document ).ready(function() {
 			}
 		}
 	});
-
+ */
 	//Cerrar sesion
 	$('.cerrarSesion').click(function(){
 		alert("cerrar sesion");
