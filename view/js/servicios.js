@@ -2,7 +2,6 @@ $( document ).ready(function() {
 
 	//Cerrar sesion
 	$('.cerrarSesion').click(function(){
-		alert("cerrar sesion");
 		$.ajax({
 		       	type: "GET",
 		       	url: "../controller/CCerrarSesion.php", 
@@ -19,6 +18,6 @@ $( document ).ready(function() {
 	});
 
 });
-	function myFunction() {
+	/* function myFunction() {
 		document.getElementById("myDropdown").classList.toggle("show");
-	}
+	} */
