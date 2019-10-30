@@ -1,10 +1,10 @@
 $( document ).ready(function() {
 	
 	//Cerrar sesión
-	$('.cerrarSesion').click(function(){
+	/* $('.cerrarSesion').click(function(){
 		$.ajax({
 		       	type: "GET",
-		       	url: "../../controller/CCerrarSesion.php", 
+		       	url: "../controller/CCerrarSesion.php", 
 		       	datatype: "json",  //type of the result
 		       	success: function(result){  
 		       		
@@ -16,7 +16,7 @@ $( document ).ready(function() {
 		   		}
 		});
 	});
-
+ */
 	//Dropdown
 	window.onclick = function(event) {
 		if (!event.target.matches('.dropbtn')) {
