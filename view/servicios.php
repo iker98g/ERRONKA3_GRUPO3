@@ -30,7 +30,7 @@ session_start();
                     <a href="#">
                         <input type="checkbox"> Modo nocturno<br>
                     </a>
-                    <a class="cerrarSesion" href="javascript:void(0);">
+                    <a class="cerrarSesion" href="../index.php">
                         <i class="fas fa-sign-out-alt"></i>    
                         Cerrar sesión
                     </a>
