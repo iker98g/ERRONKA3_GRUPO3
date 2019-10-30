@@ -168,11 +168,7 @@ $( document ).ready(function() {
        		    else
        		      $('.botonExecuteInsertUsers').attr('disabled', false);
        		  });
-       		
-       		
-       		
-       		
-       		
+
      	},
        	error : function(xhr) {
    			alert("An error occured: " + xhr.status + " " + xhr.statusText);

@@ -74,22 +74,7 @@ $( document ).ready(function() {
 			contrasena=$('#passwordFormInsert').val();
 			admin=$('input[name="radioAdminInsert"]:checked').val();
 			
-			
-			$.ajax({
-		       	type: "GET",
-		       	data:{ 'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'contrasena':contrasena, 'admin':admin},
-		       	url: "controller/CInsertUser.php", 
-		       	datatype: "json",  //type of the result
-		       	success: function(result){  
-		       		
-		       		console.log(result);
-		       		alert(result);
-		       		location.reload(true);  //recarga la pagina
-		       	},
-		       	error : function(xhr) {
-		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
-		   		}
-		       });
+			findUser(usuario);
 		});
 		
 		//si los datos estan vacios no se puede hacer insert
@@ -105,5 +90,42 @@ $( document ).ready(function() {
 		    else
 		      $('.botonExecuteInsertUsers').attr('disabled', false);
 		  });
-	
+		
+		function findUser(usuario) {
+			$.ajax({
+		       	type: "GET",
+		       	data:{'username':usuario},
+		       	url: "controller/CComprobarUsuario.php", 
+		       	datatype: "json",  //type of the result
+		       	success: function(result){
+		       		var usuarioExistente = JSON.parse(result);
+		       		
+		       		if (usuarioExistente.length == 0){
+						insertUser();
+					}else {
+						alert("Ese usuario ya existe")
+					}
+		       	},
+			   	error : function(xhr) {
+					alert("An error occured: " + xhr.status + " " + xhr.statusText);
+				}
+			});
+		}
+		
+		function insertUser() {
+			$.ajax({
+		       	type: "GET",
+		       	data:{'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'contrasena':contrasena, 'admin':admin},
+		       	url: "controller/CInsertUser.php", 
+		       	datatype: "json",  //type of the result
+		       	success: function(result){         		
+		       		console.log(result);
+		       		alert(result);
+		       		location.reload(true);  //recarga la pagina
+		       	},
+		       	error : function(xhr) {
+		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+		   		}
+		    });
+		}
 });
