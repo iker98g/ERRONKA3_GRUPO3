@@ -1,9 +1,9 @@
 <?php
 //Klase honetan gordetzen dira datu basearen datuak. erabiltzailea...
-if ($_SERVER['SERVER_NAME']=="localhost") {
-    include_once ("connect_data_local.php");
+if ($_SERVER['SERVER_NAME']=="http://tres.fpz1920.com/") {
+    include_once ("connect_data_remote.php");  
 }else {
-    include_once ("connect_data_remote.php");
+    include_once ("connect_data_local.php");
 }
 
 include_once ("habitacion_class.php");
