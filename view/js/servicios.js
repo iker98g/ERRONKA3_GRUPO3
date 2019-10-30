@@ -14,6 +14,13 @@ $( document ).ready(function() {
 		}
 	}
 
+	
+
+});
+	function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
+	}
+
 	//Cerrar sesion
 	$('.cerrarSesion').click(function(){
 		$.ajax({
@@ -30,8 +37,3 @@ $( document ).ready(function() {
 		   		}
 		       });
 	});
-
-});
-	function myFunction() {
-		document.getElementById("myDropdown").classList.toggle("show");
-	}
