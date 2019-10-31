@@ -66,6 +66,8 @@ $( document ).ready(function() {
 		}
 		
 		$("select[name=tipoHabitacion]").val("elige");
+		var elige = $("select[name=tipoHabitacion]").val();
+		console.log(elige);
 		/*$("#tipo").slideUp( "slow");
 		$("#suite").show();
 		$("#estandar").show();
@@ -85,9 +87,9 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
 			$("select[name=tipoHabitacion]").val("elige");
-		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != "" && $("select[name=tipoHabitacion]").val("") != "elige"){
+		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != ""){
 			$("#fechaFin").removeAttr('disabled');
-			if ($('#tipo').is(':visible')) {
+			if ($('#tipo').is(':visible')  && elige != "elige") {
 				calcularTotal(precioHabitacion);
 			}	
 		}else {
@@ -112,6 +114,8 @@ $( document ).ready(function() {
 		}
 
 		$("select[name=tipoHabitacion]").val("elige");
+		var elige = $("select[name=tipoHabitacion]").val();
+		console.log(elige);
 		/*$("#suite").show();
 		$("#estandar").show();
 		$("#superior").show();*/
@@ -130,8 +134,8 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow");
 			$("select[name=tipoHabitacion]").val("elige");
-		}else if (fechaInicio < fechaFin && $("select[name=tipoHabitacion]").val("") != "elige"){
-			if ($('#tipo').is(':visible')) {
+		}else if (fechaInicio < fechaFin){
+			if ($('#tipo').is(':visible') && elige != "elige") {
 				calcularTotal(precioHabitacion);
 			}
 
