@@ -44,6 +44,8 @@ $( document ).ready(function() {
 		       });
 	});
 	
+	$(".labelPrecio").hide();
+	
 	$("#fechaInicio").change(function(){
 		var fechaInicio=$("#fechaInicio").val();
 
@@ -58,6 +60,7 @@ $( document ).ready(function() {
 			$("#fechaFin").val("");
 			$("#fechaFin").attr('disabled','disabled');
 			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
 			$("select[name=tipoHabitacion]").val("elige");
 		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != ""){
@@ -69,6 +72,7 @@ $( document ).ready(function() {
 			$("#fechaFin").val("");
 			$("#fechaFin").attr('disabled','disabled');
 			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
 			$("select[name=tipoHabitacion]").val("elige");
 		}	
@@ -82,12 +86,14 @@ $( document ).ready(function() {
 			alert("Tal vez esa combinacion de días no sea buena idea, elige otra fecha final.");
 			$("#fechaFin").val("");
 			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
 			$( "#tipo" ).slideUp( "slow");
 			$("select[name=tipoHabitacion]").val("elige");
 		}else if (fechaInicio == fechaFin){
 			alert("Reserva al menos para una noche.");
 			$("#fechaFin").val("");
 			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow");
 			$("select[name=tipoHabitacion]").val("elige");
 		}else {
@@ -293,5 +299,6 @@ $( document ).ready(function() {
 		precioTotal=parseInt(precioHabitacion)*parseInt(totalDias);
 		$('#precioTotal').val(precioTotal);
 		$("#precioTotal").fadeIn("slow");
+		$(".labelPrecio").fadeIn("slow");
 	}		
 });
