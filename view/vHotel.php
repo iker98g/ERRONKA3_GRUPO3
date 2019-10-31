@@ -72,6 +72,7 @@ session_start();
                 </select>
             </div>
             <div class="form-group">
+            <label for="precioTotal">Precio Total</label>
                 <input type="number" class="form-control" id="precioTotal" placeholder="Precio total" disabled>
             </div>
             <div class="form-check card-body">
