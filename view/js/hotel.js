@@ -287,6 +287,7 @@ $( document ).ready(function() {
 			var fechaInicio=$("#fechaInicio").val();
 			var fechaFin=$("#fechaFin").val();
 			var precioTotal=$("#precioTotal").val();
+			var idHabitacion=$("#tipoHabitacion").val();
 			
 			$.ajax({
 				type: "GET",
