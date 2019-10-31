@@ -82,7 +82,7 @@ if ($_SESSION["admin"]==null) {
                 <input type="number" class="form-control" id="precioTotal" placeholder="Precio total" disabled>
             </div>
             <div class="form-check card-body">
-                <button type="submit" class="btn btn-primary" id="reserva">Reservar</button>
+                <button type="submit" class="btn btn-primary" id="reserva" disabled>Reservar</button>
             </div>
         </form>
     </div>

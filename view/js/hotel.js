@@ -307,5 +307,6 @@ $( document ).ready(function() {
 		$('#precioTotal').val(precioTotal);
 		$("#precioTotal").fadeIn("slow");
 		$(".labelPrecio").fadeIn("slow");
+		$("#reserva").removeAttr('disabled');
 	}		
 });
