@@ -185,10 +185,10 @@ class reservaModel extends reservaClass{
         {
             $vars = get_object_vars($object);
             
-            $objHabitacion=$object->getObjectHabitacion()->getObjectVars();
+            $objHabitacion=$object->getObjectHabitacion()->get_object_vars($object);
             $vars['objectHabitacion']=$objHabitacion;
             
-            $objUsuario=$object->getObjectUsuario()->getObjectVars();
+            $objUsuario=$object->getObjectUsuario()->get_object_vars($object);
             $vars['objectUsuario']=$objUsuario;
             
             array_push($arr, $vars);
