@@ -183,7 +183,7 @@ class reservaModel extends reservaClass{
         
         foreach ($this->list as $object)
         {
-            $vars = $object->getObjectVars();
+            $vars = get_object_vars($object);
             
             $objHabitacion=$object->getObjectHabitacion()->getObjectVars();
             $vars['objectHabitacion']=$objHabitacion;
@@ -194,5 +194,5 @@ class reservaModel extends reservaClass{
             array_push($arr, $vars);
         }
         return json_encode($arr);
-    }   
+    } 
 }
