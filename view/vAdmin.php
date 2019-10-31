@@ -37,7 +37,7 @@ if ($_SESSION["admin"]==null) {
 	<header>
 		<!-- NAV -->
 		<nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Hotel LES</a>
+        <a class="navbar-brand" href="vHotel.php">Hotel LES</a>
 
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
