@@ -111,6 +111,28 @@ class habitacionModel extends habitacionClass{
         $this->CloseConnect();
     }
     
+    public function findRoomById()
+    {
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $id=$this->getIdHabitacion();
+        
+        $sql = "CALL spFindIdHabitacion('$id')"; // SQL sententzia - sentencia SQL
+        
+        $result = $this->link->query($sql); // result-en ddbb-ari eskatutako informazio dena gordetzen da
+        // se guarda en result toda la información solicitada a la bbdd
+        
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            $this->setIdHabitacion($row['idHabitacion']);
+            $this->setTipo($row['tipo']);
+            $this->setImagen($row['imagen']);
+            $this->setPrecio($row['precio']);
+        }
+        mysqli_free_result($result);
+        $this->CloseConnect();
+        return $this; 
+    }
+    
     function getListJsonString() {
         
         $arr=array();
