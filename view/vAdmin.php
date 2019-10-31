@@ -43,7 +43,6 @@ if ($_SESSION["admin"]==null) {
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <a id="nombreUsuario" data-id="<?php echo $_SESSION["id"]; ?>"><?php echo $_SESSION["usuario"]; ?></a>
                 <i class="far fa-user-circle fa-lg"></i>
-                <!--<img src="img/cara.PNG" width="30" height="30" alt=""> -->
             </button>
            
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

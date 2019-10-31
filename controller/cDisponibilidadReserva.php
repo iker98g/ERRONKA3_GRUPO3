@@ -2,8 +2,8 @@
 
 include_once ("../model/reservaModel.php");
 
-$fechaInicio=filter_input(INPUT_POST, 'fechaInicio');
-$fechaFin=filter_input(INPUT_POST, 'fechaFin');
+$fechaInicio=filter_input(INPUT_GET, 'fechaInicio');
+$fechaFin=filter_input(INPUT_GET, 'fechaFin');
 
 $reserva=new reservaModel();
 

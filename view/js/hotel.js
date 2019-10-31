@@ -156,7 +156,7 @@ $( document ).ready(function() {
 
 	function disponibilidadReserva(fechaInicio, fechaFin) {
 		$.ajax({
-			type: "POST",
+			type: "GET",
 			data:{'fechaInicio':fechaInicio, 'fechaFin':fechaFin},
 			url: "../controller/cDisponibilidadReserva.php", 
 			datatype: "json",  //type of the result
