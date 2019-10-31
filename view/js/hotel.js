@@ -211,13 +211,6 @@ $( document ).ready(function() {
 						}
 					}			
 				}
-
-				$("select[name=tipoHabitacion]").change(function(){
-					var tipoHabitacion="";
-					tipoHabitacion=$("select[name=tipoHabitacion]").val();
-					
-					callTipo(tipoHabitacion, habitacionesOcupadas);
-				});
 			},
 			error : function(xhr) {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
@@ -225,7 +218,12 @@ $( document ).ready(function() {
 	 	});
 	}
 
-	
+	$("select[name=tipoHabitacion]").change(function(){
+		var tipoHabitacion="";
+		tipoHabitacion=$("select[name=tipoHabitacion]").val();
+		
+		callTipo(tipoHabitacion, habitacionesOcupadas);
+	});
 
 	function callTipo(tipoHabitacion, habitacionesOcupadas) {
 		$.ajax({
