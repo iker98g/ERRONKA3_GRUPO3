@@ -138,6 +138,30 @@ $( document ).ready(function() {
 		}
 	});
 
+	$("#reserva").click(function(){
+		var idUsuario=$("#nombreUsuario").data("id");
+		var precioTotal=$("#precioTotal").val();
+
+		fechaInicio="";
+		fechaFin="";
+		fechaInicio=$("#fechaInicio").val();
+		fechaFin=$("#fechaFin").val();
+		
+		$.ajax({
+			type: "GET",
+			data:{'idHabitacion':idHabitacion, 'idUsuario':idUsuario, 'fechaInicio':fechaInicio, 
+			'fechaFin':fechaFin, 'precioTotal':precioTotal},
+			url: "../controller/cNewReserva.php", 
+			datatype: "json",  //type of the result
+			success: function(){  
+				alert("Reserva realizada correctamente");
+			},
+			error : function(xhr) {
+				alert("An error occured: " + xhr.status + " " + xhr.statusText);
+			}
+		});
+	});
+
 	function disponibilidadReserva(fechaInicio, fechaFin) {
 		$.ajax({
 			type: "GET",
@@ -304,32 +328,6 @@ $( document ).ready(function() {
 			}
 		});
 	}
-
-	
-		$("#reserva").click(function(){
-			var idUsuario=$("#nombreUsuario").data("id");
-			var precioTotal=$("#precioTotal").val();
-
-			fechaInicio="";
-			fechaFin="";
-			fechaInicio=$("#fechaInicio").val();
-			fechaFin=$("#fechaFin").val();
-			
-			$.ajax({
-				type: "GET",
-				data:{'idHabitacion':idHabitacion, 'idUsuario':idUsuario, 'fechaInicio':fechaInicio, 
-				'fechaFin':fechaFin, 'precioTotal':precioTotal},
-				url: "../controller/cNewReserva.php", 
-				datatype: "json",  //type of the result
-				success: function(){  
-					alert("Reserva realizada correctamente");
-				},
-				error : function(xhr) {
-					alert("An error occured: " + xhr.status + " " + xhr.statusText);
-				}
-			});
-		});
-	
 
 	function calcularTotal(precioHabitacion) {
 		fechaInicio="";
