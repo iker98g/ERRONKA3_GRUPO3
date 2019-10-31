@@ -80,21 +80,21 @@ if ($_SESSION["admin"]==null) {
  <!-- RESERVA FORM -->
     <div id="form">
         <form class="bg-dark cardReserva" method="POST">
-            <h1>RESERVA</h1>
+            <h1 class="text-light">RESERVA</h1>
             <!--<div class="form-group">
                 <input type="number" class="form-control" id="idUsuario" placeholder="Id usuario">
                 
             </div>-->
             <div class="form-group">
-            <label for="fechaInicio">Fecha de Inicio</label>
+            <label for="fechaInicio" class="text-light">Fecha de Inicio</label>
                 <input type="date" class="form-control" id="fechaInicio" placeholder="Fecha inicio"> 
             </div>
             <div class="form-group">
-            <label for="fechaFin">Fecha de Finalizacion</label>
+            <label for="fechaFin" class="text-light">Fecha de Finalizacion</label>
                 <input type="date" class="form-control" id="fechaFin" placeholder="Fecha fin" disabled>
             </div>
             <div class="form-group" id="tipo">
-            <label for="tipoHabitacion">Tipo de Habitacion</label>
+            <label for="tipoHabitacion" class="text-light">Tipo de Habitacion</label>
                 <select class="form-control" name="tipoHabitacion" id="tipoHabitacion">
                     <option id="elige" value="elige" selected>Elige el tipo de habitacion</option>
                     <option id="suite" value="suite">Suite</option>
@@ -103,7 +103,7 @@ if ($_SESSION["admin"]==null) {
                 </select>
             </div>
             <div class="form-group">
-            <label for="precioTotal" class="labelPrecio">Precio Total</label>
+            <label for="precioTotal" class="labelPrecio text-light" >Precio Total</label>
                 <input type="number" class="form-control" id="precioTotal" placeholder="Precio total" disabled>
             </div>
             <div class="form-check card-body">
