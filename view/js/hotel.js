@@ -2,6 +2,10 @@ $( document ).ready(function() {
 	var newRow="";
 	var precioHabitacion;
 	var idHabitacion;
+	var fechaInicio;
+	var fechaFin;
+	var habitacionesOcupadas;
+	
 	//ajax habitaciones
 	$.ajax({
 		type:"GET",
@@ -46,25 +50,26 @@ $( document ).ready(function() {
 	});
 	
 	$(".labelPrecio").hide();
-	$("#suite").show();
+	/*$("#suite").show();
 	$("#estandar").show();
-	$("#superior").show();
+	$("#superior").show();*/
 
 	
 	$("#fechaInicio").change(function(){
 		idHabitacion="";
 
-		var fechaInicio=$("#fechaInicio").val();
-		var fechaFin=$("#fechaFin").val();
+		fechaInicio=$("#fechaInicio").val();
+
+		if ($('#precioTotal').is(':visible')) {
+			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
+		}
 		
-		$("#fechaFin").val("");
-		$("#precioTotal").fadeOut("slow");
-		$(".labelPrecio").fadeOut("slow");
-		$("#tipo").slideUp( "slow");
+		/*$("#tipo").slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
 		$("#estandar").show();
-		$("#superior").show();
+		$("#superior").show();*/
 
 		var d = new Date();
 		var month = d.getMonth()+1;
@@ -80,7 +85,7 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
 			$("select[name=tipoHabitacion]").val("elige");
-		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio > fechaFin && fechaInicio != ""){
+		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != "" && $("select[name=tipoHabitacion]").val("") != "elige"){
 			$("#fechaFin").removeAttr('disabled');
 			if ($('#tipo').is(':visible')) {
 				calcularTotal(precioHabitacion);
@@ -98,15 +103,18 @@ $( document ).ready(function() {
 	$("#fechaFin").change(function(){
 		idHabitacion="";
 		
-		var fechaInicio=$("#fechaInicio").val();
-		var fechaFin=$("#fechaFin").val();
+		fechaInicio=$("#fechaInicio").val();
+		fechaFin=$("#fechaFin").val();
 
-		$("#precioTotal").fadeOut("slow");
-		$(".labelPrecio").fadeOut("slow");
-		$("select[name=tipoHabitacion]").val("elige");
+		if ($('#precioTotal').is(':visible')) {
+			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
+		}
+
+		/*$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
 		$("#estandar").show();
-		$("#superior").show();
+		$("#superior").show();*/
 
 		if(fechaInicio > fechaFin) {
 			alert("Tal vez esa combinacion de días no sea buena idea, elige otra fecha final.");
@@ -122,13 +130,37 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow");
 			$("select[name=tipoHabitacion]").val("elige");
-		}else {
+		}else if (fechaInicio < fechaFin && $("select[name=tipoHabitacion]").val("") != "elige"){
 			if ($('#tipo').is(':visible')) {
 				calcularTotal(precioHabitacion);
 			}
 
 		disponibilidadReserva(fechaInicio, fechaFin); 	
 		}
+	});
+
+	$("#reserva").click(function(){
+		var idUsuario=$("#nombreUsuario").data("id");
+		var precioTotal=$("#precioTotal").val();
+
+		fechaInicio="";
+		fechaFin="";
+		fechaInicio=$("#fechaInicio").val();
+		fechaFin=$("#fechaFin").val();
+		
+		$.ajax({
+			type: "GET",
+			data:{'idHabitacion':idHabitacion, 'idUsuario':idUsuario, 'fechaInicio':fechaInicio, 
+			'fechaFin':fechaFin, 'precioTotal':precioTotal},
+			url: "../controller/cNewReserva.php", 
+			datatype: "json",  //type of the result
+			success: function(){  
+				alert("Reserva realizada correctamente");
+			},
+			error : function(xhr) {
+				alert("An error occured: " + xhr.status + " " + xhr.statusText);
+			}
+		});
 	});
 
 	function disponibilidadReserva(fechaInicio, fechaFin) {
@@ -138,59 +170,62 @@ $( document ).ready(function() {
 			url: "../controller/cDisponibilidadReserva.php", 
 			datatype: "json",  //type of the result
 			success: function(result){  
-			 if(fechaInicio < fechaFin) {
-				 $( "#tipo" ).slideDown("slow");
-				 
-				 var habitacionesOcupadas = JSON.parse(result);
+				if(fechaInicio < fechaFin) {
+					$( "#tipo" ).slideDown("slow");
+					
+					habitacionesOcupadas = JSON.parse(result);
 
-				 console.log(habitacionesOcupadas);
+					console.log(habitacionesOcupadas);
 
-				 var countSuites = 0;
-				 var countEstandares = 0;
-				 var countSuperiores = 0;
+					var countSuites = 0;
+					var countEstandares = 0;
+					var countSuperiores = 0;
 
-				 for(i=0; i<habitacionesOcupadas.length; i++) {
-					 if(habitacionesOcupadas[i].idHabitacion > 0 && habitacionesOcupadas[i].idHabitacion < 5) {
-						 countSuites++;
-						 if(countSuites==4) {
-							 $("#suite").hide();
-							 console.log(countSuites);
-							 countSuites = 0;
-							 console.log(countSuites);
-						 }
-					 }else if(habitacionesOcupadas[i].idHabitacion > 4 && habitacionesOcupadas[i].idHabitacion < 9) {
-						 countEstandares++;
-						 console.log(countEstandares);
-						 if(countEstandares==4) {
-							 $("#estandar").hide();
-							 console.log(countEstandares);
-							 countEstandares = 0;
-							 console.log(countEstandares);
-						 }
-					 }else if(habitacionesOcupadas[i].idHabitacion > 8 && habitacionesOcupadas[i].idHabitacion < 13) {
-						 countSuperiores++;
-						 console.log(countSuperiores);
-						 if(countSuperiores==4) {
-							 $("#superior").hide();
-							 console.log(countSuperiores);
-							 countSuperiores = 0;
-							 console.log(countSuperiores);
-						 }
-					 }
-				 }			
-			 }
+					for(i=0; i<habitacionesOcupadas.length; i++) {
+						if(habitacionesOcupadas[i].idHabitacion > 0 && habitacionesOcupadas[i].idHabitacion < 5) {
+							countSuites++;
+							if(countSuites==4) {
+								$("#suite").hide();
+								console.log(countSuites);
+								countSuites = 0;
+								console.log(countSuites);
+							}
+						}else if(habitacionesOcupadas[i].idHabitacion > 4 && habitacionesOcupadas[i].idHabitacion < 9) {
+							countEstandares++;
+							console.log(countEstandares);
+							if(countEstandares==4) {
+								$("#estandar").hide();
+								console.log(countEstandares);
+								countEstandares = 0;
+								console.log(countEstandares);
+							}
+						}else if(habitacionesOcupadas[i].idHabitacion > 8 && habitacionesOcupadas[i].idHabitacion < 13) {
+							countSuperiores++;
+							console.log(countSuperiores);
+							if(countSuperiores==4) {
+								$("#superior").hide();
+								console.log(countSuperiores);
+								countSuperiores = 0;
+								console.log(countSuperiores);
+							}
+						}
+					}			
+				}
 
-			 $("select[name=tipoHabitacion]").change(function(){
-				 var tipoHabitacion=$("select[name=tipoHabitacion]").val();
-				 
-				 callTipo(tipoHabitacion, habitacionesOcupadas);
-			 });
+				$("select[name=tipoHabitacion]").change(function(){
+					var tipoHabitacion="";
+					tipoHabitacion=$("select[name=tipoHabitacion]").val();
+					
+					callTipo(tipoHabitacion, habitacionesOcupadas);
+				});
 			},
 			error : function(xhr) {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
 			}
 	 	});
 	}
+
+	
 
 	function callTipo(tipoHabitacion, habitacionesOcupadas) {
 		$.ajax({
@@ -232,7 +267,6 @@ $( document ).ready(function() {
 						}
 
 						calcularTotal(precioHabitacion);
-						insertReserva(idHabitacion);
 					}else if(tipoHabitacion=="estandar") {
 						if (habitacionesOcupadas.length == 0){
 							idHabitacion=5;
@@ -261,7 +295,6 @@ $( document ).ready(function() {
 						}
 
 						calcularTotal(precioHabitacion);
-						insertReserva(idHabitacion);
 					}else if(tipoHabitacion=="superior") {
 						if (habitacionesOcupadas.length == 0){
 							idHabitacion=9;
@@ -290,8 +323,8 @@ $( document ).ready(function() {
 						}
 
 						calcularTotal(precioHabitacion);
-						insertReserva(idHabitacion);
 					}
+				
 	       	},
 		   	error : function(xhr) {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
@@ -299,32 +332,9 @@ $( document ).ready(function() {
 		});
 	}
 
-	function insertReserva(idHabitacion) {
-		$("#reserva").click(function(){
-			var idUsuario=$("#nombreUsuario").data("id");
-			var fechaInicio=$("#fechaInicio").val();
-			var fechaFin=$("#fechaFin").val();
-			var precioTotal=$("#precioTotal").val();
-			
-			$.ajax({
-				type: "GET",
-				data:{'idHabitacion':idHabitacion, 'idUsuario':idUsuario, 'fechaInicio':fechaInicio, 
-				'fechaFin':fechaFin, 'precioTotal':precioTotal},
-				url: "../controller/cNewReserva.php", 
-				datatype: "json",  //type of the result
-				success: function(){  
-					alert("Reserva realizada correctamente");
-				},
-				error : function(xhr) {
-					alert("An error occured: " + xhr.status + " " + xhr.statusText);
-				}
-			});
-		});
-	}
-
 	function calcularTotal(precioHabitacion) {
-		var fechaInicio=$("#fechaInicio").val();
-		var fechaFin=$("#fechaFin").val();
+		fechaInicio=$("#fechaInicio").val();
+		fechaFin=$("#fechaFin").val();
 		var totalMilisegundos = Date.parse(fechaFin) - Date.parse(fechaInicio);
 		var totalDias= totalMilisegundos / 1000 / 60 / 60 / 24;
 		precioTotal=parseInt(precioHabitacion)*parseInt(totalDias);
