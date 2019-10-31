@@ -1,8 +1,8 @@
 <?php
 
-include_once ("../model/usuario_model.php");
+include_once ("../model/usuarioModel.php");
 
-$user=new usuario_model();
+$user=new usuarioModel();
 
 $idUsuario=filter_input(INPUT_GET,"idUsuario");
 $nombre=filter_input(INPUT_GET,"nombre");
@@ -39,6 +39,5 @@ if ($idUsuario!=null)
     $resultado="No se ha pasado id";
 }
 echo $resultado;
-
 
 ?>

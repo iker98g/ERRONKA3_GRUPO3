@@ -1,10 +1,10 @@
 <?php
 
-include_once ("../model/usuario_model.php");
+include_once ("../model/usuarioModel.php");
 
 $username=filter_input(INPUT_GET, 'username');
 
-$registro=new usuario_model();
+$registro=new usuarioModel();
 
 $registro->comprobarUsuario($username); //function comprobarDisponibilidad en reserva_model
 

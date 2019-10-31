@@ -1,11 +1,11 @@
 <?php
 
-include_once ("../model/reserva_model.php");
+include_once ("../model/reservaModel.php");
 
 $fechaInicio=filter_input(INPUT_GET, 'fechaInicio');
 $fechaFin=filter_input(INPUT_GET, 'fechaFin');
 
-$reserva=new reserva_model();
+$reserva=new reservaModel();
 
 $reserva->comprobarDisponibilidad($fechaInicio, $fechaFin); //function comprobarDisponibilidad en reserva_model
 

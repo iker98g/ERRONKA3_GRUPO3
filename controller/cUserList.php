@@ -1,8 +1,8 @@
 <?php
 
-include_once ("../model/usuario_model.php");
+include_once ("../model/usuarioModel.php");
 
-$user= new usuario_model();
+$user= new usuarioModel();
 $user->setList();
 
 $listaUsersJSON=$user->getListJsonString(); //attributes PRIVATEs or PROTECTED

@@ -1,5 +1,5 @@
 <?php
-class usuario_class {
+class usuarioClass {
     
     protected $idUsuario;
     protected $nombre;

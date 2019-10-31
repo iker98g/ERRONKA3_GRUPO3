@@ -1,8 +1,8 @@
 <?php
 
-include_once ("../model/habitacion_model.php");
+include_once ("../model/habitacionModel.php");
 
-$habitaciones= new habitacion_model();
+$habitaciones= new habitacionModel();
 $habitaciones->setList();
 
 $listaHabitacionesJSON=$habitaciones->getListJsonString(); //attributes PRIVATEs or PROTECTED

@@ -4,7 +4,7 @@ $( document ).ready(function() {
 	//ajax habitaciones
 	$.ajax({
 		type:"GET",
-		url:"../controller/CHabitacionesList.php",
+		url:"../controller/cHabitacionesList.php",
 		datatype:"json",
 
 		success:function(result){
@@ -31,7 +31,7 @@ $( document ).ready(function() {
 	$('.cerrarSesion').click(function(){
 		$.ajax({
 		       	type: "GET",
-		       	url: "../controller/CCerrarSesion.php", 
+		       	url: "../controller/cCerrarSesion.php", 
 		       	datatype: "json",  //type of the result
 		       	success: function(result){  
 		       		
@@ -98,7 +98,7 @@ $( document ).ready(function() {
 		  	$.ajax({
 		       	type: "GET",
 		       	data:{'fechaInicio':fechaInicio, 'fechaFin':fechaFin},
-		       	url: "../controller/CDisponibilidadReserva.php", 
+		       	url: "../controller/cDisponibilidadReserva.php", 
 		       	datatype: "json",  //type of the result
 		       	success: function(result){  
 					if(fechaInicio < fechaFin) {
@@ -160,7 +160,7 @@ $( document ).ready(function() {
 		$.ajax({
 	       	type: "GET",
 	       	data:{'tipo':tipoHabitacion},
-	       	url: "../controller/CTipoHabitacion.php", 
+	       	url: "../controller/cTipoHabitacion.php", 
 	       	datatype: "json",  //type of the result
 	       	success: function(result){ 
 				var tipoHabitaciones = JSON.parse(result);
@@ -273,7 +273,7 @@ $( document ).ready(function() {
 				type: "GET",
 				data:{'idHabitacion':idHabitacion, 'idUsuario':idUsuario, 'fechaInicio':fechaInicio, 
 				'fechaFin':fechaFin, 'precioTotal':precioTotal},
-				url: "../controller/CNewReserva.php", 
+				url: "../controller/cNewReserva.php", 
 				datatype: "json",  //type of the result
 				success: function(){  
 					alert("Reserva realizada correctamente");
@@ -293,8 +293,5 @@ $( document ).ready(function() {
 		precioTotal=parseInt(precioHabitacion)*parseInt(totalDias);
 		$('#precioTotal').val(precioTotal);
 		$("#precioTotal").fadeIn("slow");
-	}	
-	
-	
-	
+	}		
 });

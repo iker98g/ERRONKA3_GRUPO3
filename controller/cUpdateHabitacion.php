@@ -1,8 +1,8 @@
 <?php
 
-include_once ("../model/habitacion_model.php");
+include_once ("../model/habitacionModel.php");
 
-$room=new habitacion_model();
+$room=new habitacionModel();
 
 $idHabitacion=filter_input(INPUT_GET,"idHabitacion");
 $tipo=filter_input(INPUT_GET,"tipo");
@@ -29,13 +29,10 @@ if ($idHabitacion!=null)
         $room->setPrecio($precio);
     }
     
-    
-    
     $resultado=$room->update();
 } else{
     $resultado="No se ha pasado id";
 }
 echo $resultado;
-
 
 ?>

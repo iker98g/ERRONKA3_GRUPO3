@@ -1,8 +1,8 @@
 <?php 
 
-include_once ("../model/usuario_model.php");
+include_once ("../model/usuarioModel.php");
 
-$login = new usuario_model();
+$login = new usuarioModel();
 
 $usuario=filter_input(INPUT_GET, 'user');
 $contrasena=filter_input(INPUT_GET, 'pass');

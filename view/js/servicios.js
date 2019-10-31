@@ -1,10 +1,9 @@
 $( document ).ready(function() {
-
 	//Cerrar sesion
 	$('.cerrarSesion').click(function(){
 		$.ajax({
 		       	type: "GET",
-		       	url: "../controller/CCerrarSesion.php", 
+		       	url: "../controller/cCerrarSesion.php", 
 		       	datatype: "json",  //type of the result
 		       	success: function(result){  
 		       		
@@ -16,10 +15,8 @@ $( document ).ready(function() {
 		   		}
 		});
 	});
-	
-
-
 });
-	function myFunction() {
-		document.getElementById("myDropdown").classList.toggle("show");
-	}
+	
+function myFunction() {
+	document.getElementById("myDropdown").classList.toggle("show");
+}
