@@ -58,7 +58,6 @@ $( document ).ready(function() {
 		idHabitacion="";
 
 		fechaInicio=$("#fechaInicio").val();
-		fechaFin=$("#fechaFin").val();
 		
 		$("#fechaFin").val("");
 		$("#precioTotal").fadeOut("slow");
