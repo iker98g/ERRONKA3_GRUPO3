@@ -51,6 +51,7 @@ if ($_SESSION["admin"]==null) {
                 <i class="fas fa-concierge-bell"></i>
 						Servicios
 					</a>
+				<div class="dropdown-divider"></div>	
                 <a class="dropdown-item cerrarSesion" href="javascript:void(0);">
                     <i class="fas fa-sign-out-alt"></i>    
                     Cerrar sesión
