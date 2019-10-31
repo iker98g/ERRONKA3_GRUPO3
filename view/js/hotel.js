@@ -65,7 +65,8 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 		}
 		
-		var elige = $("select[name=tipoHabitacion]").val("elige");
+		$("select[name=tipoHabitacion]").val("elige");
+		var elige = $("select[name=tipoHabitacion]").val();
 		console.log(elige);
 		/*$("#tipo").slideUp( "slow");
 		$("#suite").show();
@@ -112,7 +113,8 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 		}
 
-		var elige = $("select[name=tipoHabitacion]").val("elige");
+		$("select[name=tipoHabitacion]").val("elige");
+		var elige = $("select[name=tipoHabitacion]").val();
 		console.log(elige);
 		/*$("#suite").show();
 		$("#estandar").show();
