@@ -112,8 +112,10 @@ main{
 
 
 .imgHabitaciones:hover{
-	transform: scale(1.5);
+	position:absolute;
 	z-index:999;
+	transform: scale(1.5);
+	
 }
 
 @media only screen and (max-width: 1300px) {
