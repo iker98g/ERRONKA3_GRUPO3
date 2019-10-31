@@ -8,7 +8,7 @@ $( document ).ready(function() {
 	
 	//ajax habitaciones
 	$.ajax({
-		type:"GET",
+		type:"POST",
 		url:"../controller/cHabitacionesList.php",
 		datatype:"json",
 
@@ -35,7 +35,7 @@ $( document ).ready(function() {
 	//Cerrar sesion
 	$('.cerrarSesion').click(function(){
 		$.ajax({
-		       	type: "GET",
+		       	type: "POST",
 		       	url: "../controller/cCerrarSesion.php", 
 		       	datatype: "json",  //type of the result
 		       	success: function(result){  
@@ -140,7 +140,7 @@ $( document ).ready(function() {
 		fechaFin=$("#fechaFin").val();
 		
 		$.ajax({
-			type: "GET",
+			type: "POST",
 			data:{'idHabitacion':idHabitacion, 'idUsuario':idUsuario, 'fechaInicio':fechaInicio, 
 			'fechaFin':fechaFin, 'precioTotal':precioTotal},
 			url: "../controller/cNewReserva.php", 
@@ -156,7 +156,7 @@ $( document ).ready(function() {
 
 	function disponibilidadReserva(fechaInicio, fechaFin) {
 		$.ajax({
-			type: "GET",
+			type: "POST",
 			data:{'fechaInicio':fechaInicio, 'fechaFin':fechaFin},
 			url: "../controller/cDisponibilidadReserva.php", 
 			datatype: "json",  //type of the result
@@ -208,7 +208,7 @@ $( document ).ready(function() {
 
 	function callTipo(tipoHabitacion, habitacionesOcupadas) {
 		$.ajax({
-	       	type: "GET",
+	       	type: "POST",
 	       	data:{'tipo':tipoHabitacion},
 	       	url: "../controller/cTipoHabitacion.php", 
 	       	datatype: "json",  //type of the result
