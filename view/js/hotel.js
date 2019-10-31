@@ -49,8 +49,8 @@ $( document ).ready(function() {
 		       });
 	});
 	
-	/*$(".labelPrecio").hide();
-	$("#suite").show();
+	$(".labelPrecio").hide();
+	/*$("#suite").show();
 	$("#estandar").show();
 	$("#superior").show();*/
 
