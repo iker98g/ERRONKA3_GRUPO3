@@ -155,7 +155,7 @@ $( document ).ready(function() {
        			$.ajax({
        		       	type: "POST",
        		       	data:{'username':usuario},
-       		       	url: "controller/cComprobarUsuario.php", 
+       		       	url: "../controller/cComprobarUsuario.php", 
        		       	datatype: "json",  //type of the result
        		       	success: function(result){
        		       		var usuarioExistente = JSON.parse(result);
@@ -176,7 +176,7 @@ $( document ).ready(function() {
        			$.ajax({
        		       	type: "POST",
        		       	data:{'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'contrasena':contrasena, 'admin':admin},
-       		       	url: "controller/cInsertUser.php", 
+       		       	url: "../controller/cInsertUser.php", 
        		       	datatype: "json",  //type of the result
        		       	success: function(result){         		
        		       		console.log(result);
