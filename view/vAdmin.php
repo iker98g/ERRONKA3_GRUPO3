@@ -37,7 +37,7 @@ if ($_SESSION["admin"]==null) {
 	<header>
 		<!-- NAV -->
 		<nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Hotel LES</a>
+        <a class="navbar-brand" href="vHotel.php">Hotel LES</a>
 
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,6 +51,7 @@ if ($_SESSION["admin"]==null) {
                 <i class="fas fa-concierge-bell"></i>
 						Servicios
 					</a>
+				<div class="dropdown-divider"></div>	
                 <a class="dropdown-item cerrarSesion" href="javascript:void(0);">
                     <i class="fas fa-sign-out-alt"></i>    
                     Cerrar sesión
