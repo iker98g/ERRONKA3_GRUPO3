@@ -194,7 +194,8 @@ $( document ).ready(function() {
 	}
 
 	$("select[name=tipoHabitacion]").change(function(){
-		var tipoHabitacion=$("select[name=tipoHabitacion]").val();
+		var tipoHabitacion="";
+		tipoHabitacion=$("select[name=tipoHabitacion]").val();
 		
 		callTipo(tipoHabitacion, habitacionesOcupadas);
 	});
@@ -239,7 +240,6 @@ $( document ).ready(function() {
 						}
 
 						calcularTotal(precioHabitacion);
-						insertReserva(idHabitacion);
 					}else if(tipoHabitacion=="estandar") {
 						if (habitacionesOcupadas.length == 0){
 							idHabitacion=5;
@@ -268,7 +268,6 @@ $( document ).ready(function() {
 						}
 
 						calcularTotal(precioHabitacion);
-						insertReserva(idHabitacion);
 					}else if(tipoHabitacion=="superior") {
 						if (habitacionesOcupadas.length == 0){
 							idHabitacion=9;
@@ -297,8 +296,8 @@ $( document ).ready(function() {
 						}
 
 						calcularTotal(precioHabitacion);
-						insertReserva(idHabitacion);
 					}
+					insertReserva(idHabitacion);
 	       	},
 		   	error : function(xhr) {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
