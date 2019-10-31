@@ -176,8 +176,6 @@ class reservaModel extends reservaClass{
         $this->CloseConnect();
     }
     
-    
-    
     function getListJsonString() {
         
         // returns the list of objects in a srting with JSON format
