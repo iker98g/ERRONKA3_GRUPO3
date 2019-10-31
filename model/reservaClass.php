@@ -1,5 +1,5 @@
 <?php
-class reserva_class {
+class reservaClass {
     
     protected $idReserva;
     protected $idHabitacion;

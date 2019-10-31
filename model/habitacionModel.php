@@ -1,8 +1,14 @@
 <?php
-include_once ("connect_data.php");  // klase honetan gordetzen dira datu basearen datuak. erabiltzailea...
-include_once ("habitacion_class.php");
+//Klase honetan gordetzen dira datu basearen datuak. erabiltzailea...
+if ($_SERVER['SERVER_NAME']=="tres.fpz1920.com") {
+    include_once ("connect_data_remote.php");  
+}else {
+    include_once ("connect_data_local.php");
+}
 
-class habitacion_model extends habitacion_class{
+include_once ("habitacionClass.php");
+
+class habitacionModel extends habitacionClass{
     
     private $link;
     private $list = array();
@@ -44,7 +50,7 @@ class habitacion_model extends habitacion_class{
         
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             
-            $new=new habitacion_class();
+            $new=new habitacionClass();
             
             $new->setIdHabitacion($row['idHabitacion']);
             $new->setTipo($row['tipo']);
@@ -92,7 +98,7 @@ class habitacion_model extends habitacion_class{
         
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             
-            $new=new habitacion_class();
+            $new=new habitacionClass();
             
             $new->setIdHabitacion($row['idHabitacion']);
             $new->setTipo($row['tipo']);

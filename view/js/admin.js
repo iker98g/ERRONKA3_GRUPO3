@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
 	$.ajax({
        	type:"GET",
-       	url: "../controller/CUserList.php", 
+       	url: "../controller/cUserList.php", 
     	datatype: "json",  // type of the result
        	
     	success: function(result){  
@@ -81,7 +81,7 @@ $( document ).ready(function() {
        			$.ajax({
        		       	type: "GET",
        		       	data:{ 'idUsuario':idUsuario, 'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'admin':admin},
-       		       	url: "../controller/CUpdateUser.php", 
+       		       	url: "../controller/cUpdateUser.php", 
        		       	datatype: "json",  //type of the result
        		       	success: function(result){  
        		       		
@@ -103,7 +103,7 @@ $( document ).ready(function() {
        					$.ajax({
        	       		       	type: "GET",
        	       		       	data:{ 'idUsuario':idUsuario},
-       	       		       	url: "../controller/CDeleteUser.php", 
+       	       		       	url: "../controller/cDeleteUser.php", 
        	       		       	datatype: "json",  //type of the result
        	       		       	success: function(result){  
        	       		       		
@@ -166,7 +166,7 @@ $( document ).ready(function() {
 
 	$.ajax({
        	type:"GET",
-       	url: "../controller/CReservas.php", 
+       	url: "../controller/cReservas.php", 
     	datatype: "json",  // type of the result
        	
     	success: function(result){  
@@ -233,7 +233,7 @@ $( document ).ready(function() {
        			$.ajax({
        		       	type: "GET",
        		       	data:{ 'idReserva':idReserva, 'idHabitacion':idHabitacion, 'idUsuario':idUsuario,'fechaInicio':fechaInicio, 'fechaFin':fechaFin, 'precioTotal':precioTotal},
-       		       	url: "../controller/CUpdateReserva.php", 
+       		       	url: "../controller/cUpdateReserva.php", 
        		       	datatype: "json",  //type of the result
        		       	success: function(result){  
        		       		
@@ -255,7 +255,7 @@ $( document ).ready(function() {
        					$.ajax({
        	       		       	type: "GET",
        	       		       	data:{ 'idReserva':idReserva},
-       	       		       	url: "../controller/CDeleteReserva.php", 
+       	       		       	url: "../controller/cDeleteReserva.php", 
        	       		       	datatype: "json",  //type of the result
        	       		       	success: function(result){  
        	       		       		
@@ -282,7 +282,7 @@ $( document ).ready(function() {
 
 	$.ajax({
        	type:"GET",
-       	url: "../controller/CHabitacionesList.php", 
+       	url: "../controller/cHabitacionesList.php", 
     	datatype: "json",  // type of the result
        	
     	success: function(result){  
@@ -340,7 +340,7 @@ $( document ).ready(function() {
    			$.ajax({
    		       	type: "GET",
    		       	data:{ 'idHabitacion':idHabitacion, 'tipo':tipo, 'imagen':imagen,'precio':precio},
-   		       	url: "../controller/CUpdateHabitacion.php", 
+   		       	url: "../controller/cUpdateHabitacion.php", 
    		       	datatype: "json",  //type of the result
    		       	success: function(result){  
    		       		
@@ -365,7 +365,7 @@ $( document ).ready(function() {
 		$('.cerrarSesion').click(function(){
 			$.ajax({
    		       	type: "GET",
-   		       	url: "../controller/CCerrarSesion.php", 
+   		       	url: "../controller/cCerrarSesion.php", 
    		       	datatype: "json",  //type of the result
    		       	success: function(result){  
    		       		
@@ -392,7 +392,7 @@ $( document ).ready(function() {
 		$.ajax({
 	       	type: "GET",
 	       	data:{'username':usuario},
-	       	url: "../controller/CComprobarUsuario.php", 
+	       	url: "../controller/cComprobarUsuario.php", 
 	       	datatype: "json",  //type of the result
 	       	success: function(result){
 	       		var usuarioExistente = JSON.parse(result);
@@ -413,7 +413,7 @@ $( document ).ready(function() {
 	   $.ajax({
 		   	type: "GET",
 		   	data:{ 'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'contrasena':contrasena, 'admin':admin},
-		   	url: "../controller/CInsertUser.php", 
+		   	url: "../controller/cInsertUser.php", 
 		   	datatype: "json",  //type of the result
 		   	success: function(result){  
 		   		
@@ -425,8 +425,5 @@ $( document ).ready(function() {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
 			}
 	   });
-	}
-   
-   
-   
+	} 
 });

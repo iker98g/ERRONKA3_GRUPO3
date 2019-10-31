@@ -1,9 +1,9 @@
 <?php
 session_start();
-include_once ("../model/usuario_model.php");
-include_once ("../model/habitacion_model.php");
+include_once ("../model/usuarioModel.php");
+include_once ("../model/habitacionModel.php");
 
-$usuario= new usuario_model();
+$usuario= new usuarioModel();
 $usuario->setList();
 
 $usuarios = $usuario->getList();
@@ -17,7 +17,7 @@ foreach ($usuarios as $object){
         if($object->getAdmin()==1){
             echo "http://tres.fpz1920.com/view/admin.php";
         }else {
-            $habitaciones= new habitacion_model();
+            $habitaciones= new habitacionModel();
             $habitaciones->setList();
             
             $_SESSION["habitaciones"] = $habitaciones->getList();

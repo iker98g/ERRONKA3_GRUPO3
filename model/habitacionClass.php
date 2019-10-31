@@ -1,5 +1,5 @@
 <?php
-class habitacion_class {
+class habitacionClass {
     
     protected $idHabitacion;
     protected $tipo;
