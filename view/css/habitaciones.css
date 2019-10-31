@@ -18,7 +18,7 @@ body {
     width: 20vw;
     padding: 15px;
     border-radius: .25rem;
-    margin: 5vh 5vw 5vh 5vw;
+    margin: 12vh;
 }
 
 h1 {
@@ -95,12 +95,22 @@ main{
 	font-size:3vh;
 }
 
+.imgCarrusel{
+	height:70vh;
+	
+}
+
+#carouselExampleIndicators{
+	height:70vh;
+}
+
+
 @media only screen and (max-width: 1300px) {
-    #carouselExampleIndicators{
+	
+	 #carouselExampleIndicators{
         display: none;
     }
-}
-@media only screen and (max-width: 600px) {
+     
     .mapa{
         width: 100px;
         height: 150px;
@@ -112,8 +122,8 @@ main{
 	
 	.bg-secondary {
     width: 100%;
-    margin-left:0;
-   
+    margin:0;
+   	margin-top:5vh;
 	}
 	
 	p{
