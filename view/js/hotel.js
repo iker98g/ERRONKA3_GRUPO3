@@ -87,9 +87,9 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
 			$("select[name=tipoHabitacion]").val("elige");
-		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != "" && elige != "elige"){
+		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != ""){
 			$("#fechaFin").removeAttr('disabled');
-			if ($('#tipo').is(':visible')) {
+			if ($('#tipo').is(':visible')  && elige != "elige") {
 				calcularTotal(precioHabitacion);
 			}	
 		}else {
