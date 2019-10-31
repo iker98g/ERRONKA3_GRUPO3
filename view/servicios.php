@@ -25,13 +25,6 @@ session_start();
                 <i class="far fa-user-circle fa-lg"></i>
             </button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="#">
-                        <i class="fas fa-euro-sign"></i>    
-                        Moneda
-                    </a>
-                    <a href="#" id="darkModeSwitch">
-                        <input type="checkbox"> Modo nocturno<br>
-                    </a>
                     <a class="cerrarSesion" href="javascript:void(0);">
                         <i class="fas fa-sign-out-alt"></i>    
                         Cerrar sesión
