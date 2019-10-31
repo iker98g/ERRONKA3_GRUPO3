@@ -54,6 +54,9 @@ $( document ).ready(function() {
 		$(".labelPrecio").fadeOut("slow");
 		$( "#tipo" ).slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
+		$("#suite").show();
+		$("#estandar").show();
+		$("#superior").show();
 
 		var d = new Date();
 		var month = d.getMonth()+1;
@@ -137,7 +140,7 @@ $( document ).ready(function() {
 								countEstandares++;
 								console.log(countEstandares);
 								if(countEstandares==4) {
-									$("#estandar").attr('disabled','disabled');
+									$("#estandar").hide();
 									console.log(countEstandares);
 									countEstandares = 0;
 									console.log(countEstandares);
@@ -146,7 +149,7 @@ $( document ).ready(function() {
 								countSuperiores++;
 								console.log(countSuperiores);
 								if(countSuperiores==4) {
-									$("#superior").attr('disabled','disabled');
+									$("#superior").hide();
 									console.log(countSuperiores);
 									countSuperiores = 0;
 									console.log(countSuperiores);
