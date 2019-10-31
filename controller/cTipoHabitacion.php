@@ -2,7 +2,7 @@
 
 include_once ("../model/habitacionModel.php");
 
-$tipo=filter_input(INPUT_GET,"tipo");
+$tipo=filter_input(INPUT_POST,"tipo");
 
 $habitacion= new habitacionModel();
 $habitacion->setTipo($tipo);

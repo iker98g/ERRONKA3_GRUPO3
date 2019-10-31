@@ -179,8 +179,8 @@ $( document ).ready(function() {
        		
        		$.each(reservas,function(index,reserva){
        			newRow += "<tr>" + "<td>"+reserva.idReserva+"</td>"
-       									+"<td>"+reserva.idHabitacion+"</td>"
-       									+"<td>"+reserva.idUsuario+"</td>"
+       									+"<td>"+reserva.objectHabitacion.tipo+"</td>"
+       									+"<td>"+reserva.objectUsuario.usuario+"</td>"
        									+"<td>"+reserva.fechaInicio+"</td>"
        									+"<td>"+reserva.fechaFin+"</td>"
        									+"<td>"+reserva.precioTotal+"</td>"

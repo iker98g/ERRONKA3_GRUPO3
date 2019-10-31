@@ -64,8 +64,7 @@ class usuarioModel extends usuarioClass{
         mysqli_free_result($result);
         $this->CloseConnect();
     }
-    
-    
+
     public function delete()
     {
         $this->OpenConnect();
@@ -154,6 +153,30 @@ class usuarioModel extends usuarioClass{
         }
         mysqli_free_result($result);
         $this->CloseConnect();
+    }
+    
+    public function findUserById()
+    {
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $id=$this->getIdUsuario();
+        
+        $sql = "CALL spFindIdUsuario('$id')"; // SQL sententzia - sentencia SQL
+        
+        $result = $this->link->query($sql); // result-en ddbb-ari eskatutako informazio dena gordetzen da
+        // se guarda en result toda la información solicitada a la bbdd
+        
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            $this->setIdUsuario($row['idUsuario']);
+            $this->setNombre($row['nombre']);
+            $this->setApellido($row['apellido']);
+            $this->setUsuario($row['usuario']);
+            $this->setContrasena($row['contrasena']);
+            $this->setAdmin($row['admin']);
+        }
+        mysqli_free_result($result);
+        $this->CloseConnect();
+        return $this;
     }
     
     function getListJsonString() {

@@ -4,11 +4,11 @@ include_once ("../model/usuarioModel.php");
 
 $user=new usuarioModel();
 
-$nombre=filter_input(INPUT_GET,"nombre");
-$apellido= filter_input(INPUT_GET,"apellido");
-$usuario=filter_input(INPUT_GET,"usuario");
-$contrasena=filter_input(INPUT_GET,"contrasena");
-$admin=filter_input(INPUT_GET,"admin");
+$nombre=filter_input(INPUT_POST,"nombre");
+$apellido= filter_input(INPUT_POST,"apellido");
+$usuario=filter_input(INPUT_POST,"usuario");
+$contrasena=filter_input(INPUT_POST,"contrasena");
+$admin=filter_input(INPUT_POST,"admin");
 
     if ($nombre!=null)
     {

@@ -7,15 +7,28 @@ if ($_SERVER['SERVER_NAME']=="tres.fpz1920.com") {
 }
 
 include_once ("reservaClass.php");
+include_once("habitacionModel.php");
+include_once("usuarioModel.php");
 
 class reservaModel extends reservaClass{
     
     private $link;
     private $list = array();
-    //private $objUsuario;
+    private $objectHabitacion;
+    private $objectUsuario;
     
     function getList() {
         return $this->list;
+    }
+    
+    public function getObjectHabitacion()
+    {
+        return $this->objectHabitacion;
+    }
+    
+    public function getObjectUsuario()
+    {
+        return $this->objectUsuario;
     }
     
     public function OpenConnect()
@@ -60,13 +73,19 @@ class reservaModel extends reservaClass{
             $new->setFechaFin($row['fechaFin']);
             $new->setPrecioTotal($row['precioTotal']);
             
-            //$usuario=new usuario_model();
-            //$usuario->setIdUsuario($row['idUsuario']);
-            //$new->objUsuario= $usuario->findIdUsuario();
+            $habitacion=new habitacionModel();
+            $habitacion->setIdHabitacion($row['idHabitacion']);
+            $new->objectHabitacion=$habitacion->findRoomById();
+            
+            $usuario=new usuarioModel();
+            $usuario->setIdUsuario($row['idUsuario']);
+            $new->objectUsuario=$usuario->findUserById();
             
             array_push($this->list, $new);
         }
         mysqli_free_result($result);
+        unset($habitacion);
+        unset($usuario);
         $this->CloseConnect();
     }
     
@@ -159,16 +178,21 @@ class reservaModel extends reservaClass{
     
     function getListJsonString() {
         
+        // returns the list of objects in a srting with JSON format
         $arr=array();
         
         foreach ($this->list as $object)
         {
-            $vars = get_object_vars($object);
+            $vars = $object->getObjectVars();
+            
+            $objHabitacion=$object->getObjectHabitacion()->getObjectVars();
+            $vars['objectHabitacion']=$objHabitacion;
+            
+            $objUsuario=$object->getObjectUsuario()->getObjectVars();
+            $vars['objectUsuario']=$objUsuario;
             
             array_push($arr, $vars);
         }
         return json_encode($arr);
-    }
-    
-    
+    }   
 }

@@ -27,7 +27,7 @@ $( document ).ready(function() {
 			alert("Los campos no pueden estar vacios")
 		}else{
 			$.ajax({
-   		       	type: "GET",
+   		       	type: "POST",
    		       	data: {'user':user,'pass':pass},
    		       	url: "controller/cUsuario.php",
    		       	success: function(pagina){  		
@@ -56,7 +56,7 @@ $( document ).ready(function() {
 				alert("Los campos no pueden estar vacios")
 			}else{
 				$.ajax({
-	   		       	type: "GET",
+	   		       	type: "POST",
 	   		       	data: {'user':user,'pass':pass},
 	   		       	url: "controller/cUsuario.php",
 	   		       	success: function(pagina){  		
@@ -118,7 +118,7 @@ $( document ).ready(function() {
 	
 	function findUser(usuario) {
 		$.ajax({
-	       	type: "GET",
+	       	type: "POST",
 	       	data:{'username':usuario},
 	       	url: "controller/cComprobarUsuario.php", 
 	       	datatype: "json",  //type of the result
@@ -139,7 +139,7 @@ $( document ).ready(function() {
 	
 	function insertUser() {
 		$.ajax({
-	       	type: "GET",
+	       	type: "POST",
 	       	data:{'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'contrasena':contrasena, 'admin':admin},
 	       	url: "controller/cInsertUser.php", 
 	       	datatype: "json",  //type of the result
