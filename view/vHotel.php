@@ -79,7 +79,7 @@ if ($_SESSION["admin"]==null) {
 <main>
  <!-- RESERVA FORM -->
     <div id="form">
-        <form class="bg-dark" method="POST">
+        <form class="bg-dark cardReserva" method="POST">
             <h1>RESERVA</h1>
             <!--<div class="form-group">
                 <input type="number" class="form-control" id="idUsuario" placeholder="Id usuario">
