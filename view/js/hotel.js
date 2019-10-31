@@ -56,7 +56,7 @@ $( document ).ready(function() {
 		$("#fechaFin").val("");
 		$("#precioTotal").fadeOut("slow");
 		$(".labelPrecio").fadeOut("slow");
-		$( "#tipo" ).slideUp( "slow");
+		$("#tipo").slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
 		$("#estandar").show();
@@ -94,6 +94,13 @@ $( document ).ready(function() {
 	$("#fechaFin").change(function(){
 		var fechaInicio=$("#fechaInicio").val();
 		var fechaFin=$("#fechaFin").val();
+
+		$("#precioTotal").fadeOut("slow");
+		$(".labelPrecio").fadeOut("slow");
+		$("select[name=tipoHabitacion]").val("elige");
+		$("#suite").show();
+		$("#estandar").show();
+		$("#superior").show();
 
 		if(fechaInicio > fechaFin) {
 			alert("Tal vez esa combinacion de días no sea buena idea, elige otra fecha final.");
@@ -191,7 +198,7 @@ $( document ).ready(function() {
 					if(tipoHabitacion=="suite") {
 						if (habitacionesOcupadas.length == 0){
 							idHabitacion=1;
-							libre=1;
+							precioHabitacion=tipoHabitaciones[0].precio;
 						}else {
 							for(i=0; i<tipoHabitaciones.length; i++) {
 								libre=1;
@@ -220,6 +227,7 @@ $( document ).ready(function() {
 					}else if(tipoHabitacion=="estandar") {
 						if (habitacionesOcupadas.length == 0){
 							idHabitacion=5;
+							precioHabitacion=tipoHabitaciones[0].precio;
 						}else {
 							for(i=0; i<tipoHabitaciones.length; i++) {
 								libre=1;
@@ -248,6 +256,7 @@ $( document ).ready(function() {
 					}else if(tipoHabitacion=="superior") {
 						if (habitacionesOcupadas.length == 0){
 							idHabitacion=9;
+							precioHabitacion=tipoHabitaciones[0].precio;
 						}else {
 							for(i=0; i<tipoHabitaciones.length; i++) {
 								libre=1;
