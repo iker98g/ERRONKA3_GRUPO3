@@ -134,8 +134,8 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow");
 			$("select[name=tipoHabitacion]").val("elige");
-		}else if (fechaInicio < fechaFin && elige != "elige"){
-			if ($('#tipo').is(':visible')) {
+		}else if (fechaInicio < fechaFin){
+			if ($('#tipo').is(':visible') && elige != "elige") {
 				calcularTotal(precioHabitacion);
 			}
 
