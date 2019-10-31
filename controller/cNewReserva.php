@@ -2,11 +2,11 @@
 
 include_once ("../model/reservaModel.php");
 
-$idHabitacion=filter_input(INPUT_POST, 'idHabitacion');
-$idUsuario=filter_input(INPUT_POST, 'idUsuario');
-$fechaInicio=filter_input(INPUT_POST, 'fechaInicio');
-$fechaFin=filter_input(INPUT_POST, 'fechaFin');
-$precioTotal=filter_input(INPUT_POST, 'precioTotal');
+$idHabitacion=filter_input(INPUT_GET, 'idHabitacion');
+$idUsuario=filter_input(INPUT_GET, 'idUsuario');
+$fechaInicio=filter_input(INPUT_GET, 'fechaInicio');
+$fechaFin=filter_input(INPUT_GET, 'fechaFin');
+$precioTotal=filter_input(INPUT_GET, 'precioTotal');
 
 $reserva=new reservaModel();
 

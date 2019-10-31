@@ -54,7 +54,7 @@ if ($_SESSION["admin"]==null) {
 <main>
  <!-- RESERVA FORM -->
     <div id="form">
-        <form class="bg-secondary" method="POST">
+        <form class="bg-secondary" method="GET">
             <h1>RESERVA</h1>
             <!--<div class="form-group">
                 <input type="number" class="form-control" id="idUsuario" placeholder="Id usuario">
