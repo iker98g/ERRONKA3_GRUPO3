@@ -74,6 +74,7 @@ $( document ).ready(function() {
 			$("#fechaInicio").val("");
 			$("#fechaFin").val("");
 			$("#fechaFin").attr('disabled','disabled');
+			$("#reserva").attr('disabled','disabled');
 			$("#precioTotal").fadeOut("slow");
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
@@ -86,6 +87,7 @@ $( document ).ready(function() {
 		}else {
 			$("#fechaFin").val("");
 			$("#fechaFin").attr('disabled','disabled');
+			$("#reserva").attr('disabled','disabled');
 			$("#precioTotal").fadeOut("slow");
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
