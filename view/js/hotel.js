@@ -2,6 +2,8 @@ $( document ).ready(function() {
 	var newRow="";
 	var precioHabitacion;
 	var idHabitacion;
+	var fechaInicio;
+	var fechaFin;
 	//ajax habitaciones
 	$.ajax({
 		type:"GET",
@@ -54,8 +56,10 @@ $( document ).ready(function() {
 	$("#fechaInicio").change(function(){
 		idHabitacion="";
 
-		var fechaInicio=$("#fechaInicio").val();
-		var fechaFin=$("#fechaFin").val();
+		fechaInicio="";
+		fechaFin="";
+		fechaInicio=$("#fechaInicio").val();
+		fechaFin=$("#fechaFin").val();
 		
 		$("#fechaFin").val("");
 		$("#precioTotal").fadeOut("slow");
@@ -98,8 +102,10 @@ $( document ).ready(function() {
 	$("#fechaFin").change(function(){
 		idHabitacion="";
 		
-		var fechaInicio=$("#fechaInicio").val();
-		var fechaFin=$("#fechaFin").val();
+		fechaInicio="";
+		fechaFin="";
+		fechaInicio=$("#fechaInicio").val();
+		fechaFin=$("#fechaFin").val();
 
 		$("#precioTotal").fadeOut("slow");
 		$(".labelPrecio").fadeOut("slow");
@@ -302,9 +308,12 @@ $( document ).ready(function() {
 	function insertReserva(idHabitacion) {
 		$("#reserva").click(function(){
 			var idUsuario=$("#nombreUsuario").data("id");
-			var fechaInicio=$("#fechaInicio").val();
-			var fechaFin=$("#fechaFin").val();
 			var precioTotal=$("#precioTotal").val();
+
+			fechaInicio="";
+			fechaFin="";
+			fechaInicio=$("#fechaInicio").val();
+			fechaFin=$("#fechaFin").val();
 			
 			$.ajax({
 				type: "GET",
@@ -323,8 +332,10 @@ $( document ).ready(function() {
 	}
 
 	function calcularTotal(precioHabitacion) {
-		var fechaInicio=$("#fechaInicio").val();
-		var fechaFin=$("#fechaFin").val();
+		fechaInicio="";
+		fechaFin="";
+		fechaInicio=$("#fechaInicio").val();
+		fechaFin=$("#fechaFin").val();
 		var totalMilisegundos = Date.parse(fechaFin) - Date.parse(fechaInicio);
 		var totalDias= totalMilisegundos / 1000 / 60 / 60 / 24;
 		precioTotal=parseInt(precioHabitacion)*parseInt(totalDias);
