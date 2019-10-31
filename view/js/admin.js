@@ -123,11 +123,6 @@ $( document ).ready(function() {
        		
        		$('.insertUsuario').click(function(){
        			$('#modalInsertUser').appendTo("body").modal('show'); 
-       			if(admin==0){
-           			$('#adminNoInsert').attr('checked', true);
-           		}else{
-           			$('#adminSiInsert').attr('checked', true);
-           		}
        		}); 
        		
        		$('.botonExecuteInsertUsers').click(function(){
@@ -155,6 +150,44 @@ $( document ).ready(function() {
        		    else
        		      $('.botonExecuteInsertUsers').attr('disabled', false);
        		  });
+       		
+       		function findUser(usuario) {
+       			$.ajax({
+       		       	type: "POST",
+       		       	data:{'username':usuario},
+       		       	url: "controller/cComprobarUsuario.php", 
+       		       	datatype: "json",  //type of the result
+       		       	success: function(result){
+       		       		var usuarioExistente = JSON.parse(result);
+       		       		
+       		       		if (usuarioExistente.length == 0){
+       						insertUser();
+       					}else {
+       						alert("Ese usuario ya existe")
+       					}
+       		       	},
+       			   	error : function(xhr) {
+       					alert("An error occured: " + xhr.status + " " + xhr.statusText);
+       				}
+       			});
+       		}
+       		
+       		function insertUser() {
+       			$.ajax({
+       		       	type: "POST",
+       		       	data:{'nombre':nombre, 'apellido':apellido,'usuario':usuario, 'contrasena':contrasena, 'admin':admin},
+       		       	url: "controller/cInsertUser.php", 
+       		       	datatype: "json",  //type of the result
+       		       	success: function(result){         		
+       		       		console.log(result);
+       		       		alert(result);
+       		       		location.reload(true);  //recarga la pagina
+       		       	},
+       		       	error : function(xhr) {
+       		   			alert("An error occured: " + xhr.status + " " + xhr.statusText);
+       		   		}
+       		    });
+       		}
 
      	},
        	error : function(xhr) {
