@@ -13,6 +13,7 @@ foreach ($usuarios as $object){
                
         $_SESSION["usuario"] = $object->getUsuario();
         $_SESSION["id"] = $object->getIdUsuario();
+        $_SESSION["admin"] = $object->getAdmin();
         
         if($object->getAdmin()==1){
             echo "http://tres.fpz1920.com/view/vAdmin.php";
