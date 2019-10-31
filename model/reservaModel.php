@@ -64,7 +64,7 @@ class reservaModel extends reservaClass{
         
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             
-            $new=new reservaClass();
+            $new=new reservaModel();
             
             $new->setIdReserva($row['idReserva']);
             $new->setIdHabitacion($row['idHabitacion']);
