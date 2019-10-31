@@ -45,6 +45,10 @@ $( document ).ready(function() {
 	});
 	
 	$(".labelPrecio").hide();
+	$("#suite").show();
+	$("#estandar").show();
+	$("#superior").show();
+
 	
 	$("#fechaInicio").change(function(){
 		var fechaInicio=$("#fechaInicio").val();
