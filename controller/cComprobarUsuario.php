@@ -2,7 +2,7 @@
 
 include_once ("../model/usuarioModel.php");
 
-$username=filter_input(INPUT_GET, 'username');
+$username=filter_input(INPUT_POST, 'username');
 
 $registro=new usuarioModel();
 
