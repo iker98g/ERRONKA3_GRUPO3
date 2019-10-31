@@ -34,12 +34,16 @@ if ($_SESSION["admin"]==null) {
            if ($_SESSION["admin"]==1) {
               ?>    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="vAdmin.php">
-                    <i class="fas fa-concierge-bell"></i>
+                    <i class="fas fa-users-cog"></i>
 						Panel De Administrador
 				</a>  
 				
-				<div class="dropdown-divider"></div> <?php ;
-           }
+				<div class="dropdown-divider"></div> 
+				<a class="cerrarSesion" href="javascript:void(0);">
+                        <i class="fas fa-sign-out-alt"></i>    
+                        Cerrar sesión
+                    </a><?php ;
+           }else{
            
            
            ?>
@@ -47,6 +51,8 @@ if ($_SESSION["admin"]==null) {
                         <i class="fas fa-sign-out-alt"></i>    
                         Cerrar sesión
                     </a>
+                    
+                    <?php }?>
                 </div>
             </div>
     </div>
