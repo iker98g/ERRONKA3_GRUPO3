@@ -72,14 +72,9 @@
 									aria-describedby="passwordInsert" required name="insertarUsu">
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio"
-									name="radioAdminInsert" id="adminSiInsert" value="1" disabled> 
-									<label class="form-check-label" for="adminSiInsert">Si</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio"
-									name="radioAdminInsert" id="adminNoInsert" value="0" disabled checked> <label
-									class="form-check-label" for="adminNoInsert">No</label>
+							
+							<input type="hidden" id="adminNoInsert" name="adminNoInsert" value="0">
+								
 							</div>
 						</form>
 
