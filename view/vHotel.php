@@ -79,7 +79,7 @@ if ($_SESSION["admin"]==null) {
 <main>
  <!-- RESERVA FORM -->
     <div id="form">
-        <form class="bg-secondary" method="POST">
+        <form class="bg-dark" method="POST">
             <h1>RESERVA</h1>
             <!--<div class="form-group">
                 <input type="number" class="form-control" id="idUsuario" placeholder="Id usuario">
@@ -107,7 +107,7 @@ if ($_SESSION["admin"]==null) {
                 <input type="number" class="form-control" id="precioTotal" placeholder="Precio total" disabled>
             </div>
             <div class="form-check card-body">
-                <button type="submit" class="btn btn-primary" id="reserva" disabled>Reservar</button>
+                <button type="submit" class="btn btn-light" id="reserva" disabled>Reservar</button>
             </div>
         </form>
     </div>

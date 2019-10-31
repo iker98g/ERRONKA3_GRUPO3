@@ -28,8 +28,8 @@
             <small id="passHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
           </div>
           <div class="form-group text-center">
-          	<button type="button" class="btn btn-info btnLogin" disabled>Log in</button>
-            <button type="button" class="btn btn-info btnSignin">Sign Up</button>
+          	<button type="button" class="btn btn-light btnLogin" disabled>Log in</button>
+            <button type="button" class="btn btn-light btnSignin">Sign Up</button>
           </div>
         </form>
       </div>
