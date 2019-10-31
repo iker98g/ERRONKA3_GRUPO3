@@ -4,6 +4,7 @@ $( document ).ready(function() {
 	var idHabitacion;
 	var fechaInicio;
 	var fechaFin;
+	var habitacionesOcupadas;
 	//ajax habitaciones
 	$.ajax({
 		type:"GET",
@@ -144,59 +145,59 @@ $( document ).ready(function() {
 			url: "../controller/cDisponibilidadReserva.php", 
 			datatype: "json",  //type of the result
 			success: function(result){  
-			 if(fechaInicio < fechaFin) {
-				 $( "#tipo" ).slideDown("slow");
-				 
-				 var habitacionesOcupadas = JSON.parse(result);
+				if(fechaInicio < fechaFin) {
+					$( "#tipo" ).slideDown("slow");
+					
+					habitacionesOcupadas = JSON.parse(result);
 
-				 console.log(habitacionesOcupadas);
+					console.log(habitacionesOcupadas);
 
-				 var countSuites = 0;
-				 var countEstandares = 0;
-				 var countSuperiores = 0;
+					var countSuites = 0;
+					var countEstandares = 0;
+					var countSuperiores = 0;
 
-				 for(i=0; i<habitacionesOcupadas.length; i++) {
-					 if(habitacionesOcupadas[i].idHabitacion > 0 && habitacionesOcupadas[i].idHabitacion < 5) {
-						 countSuites++;
-						 if(countSuites==4) {
-							 $("#suite").hide();
-							 console.log(countSuites);
-							 countSuites = 0;
-							 console.log(countSuites);
-						 }
-					 }else if(habitacionesOcupadas[i].idHabitacion > 4 && habitacionesOcupadas[i].idHabitacion < 9) {
-						 countEstandares++;
-						 console.log(countEstandares);
-						 if(countEstandares==4) {
-							 $("#estandar").hide();
-							 console.log(countEstandares);
-							 countEstandares = 0;
-							 console.log(countEstandares);
-						 }
-					 }else if(habitacionesOcupadas[i].idHabitacion > 8 && habitacionesOcupadas[i].idHabitacion < 13) {
-						 countSuperiores++;
-						 console.log(countSuperiores);
-						 if(countSuperiores==4) {
-							 $("#superior").hide();
-							 console.log(countSuperiores);
-							 countSuperiores = 0;
-							 console.log(countSuperiores);
-						 }
-					 }
-				 }			
-			 }
-
-			 $("select[name=tipoHabitacion]").change(function(){
-				 var tipoHabitacion=$("select[name=tipoHabitacion]").val();
-				 
-				 callTipo(tipoHabitacion, habitacionesOcupadas);
-			 });
+					for(i=0; i<habitacionesOcupadas.length; i++) {
+						if(habitacionesOcupadas[i].idHabitacion > 0 && habitacionesOcupadas[i].idHabitacion < 5) {
+							countSuites++;
+							if(countSuites==4) {
+								$("#suite").hide();
+								console.log(countSuites);
+								countSuites = 0;
+								console.log(countSuites);
+							}
+						}else if(habitacionesOcupadas[i].idHabitacion > 4 && habitacionesOcupadas[i].idHabitacion < 9) {
+							countEstandares++;
+							console.log(countEstandares);
+							if(countEstandares==4) {
+								$("#estandar").hide();
+								console.log(countEstandares);
+								countEstandares = 0;
+								console.log(countEstandares);
+							}
+						}else if(habitacionesOcupadas[i].idHabitacion > 8 && habitacionesOcupadas[i].idHabitacion < 13) {
+							countSuperiores++;
+							console.log(countSuperiores);
+							if(countSuperiores==4) {
+								$("#superior").hide();
+								console.log(countSuperiores);
+								countSuperiores = 0;
+								console.log(countSuperiores);
+							}
+						}
+					}			
+				}
 			},
 			error : function(xhr) {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
 			}
 	 	});
 	}
+
+	$("select[name=tipoHabitacion]").change(function(){
+		var tipoHabitacion=$("select[name=tipoHabitacion]").val();
+		
+		callTipo(tipoHabitacion, habitacionesOcupadas);
+	});
 
 	function callTipo(tipoHabitacion, habitacionesOcupadas) {
 		$.ajax({
