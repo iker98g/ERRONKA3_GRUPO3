@@ -50,7 +50,8 @@ $( document ).ready(function() {
 		var fechaInicio=$("#fechaInicio").val();
 		
 		$("#fechaFin").val("");
-		
+		$("#precioTotal").fadeOut("slow");
+		$(".labelPrecio").fadeOut("slow");
 		$( "#tipo" ).slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
 
