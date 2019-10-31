@@ -178,17 +178,30 @@ class reservaModel extends reservaClass{
     
     function getListJsonString() {
         
-        // returns the list of objects in a srting with JSON format
         $arr=array();
         
         foreach ($this->list as $object)
         {
             $vars = get_object_vars($object);
             
-            $objHabitacion=$object->getObjectHabitacion()->get_object_vars($object);
+            array_push($arr, $vars);
+        }
+        return json_encode($arr);
+    }
+    
+    function getListJsonStringObjects() {
+        
+        // returns the list of objects in a srting with JSON format
+        $arr=array();
+        
+        foreach ($this->list as $object)
+        {
+            $vars = $object->getObjectVars();
+            
+            $objHabitacion=$object->getObjectHabitacion()->getObjectVars();
             $vars['objectHabitacion']=$objHabitacion;
             
-            $objUsuario=$object->getObjectUsuario()->get_object_vars($object);
+            $objUsuario=$object->getObjectUsuario()->getObjectVars();
             $vars['objectUsuario']=$objUsuario;
             
             array_push($arr, $vars);
