@@ -85,7 +85,7 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
 			$("select[name=tipoHabitacion]").val("elige");
-		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != ""){
+		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != "" && $("select[name=tipoHabitacion]").val("") != "elige"){
 			$("#fechaFin").removeAttr('disabled');
 			if ($('#tipo').is(':visible')) {
 				calcularTotal(precioHabitacion);
@@ -130,7 +130,7 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow");
 			$("select[name=tipoHabitacion]").val("elige");
-		}else {
+		}else if (fechaInicio > fechaFin && ($("select[name=tipoHabitacion]").val("") != "elige"){
 			if ($('#tipo').is(':visible')) {
 				calcularTotal(precioHabitacion);
 			}
