@@ -65,12 +65,11 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 		}
 		
-		$("#fechaFin").val("");
-		$("#tipo").slideUp( "slow");
+		/*$("#tipo").slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
 		$("#estandar").show();
-		$("#superior").show();
+		$("#superior").show();*/
 
 		var d = new Date();
 		var month = d.getMonth()+1;
@@ -112,10 +111,10 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 		}
 
-		$("select[name=tipoHabitacion]").val("elige");
+		/*$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
 		$("#estandar").show();
-		$("#superior").show();
+		$("#superior").show();*/
 
 		if(fechaInicio > fechaFin) {
 			alert("Tal vez esa combinacion de días no sea buena idea, elige otra fecha final.");
