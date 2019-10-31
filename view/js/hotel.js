@@ -66,6 +66,7 @@ $( document ).ready(function() {
 		}
 		
 		var elige = $("select[name=tipoHabitacion]").val("elige");
+		console.log(elige);
 		/*$("#tipo").slideUp( "slow");
 		$("#suite").show();
 		$("#estandar").show();
@@ -112,6 +113,7 @@ $( document ).ready(function() {
 		}
 
 		var elige = $("select[name=tipoHabitacion]").val("elige");
+		console.log(elige);
 		/*$("#suite").show();
 		$("#estandar").show();
 		$("#superior").show();*/
