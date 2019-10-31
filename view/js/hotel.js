@@ -58,13 +58,10 @@ $( document ).ready(function() {
 		idHabitacion="";
 
 		fechaInicio=$("#fechaInicio").val();
-
-		if ($('#precioTotal').is(':visible')) {
-			$("#precioTotal").fadeOut("slow");
-			$(".labelPrecio").fadeOut("slow");
-		}
 		
 		$("#fechaFin").val("");
+		$("#precioTotal").fadeOut("slow");
+		$(".labelPrecio").fadeOut("slow");
 		$("#tipo").slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
@@ -85,7 +82,7 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
 			$("select[name=tipoHabitacion]").val("elige");
-		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != ""){
+		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio > fechaFin && fechaInicio != ""){
 			$("#fechaFin").removeAttr('disabled');
 			if ($('#tipo').is(':visible')) {
 				calcularTotal(precioHabitacion);
@@ -106,11 +103,8 @@ $( document ).ready(function() {
 		fechaInicio=$("#fechaInicio").val();
 		fechaFin=$("#fechaFin").val();
 
-		if ($('#precioTotal').is(':visible')) {
-			$("#precioTotal").fadeOut("slow");
-			$(".labelPrecio").fadeOut("slow");
-		}
-
+		$("#precioTotal").fadeOut("slow");
+		$(".labelPrecio").fadeOut("slow");
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
 		$("#estandar").show();
@@ -331,6 +325,8 @@ $( document ).ready(function() {
 	}
 
 	function calcularTotal(precioHabitacion) {
+		fechaInicio="";
+		fechaFin="";
 		fechaInicio=$("#fechaInicio").val();
 		fechaFin=$("#fechaFin").val();
 		var totalMilisegundos = Date.parse(fechaFin) - Date.parse(fechaInicio);
