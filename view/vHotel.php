@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if ($_SESSION["admin"]==null) {
+    header("Location: http://tres.fpz1920.com/index.php");
+    die();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

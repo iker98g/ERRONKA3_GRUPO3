@@ -5,6 +5,11 @@ if ($_SESSION["admin"]==0) {
     header("Location: http://tres.fpz1920.com/view/vHotel.php");
     die();
 }
+
+if ($_SESSION["admin"]==null) {
+    header("Location: http://tres.fpz1920.com/index.php");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
