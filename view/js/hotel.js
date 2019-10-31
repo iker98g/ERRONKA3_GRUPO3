@@ -58,10 +58,13 @@ $( document ).ready(function() {
 		idHabitacion="";
 
 		fechaInicio=$("#fechaInicio").val();
+
+		if ($('#precioTotal').is(':visible')) {
+			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
+		}
 		
 		$("#fechaFin").val("");
-		$("#precioTotal").fadeOut("slow");
-		$(".labelPrecio").fadeOut("slow");
 		$("#tipo").slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
@@ -103,8 +106,11 @@ $( document ).ready(function() {
 		fechaInicio=$("#fechaInicio").val();
 		fechaFin=$("#fechaFin").val();
 
-		$("#precioTotal").fadeOut("slow");
-		$(".labelPrecio").fadeOut("slow");
+		if ($('#precioTotal').is(':visible')) {
+			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
+		}
+		
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
 		$("#estandar").show();
