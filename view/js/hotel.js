@@ -58,10 +58,13 @@ $( document ).ready(function() {
 		idHabitacion="";
 
 		fechaInicio=$("#fechaInicio").val();
+
+		if ($('#precioTotal').is(':visible')) {
+			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
+		}
 		
 		$("#fechaFin").val("");
-		$("#precioTotal").fadeOut("slow");
-		$(".labelPrecio").fadeOut("slow");
 		$("#tipo").slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
@@ -82,7 +85,7 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 			$("#tipo").slideUp( "slow" );
 			$("select[name=tipoHabitacion]").val("elige");
-		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio > fechaFin && fechaInicio != ""){
+		}else if (fechaInicio == fechaActual || fechaInicio > fechaActual && fechaInicio != ""){
 			$("#fechaFin").removeAttr('disabled');
 			if ($('#tipo').is(':visible')) {
 				calcularTotal(precioHabitacion);
@@ -103,8 +106,11 @@ $( document ).ready(function() {
 		fechaInicio=$("#fechaInicio").val();
 		fechaFin=$("#fechaFin").val();
 
-		$("#precioTotal").fadeOut("slow");
-		$(".labelPrecio").fadeOut("slow");
+		if ($('#precioTotal').is(':visible')) {
+			$("#precioTotal").fadeOut("slow");
+			$(".labelPrecio").fadeOut("slow");
+		}
+
 		$("select[name=tipoHabitacion]").val("elige");
 		$("#suite").show();
 		$("#estandar").show();
@@ -205,6 +211,13 @@ $( document ).ready(function() {
 						}
 					}			
 				}
+
+				$("select[name=tipoHabitacion]").change(function(){
+					var tipoHabitacion="";
+					tipoHabitacion=$("select[name=tipoHabitacion]").val();
+					
+					callTipo(tipoHabitacion, habitacionesOcupadas);
+				});
 			},
 			error : function(xhr) {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
@@ -212,12 +225,7 @@ $( document ).ready(function() {
 	 	});
 	}
 
-	$("select[name=tipoHabitacion]").change(function(){
-		var tipoHabitacion="";
-		tipoHabitacion=$("select[name=tipoHabitacion]").val();
-		
-		callTipo(tipoHabitacion, habitacionesOcupadas);
-	});
+	
 
 	function callTipo(tipoHabitacion, habitacionesOcupadas) {
 		$.ajax({
@@ -325,8 +333,6 @@ $( document ).ready(function() {
 	}
 
 	function calcularTotal(precioHabitacion) {
-		fechaInicio="";
-		fechaFin="";
 		fechaInicio=$("#fechaInicio").val();
 		fechaFin=$("#fechaFin").val();
 		var totalMilisegundos = Date.parse(fechaFin) - Date.parse(fechaInicio);
