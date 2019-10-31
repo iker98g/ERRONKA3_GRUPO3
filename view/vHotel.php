@@ -48,23 +48,14 @@ if ($_SESSION["admin"]==null) {
 				<a class="cerrarSesion" href="javascript:void(0);">
                         <i class="fas fa-sign-out-alt"></i>    
                         Cerrar sesión
-                    </a><?php ;
+                    </a>
+                    
+                    </div><?php ;
            }else{
            
            
            ?>
-                   <div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="vServicios.php">
-                <i class="fas fa-concierge-bell"></i>
-						Servicios
-					</a>
-                    <a class="cerrarSesion" href="javascript:void(0);">
-                        <i class="fas fa-sign-out-alt"></i>    
-                        Cerrar sesión
-                    </a>
-                    
-                    <?php }?>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="vServicios.php">
                     <i class="fas fa-concierge-bell"></i>
 						Servicios
@@ -75,7 +66,10 @@ if ($_SESSION["admin"]==null) {
                     Cerrar sesión
                 </a>
                 
-            </div>
+            </div
+                    
+                    <?php }?>
+            >
         </div>
     </nav>
     <!-- FIN NAV -->
