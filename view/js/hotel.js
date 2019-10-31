@@ -57,8 +57,6 @@ $( document ).ready(function() {
 	$("#fechaInicio").change(function(){
 		idHabitacion="";
 
-		fechaInicio="";
-		fechaFin="";
 		fechaInicio=$("#fechaInicio").val();
 		fechaFin=$("#fechaFin").val();
 		
@@ -103,8 +101,6 @@ $( document ).ready(function() {
 	$("#fechaFin").change(function(){
 		idHabitacion="";
 		
-		fechaInicio="";
-		fechaFin="";
 		fechaInicio=$("#fechaInicio").val();
 		fechaFin=$("#fechaFin").val();
 
