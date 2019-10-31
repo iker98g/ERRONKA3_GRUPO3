@@ -15,14 +15,14 @@ foreach ($usuarios as $object){
         $_SESSION["id"] = $object->getIdUsuario();
         
         if($object->getAdmin()==1){
-            echo "http://tres.fpz1920.com/view/admin.php";
+            echo "http://tres.fpz1920.com/view/vAdmin.php";
         }else {
             $habitaciones= new habitacionModel();
             $habitaciones->setList();
             
             $_SESSION["habitaciones"] = $habitaciones->getList();
             
-            echo "http://tres.fpz1920.com/view/hotel.php";
+            echo "http://tres.fpz1920.com/view/vHotel.php";
         }
     }
 }
