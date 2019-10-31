@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 	var newRow="";
 	var precioHabitacion;
+	var idHabitacion;
 	//ajax habitaciones
 	$.ajax({
 		type:"GET",
@@ -51,6 +52,8 @@ $( document ).ready(function() {
 
 	
 	$("#fechaInicio").change(function(){
+		idHabitacion="";
+
 		var fechaInicio=$("#fechaInicio").val();
 		
 		$("#fechaFin").val("");
@@ -92,6 +95,8 @@ $( document ).ready(function() {
 	});
 
 	$("#fechaFin").change(function(){
+		idHabitacion="";
+		
 		var fechaInicio=$("#fechaInicio").val();
 		var fechaFin=$("#fechaFin").val();
 
@@ -190,7 +195,6 @@ $( document ).ready(function() {
 	       	datatype: "json",  //type of the result
 	       	success: function(result){ 
 				var tipoHabitaciones = JSON.parse(result);
-				var idHabitacion;
 				var libre;
 				
 				console.log(tipoHabitaciones);
