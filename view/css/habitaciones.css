@@ -113,6 +113,8 @@ main{
 
 .imgHabitaciones:hover{
 	position:absolute;
+	width:"100%";
+	height:"200vh";
 	z-index:999;
 	transform: scale(1.1);
 	
