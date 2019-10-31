@@ -178,6 +178,19 @@ class reservaModel extends reservaClass{
     
     function getListJsonString() {
         
+        $arr=array();
+        
+        foreach ($this->list as $object)
+        {
+            $vars = get_object_vars($object);
+            
+            array_push($arr, $vars);
+        }
+        return json_encode($arr);
+    }
+    
+    function getListJsonStringObject() {
+        
         // returns the list of objects in a srting with JSON format
         $arr=array();
         
