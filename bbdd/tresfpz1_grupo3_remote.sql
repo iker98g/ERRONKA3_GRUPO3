@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 30, 2019 at 02:11 PM
--- Server version: 10.1.41-MariaDB
--- PHP Version: 7.2.24
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 30-10-2019 a las 14:33:22
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,54 +19,80 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tresfpz1_grupo3`
+-- Base de datos: `tresfpz1_grupo3`
 --
 
 DELIMITER $$
 --
--- Procedures
+-- Procedimientos
 --
-CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spAllHabitaciones` ()  NO SQL
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spAllHabitaciones` ()  NO SQL
 SELECT * FROM habitaciones$$
 
-CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spAllReservas` ()  NO SQL
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spAllReservas` ()  NO SQL
 SELECT * FROM reservas$$
 
-CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spAllUsers` ()  NO SQL
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spAllUsers` ()  NO SQL
 SELECT * FROM usuarios$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spBorrarReserva` (IN `pId` INT)  NO SQL
+DELETE FROM reservas
+WHERE reservas.idReserva = pId$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spBorrarUsuario` (IN `pId` INT)  NO SQL
+DELETE FROM usuarios
+WHERE usuarios.idUsuario = pId$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spComprobarDisponibilidad` (IN `pFechaInicio` DATE, IN `pFechaFin` DATE)  NO SQL
+SELECT reservas.idHabitacion FROM `reservas` 
+WHERE pFechaInicio BETWEEN reservas.fechaInicio AND reservas.fechaFin
+OR pFechaFin BETWEEN reservas.fechaInicio AND reservas.fechaFin
+OR reservas.fechaInicio BETWEEN pFechaInicio AND pFechaFin
+OR reservas.fechaFin BETWEEN pFechaInicio AND pFechaFin$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spCrearUsuario` (IN `pNombre` VARCHAR(50), IN `pApellido` VARCHAR(50), IN `pUsuario` VARCHAR(50), IN `pContrasena` VARCHAR(50), IN `pAdmin` TINYINT(1))  NO SQL
+INSERT INTO usuarios (usuarios.nombre, usuarios.apellido, usuarios.usuario, usuarios.contrasena, usuarios.admin)
+VALUES (pNombre, pApellido, pUsuario, pContrasena, pAdmin)$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spFindByType` (IN `pTipo` VARCHAR(50))  NO SQL
+SELECT * FROM `habitaciones` WHERE habitaciones.tipo=pTipo$$
 
-CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spFindIdHabitacion` (IN `id` INT)  NO SQL
-SELECT * FROM `habitaciones` WHERE `habitaciones`.`idHabitacion`=id$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spFindIdHabitacion` (IN `pId` INT)  NO SQL
+SELECT * FROM `habitaciones` WHERE `habitaciones`.`idHabitacion`=pId$$
 
-CREATE DEFINER=`tresfpz1_adrian`@`localhost` PROCEDURE `spFindIdUsuario` (IN `id` INT)  NO SQL
-SELECT * FROM `usuarios` WHERE `usuarios`.`idUsuario`=id$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spFindIdUsuario` (IN `pId` INT)  NO SQL
+SELECT * FROM `usuarios` WHERE `usuarios`.`idUsuario`=pId$$
 
-$$
+CREATE DEFINER=tresfpz1_iker`@`localhost` PROCEDURE `spFindUser` (IN `pUsername` VARCHAR(50))  NO SQL
+SELECT * FROM `usuarios` WHERE usuarios.usuario = pUsername$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spInsertReserva` (IN `pIdHabitacion` INT, IN `pIdUsuario` INT, IN `pFechaInicio` DATE, IN `pFechaFin` DATE, IN `pPrecioTotal` DECIMAL(10,2))  NO SQL
+BEGIN
+INSERT INTO reservas (reservas.idHabitacion, reservas.idUsuario, reservas.fechaInicio, reservas.fechaFin, reservas.precioTotal)
+VALUES (pIdHabitacion, pIdUsuario, pFechaInicio, pFechaFin, pPrecioTotal);
+END$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spModificarHabitacion` (IN `pId` INT, IN `pTipo` VARCHAR(50), IN `pImagen` VARCHAR(100), IN `pPrecio` DECIMAL(10,2))  NO SQL
+UPDATE habitaciones
+SET habitaciones.tipo = pTipo, habitaciones.imagen = pImagen, habitaciones.precio = pPrecio
+WHERE habitaciones.idHabitacion = pId$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spModificarReserva` (IN `pId` INT, IN `pIdHabitacion` INT, IN `pIdUsuario` INT, IN `pFechaInicio` DATE, IN `pFechaFin` DATE, IN `pPrecioTotal` DECIMAL(10,2))  NO SQL
+UPDATE reservas
+SET reservas.idHabitacion = pIdHabitacion, reservas.idUsuario = pIdUsuario, reservas.fechaInicio = pFechaInicio, reservas.fechaFin = pFechaFin, reservas.precioTotal = pPrecioTotal
+WHERE reservas.idReserva = pId$$
 
-$$
+CREATE DEFINER=`tresfpz1_iker`@`localhost` PROCEDURE `spModificarUsuario` (IN `pId` INT, IN `pNombre` VARCHAR(50), IN `pApellido` VARCHAR(50), IN `pUsuario` VARCHAR(50), IN `pAdmin` TINYINT(1))  NO SQL
+UPDATE usuarios
+SET usuarios.nombre = pNombre, usuarios.apellido = pApellido, usuarios.usuario = pUsuario, usuarios.admin = pAdmin
+WHERE usuarios.idUsuario = pId$$
 
 DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `habitaciones`
+-- Estructura de tabla para la tabla `habitaciones`
 --
 
 CREATE TABLE `habitaciones` (
@@ -77,7 +103,7 @@ CREATE TABLE `habitaciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `habitaciones`
+-- Volcado de datos para la tabla `habitaciones`
 --
 
 INSERT INTO `habitaciones` (`idHabitacion`, `tipo`, `imagen`, `precio`) VALUES
@@ -97,7 +123,7 @@ INSERT INTO `habitaciones` (`idHabitacion`, `tipo`, `imagen`, `precio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservas`
+-- Estructura de tabla para la tabla `reservas`
 --
 
 CREATE TABLE `reservas` (
@@ -110,7 +136,7 @@ CREATE TABLE `reservas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `reservas`
+-- Volcado de datos para la tabla `reservas`
 --
 
 INSERT INTO `reservas` (`idReserva`, `idHabitacion`, `idUsuario`, `fechaInicio`, `fechaFin`, `precioTotal`) VALUES
@@ -127,7 +153,7 @@ INSERT INTO `reservas` (`idReserva`, `idHabitacion`, `idUsuario`, `fechaInicio`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -140,7 +166,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nombre`, `apellido`, `usuario`, `contrasena`, `admin`) VALUES
@@ -154,17 +180,17 @@ INSERT INTO `usuarios` (`idUsuario`, `nombre`, `apellido`, `usuario`, `contrasen
 (13, 'Asier', 'Gusmano', 'agusmano', '123', 0);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `habitaciones`
+-- Indices de la tabla `habitaciones`
 --
 ALTER TABLE `habitaciones`
   ADD PRIMARY KEY (`idHabitacion`);
 
 --
--- Indexes for table `reservas`
+-- Indices de la tabla `reservas`
 --
 ALTER TABLE `reservas`
   ADD PRIMARY KEY (`idReserva`),
@@ -172,39 +198,39 @@ ALTER TABLE `reservas`
   ADD KEY `idUsuario` (`idUsuario`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`idUsuario`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `habitaciones`
+-- AUTO_INCREMENT de la tabla `habitaciones`
 --
 ALTER TABLE `habitaciones`
   MODIFY `idHabitacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `reservas`
+-- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
   MODIFY `idReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `reservas`
+-- Filtros para la tabla `reservas`
 --
 ALTER TABLE `reservas`
   ADD CONSTRAINT `reservas_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,

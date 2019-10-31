@@ -57,11 +57,11 @@ VALUES (pNombre, pApellido, pUsuario, pContrasena, pAdmin)$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindByType` (IN `pTipo` VARCHAR(50))  NO SQL
 SELECT * FROM `habitaciones` WHERE habitaciones.tipo=pTipo$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindIdHabitacion` (IN `id` INT)  NO SQL
-SELECT * FROM `habitaciones` WHERE `habitaciones`.`idHabitacion`=id$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindIdHabitacion` (IN `pId` INT)  NO SQL
+SELECT * FROM `habitaciones` WHERE `habitaciones`.`idHabitacion`=pId$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindIdUsuario` (IN `id` INT)  NO SQL
-SELECT * FROM `usuarios` WHERE `usuarios`.`idUsuario`=id$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindIdUsuario` (IN `pId` INT)  NO SQL
+SELECT * FROM `usuarios` WHERE `usuarios`.`idUsuario`=pId$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindUser` (IN `pUsername` VARCHAR(50))  NO SQL
 SELECT * FROM `usuarios` WHERE usuarios.usuario = pUsername$$
