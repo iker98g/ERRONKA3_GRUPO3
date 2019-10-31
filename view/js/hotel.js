@@ -48,6 +48,12 @@ $( document ).ready(function() {
 	
 	$("#fechaInicio").change(function(){
 		var fechaInicio=$("#fechaInicio").val();
+		
+		$("#fechaFin").val("");
+		$("#precioTotal").fadeOut("slow");
+		$(".labelPrecio").fadeOut("slow");
+		$( "#tipo" ).slideUp( "slow");
+		$("select[name=tipoHabitacion]").val("elige");
 
 		var d = new Date();
 		var month = d.getMonth()+1;
