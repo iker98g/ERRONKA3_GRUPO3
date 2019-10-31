@@ -50,7 +50,7 @@
 					<div class="modal-body">
 
 						<!--form modificar -->
-						<form>
+						<form method="post">
 							<div class="form-group">
 								<label for="nombreFormInsert">Nombre</label> <input type="text"
 									class="form-control" id="nombreFormInsert"

@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if ($_SESSION["admin"]==null) {
+    header("Location: http://tres.fpz1920.com/index.php");
+    die();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +55,7 @@ session_start();
 <main>
  <!-- RESERVA FORM -->
     <div id="form">
-        <form class="bg-secondary" method="GET">
+        <form class="bg-secondary" method="POST">
             <h1>RESERVA</h1>
             <!--<div class="form-group">
                 <input type="number" class="form-control" id="idUsuario" placeholder="Id usuario">

@@ -9,7 +9,7 @@ $usuario->setList();
 $usuarios = $usuario->getList();
 
 foreach ($usuarios as $object){
-    if($object->getUsuario()==$_GET["user"] && $object->getContrasena()==$_GET["pass"]){
+    if($object->getUsuario()==$_POST["user"] && $object->getContrasena()==$_POST["pass"]){
                
         $_SESSION["usuario"] = $object->getUsuario();
         $_SESSION["id"] = $object->getIdUsuario();
