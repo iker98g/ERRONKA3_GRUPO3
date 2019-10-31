@@ -10,18 +10,18 @@ body {
 }
 .topnav{
     background: #343a40;
+    height:50pvh;
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 .menu{
     text-decoration: none;
-    margin: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .blanco{
     color: white;
-
+	margin-left: 3vh;
 }
 main{
     margin-left: 30px;
