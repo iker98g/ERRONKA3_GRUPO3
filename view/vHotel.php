@@ -35,22 +35,22 @@ if ($_SESSION["admin"]==null) {
            <?php 
            if ($_SESSION["admin"]==1) {
               ?>    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="vAdmin.php">
+              <a class="dropdown-item" href="vAdmin.php">
                     <i class="fas fa-users-cog"></i>
-						Panel De Administrador
-				</a>  
-				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="vServicios.php">
-                <i class="fas fa-concierge-bell"></i>
+						Panel Admin
+				</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="vServicios.php">
+                    <i class="fas fa-concierge-bell"></i>
 						Servicios
-					</a>
-				<div class="dropdown-divider"></div> 
-				<a class="cerrarSesion" href="javascript:void(0);">
-                        <i class="fas fa-sign-out-alt"></i>    
-                        Cerrar sesión
-                    </a>
-                    
-                    </div><?php ;
+				</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item cerrarSesion" href="javascript:void(0);">
+                    <i class="fas fa-sign-out-alt"></i>    
+                    Cerrar sesión
+                </a>
+                
+            </div><?php ;
            }else{
            
            
@@ -66,10 +66,10 @@ if ($_SESSION["admin"]==null) {
                     Cerrar sesión
                 </a>
                 
-            </div
+            </div>
                     
                     <?php }?>
-            >
+            
         </div>
     </nav>
     <!-- FIN NAV -->
