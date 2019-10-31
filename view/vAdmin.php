@@ -52,7 +52,7 @@ if ($_SESSION["admin"]==null) {
 						Hotel
 					</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="javascript:void(0);">
+				<a class="dropdown-item" href="vServicios.php">
                 <i class="fas fa-concierge-bell"></i>
 						Servicios
 					</a>

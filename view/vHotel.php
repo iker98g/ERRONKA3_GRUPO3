@@ -39,7 +39,11 @@ if ($_SESSION["admin"]==null) {
                     <i class="fas fa-users-cog"></i>
 						Panel De Administrador
 				</a>  
-				
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="vServicios.php">
+                <i class="fas fa-concierge-bell"></i>
+						Servicios
+					</a>
 				<div class="dropdown-divider"></div> 
 				<a class="cerrarSesion" href="javascript:void(0);">
                         <i class="fas fa-sign-out-alt"></i>    
@@ -49,6 +53,11 @@ if ($_SESSION["admin"]==null) {
            
            
            ?>
+                   <div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="vServicios.php">
+                <i class="fas fa-concierge-bell"></i>
+						Servicios
+					</a>
                     <a class="cerrarSesion" href="javascript:void(0);">
                         <i class="fas fa-sign-out-alt"></i>    
                         Cerrar sesión
