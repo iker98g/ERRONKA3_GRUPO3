@@ -5,6 +5,7 @@ $( document ).ready(function() {
 	var fechaInicio;
 	var fechaFin;
 	var habitacionesOcupadas;
+	
 	//ajax habitaciones
 	$.ajax({
 		type:"GET",
@@ -48,10 +49,10 @@ $( document ).ready(function() {
 		       });
 	});
 	
-	$(".labelPrecio").hide();
+	/*$(".labelPrecio").hide();
 	$("#suite").show();
 	$("#estandar").show();
-	$("#superior").show();
+	$("#superior").show();*/
 
 	
 	$("#fechaInicio").change(function(){
