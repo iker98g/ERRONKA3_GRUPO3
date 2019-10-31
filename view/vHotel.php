@@ -32,7 +32,17 @@ if ($_SESSION["admin"]==null) {
                 <a id="nombreUsuario" data-id="<?php echo $_SESSION["id"]; ?>"><?php echo $_SESSION["usuario"]; ?></a>
                 <i class="far fa-user-circle fa-lg"></i>
             </button>
+           <?php 
+           if ($_SESSION["admin"]==1) {
+              ?>    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="vAdmin.php">
+                    <i class="fas fa-concierge-bell"></i>
+						Panel De Administrador
+				</a>   <?php ;
+           }
            
+           
+           ?>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="vServicios.php">
                     <i class="fas fa-concierge-bell"></i>

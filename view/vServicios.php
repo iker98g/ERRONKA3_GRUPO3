@@ -30,6 +30,19 @@ if ($_SESSION["admin"]==null) {
                 <i class="far fa-user-circle fa-lg"></i>
             </button>
                 <div id="myDropdown" class="dropdown-content">
+                 <?php 
+           if ($_SESSION["admin"]==1) {
+              ?>    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="vAdmin.php">
+                    <i class="fas fa-concierge-bell"></i>
+						Panel De Administrador
+				</a>  
+				
+				<div class="dropdown-divider"></div> <?php ;
+           }
+           
+           
+           ?>
                     <a class="cerrarSesion" href="javascript:void(0);">
                         <i class="fas fa-sign-out-alt"></i>    
                         Cerrar sesión
