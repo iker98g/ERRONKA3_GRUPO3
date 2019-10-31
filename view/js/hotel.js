@@ -297,7 +297,7 @@ $( document ).ready(function() {
 
 						calcularTotal(precioHabitacion);
 					}
-					insertReserva(idHabitacion);
+				
 	       	},
 		   	error : function(xhr) {
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
@@ -305,7 +305,7 @@ $( document ).ready(function() {
 		});
 	}
 
-	function insertReserva(idHabitacion) {
+	
 		$("#reserva").click(function(){
 			var idUsuario=$("#nombreUsuario").data("id");
 			var precioTotal=$("#precioTotal").val();
@@ -329,7 +329,7 @@ $( document ).ready(function() {
 				}
 			});
 		});
-	}
+	
 
 	function calcularTotal(precioHabitacion) {
 		fechaInicio="";
