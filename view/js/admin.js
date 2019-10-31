@@ -199,7 +199,7 @@ $( document ).ready(function() {
 
 	$.ajax({
        	type:"GET",
-       	url: "../controller/cReservas.php", 
+       	url: "../controller/cReservasAdmin.php", 
     	datatype: "json",  // type of the result
        	
     	success: function(result){  
