@@ -65,8 +65,8 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 		}
 		
-		/*$("#tipo").slideUp( "slow");
 		$("select[name=tipoHabitacion]").val("elige");
+		/*$("#tipo").slideUp( "slow");
 		$("#suite").show();
 		$("#estandar").show();
 		$("#superior").show();*/
@@ -111,8 +111,8 @@ $( document ).ready(function() {
 			$(".labelPrecio").fadeOut("slow");
 		}
 
-		/*$("select[name=tipoHabitacion]").val("elige");
-		$("#suite").show();
+		$("select[name=tipoHabitacion]").val("elige");
+		/*$("#suite").show();
 		$("#estandar").show();
 		$("#superior").show();*/
 
