@@ -27,33 +27,28 @@ session_start();
 	<header>
 		<!-- NAV -->
 		<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Hotel LES</a>
-			<div class="dropdown dropleft">
-				<button class="btn btn-light" type="button" id="dropdownMenuButton"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					
-					<?php echo $_SESSION["usuario"]; ?>
-					
-					<!-- <img src="img/cara.PNG" width="30" height="30" alt=""> -->
-					<i class="far fa-user-circle fa-lg"></i>
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<a class="dropdown-item" href="#"> <i class="fas fa-euro-sign"></i>
-						Moneda
-					</a> <a class="dropdown-item" href="#">
-						<div class="custom-control custom-switch">
-							<input type="checkbox" class="custom-control-input"
-								id="darkModeSwitch"> <label class="custom-control-label"
-								for="darkModeSwitch">Modo nocturno</label>
-						</div>
+        <a class="navbar-brand" href="#">Hotel LES</a>
+
+        <div class="dropdown dropleft">
+            <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a id="nombreUsuario" data-id="<?php echo $_SESSION["id"]; ?>"><?php echo $_SESSION["usuario"]; ?></a>
+                <i class="far fa-user-circle fa-lg"></i>
+                <!--<img src="img/cara.PNG" width="30" height="30" alt=""> -->
+            </button>
+           
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="vServicios.php">
+                <i class="fas fa-concierge-bell"></i>
+						Servicios
 					</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item cerrarSesion" href="javascript:void(0);"> <i class="fas fa-sign-out-alt"></i>
-						Cerrar sesión
-					</a>
-				</div>
-			</div>
-		</nav>
+                <a class="dropdown-item cerrarSesion" href="javascript:void(0);">
+                    <i class="fas fa-sign-out-alt"></i>    
+                    Cerrar sesión
+                </a>
+                
+            </div>
+        </div>
+    </nav>
 		<!-- FIN NAV -->
 	</header>
 

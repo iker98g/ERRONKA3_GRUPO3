@@ -18,7 +18,7 @@ session_start();
 <header> 
     <!-- NAV -->
     <div class="topnav">
-        <a class="menu blanco" href="hotel.php">Hotel LES</a>
+        <a class="menu blanco" href="hotel.php"><b><h3>Hotel LES</h3></b></a>
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">
                 <?php echo $_SESSION["usuario"]; ?>

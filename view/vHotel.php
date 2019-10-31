@@ -20,18 +20,24 @@ session_start();
     <!-- NAV -->
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Hotel LES</a>
-        <a href="servicios.php" class="btn btn-light" role="button" aria-pressed="true">Servicios</a>
+
         <div class="dropdown dropleft">
             <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <a id="nombreUsuario" data-id="<?php echo $_SESSION["id"]; ?>"><?php echo $_SESSION["usuario"]; ?></a>
                 <i class="far fa-user-circle fa-lg"></i>
                 <!--<img src="img/cara.PNG" width="30" height="30" alt=""> -->
             </button>
+           
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="vServicios.php">
+                <i class="fas fa-concierge-bell"></i>
+						Servicios
+					</a>
                 <a class="dropdown-item cerrarSesion" href="javascript:void(0);">
                     <i class="fas fa-sign-out-alt"></i>    
                     Cerrar sesión
                 </a>
+                
             </div>
         </div>
     </nav>
@@ -49,13 +55,16 @@ session_start();
                 
             </div>-->
             <div class="form-group">
+            <label for="fechaInicio">Fecha de Inicio</label>
                 <input type="date" class="form-control" id="fechaInicio" placeholder="Fecha inicio"> 
             </div>
             <div class="form-group">
+            <label for="fechaFin">Fecha de Finalizacion</label>
                 <input type="date" class="form-control" id="fechaFin" placeholder="Fecha fin" disabled>
             </div>
             <div class="form-group" id="tipo">
-                <select class="form-control" name="tipoHabitacion">
+            <label for="tipoHabitacion">Tipo de Habitacion</label>
+                <select class="form-control" name="tipoHabitacion" id="tipoHabitacion">
                     <option id="elige" value="elige" selected>Elige el tipo de habitacion</option>
                     <option id="suite" value="suite">Suite</option>
                     <option id="estandar" value="estandar">Estandar</option>
@@ -83,22 +92,22 @@ session_start();
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/hotel2.jpg" class="d-block w-100" height="450px" alt="...">
+                <img src="img/hotel2.jpg" class="d-block w-100 imgCarrusel"  alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/hotel3.jpg" class="d-block w-100" height="450px" alt="...">
+                <img src="img/hotel3.jpg" class="d-block w-100 imgCarrusel"  alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/hotel4.jpg" class="d-block w-100" height="450px" alt="...">
+                <img src="img/hotel4.jpg" class="d-block w-100 imgCarrusel"  alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/hotel5.jpg" class="d-block w-100" height="450px" alt="...">
+                <img src="img/hotel5.jpg" class="d-block w-100 imgCarrusel" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/hotel6.jpg" class="d-block w-100" height="450px" alt="...">
+                <img src="img/hotel6.jpg" class="d-block w-100 imgCarrusel"  alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/hotel7.jpg" class="d-block w-100" height="450px" alt="...">
+                <img src="img/hotel7.jpg" class="d-block w-100 imgCarrusel" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
