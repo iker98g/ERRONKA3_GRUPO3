@@ -45,7 +45,7 @@ table{
 }
 td{
     text-align: center;
-    margin-bottom:2vh;
+    margin-bottom:4vh;
 }
 h2,h3{
     text-align: center;
@@ -106,7 +106,6 @@ li{
 	width:90vh;
 	height:70vh;
 	margin:auto;
-	margin-bottom:10vh;
 	margin-top:5vh;
 }
 
@@ -140,7 +139,7 @@ p{
 
 .videoYt{	
 	width:40vh;
-	height:20vh;
+	height:30vh;
 }
 
 
