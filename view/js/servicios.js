@@ -16,7 +16,7 @@ $( document ).ready(function() {
 		});
 	});
 });
-	
+//muestra el dropdown
 function myFunction() {
 	document.getElementById("myDropdown").classList.toggle("show");
 }

@@ -115,7 +115,7 @@ $( document ).ready(function() {
 	    else
 	      $('.botonExecuteInsertUsers').attr('disabled', false);
 	  });
-	
+	//funcion que comprueba si el usuario ya existe al crear usu
 	function findUser(usuario) {
 		$.ajax({
 	       	type: "POST",
@@ -136,7 +136,7 @@ $( document ).ready(function() {
 			}
 		});
 	}
-	
+	//inserta el usuario a la bbdd
 	function insertUser() {
 		$.ajax({
 	       	type: "POST",

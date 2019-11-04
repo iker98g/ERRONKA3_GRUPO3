@@ -39,7 +39,7 @@ $( document ).ready(function() {
      		  var apellido="";
      		  var usuario="";
      		  var admin="";
-     		  
+     		  //al modificar el usuario recoge los datos comparandolos con la id y muestra el modal con los datos cargados
        		$('.botonModificarUser').click(function() {
        			idUsuario=$(this).val();
 
@@ -69,7 +69,7 @@ $( document ).ready(function() {
        			$('#adminSi').attr('checked', true);
        		}
        		});
-       		
+       		//manda los datos al controlador para hacer un update
        		$('.botonExecuteModificarUsers').click(function(){
        			idUsuario=$('#idUsuarioForm').val();
        			nombre=$('#nombreForm').val();
@@ -94,7 +94,7 @@ $( document ).ready(function() {
        		   		}
        		       });
        		});
-       		
+       		//recoge la id y la manda al controlador que hace un delete en la bbdd
        		$('.botonDeleteUser').click(function(){
        			idUsuario=$(this).val();
        			
@@ -120,11 +120,11 @@ $( document ).ready(function() {
        				}
        			
        		});
-       		
+       		//muestra el modal de insertar usuario
        		$('.insertUsuario').click(function(){
        			$('#modalInsertUser').appendTo("body").modal('show'); 
        		}); 
-       		
+       		//recoge los datos y ejecuta la funcion finduser
        		$('.botonExecuteInsertUsers').click(function(){
        			nombre=$('#nombreFormInsert').val();
        			apellido=$('#apellidoFormInsert').val();
@@ -151,6 +151,8 @@ $( document ).ready(function() {
        		      $('.botonExecuteInsertUsers').attr('disabled', false);
        		  });
        		
+       		
+       		//comprueba que el usuario nuevo existe, si no existe ejecuta insert
        		function findUser(usuario) {
        			$.ajax({
        		       	type: "POST",
@@ -171,7 +173,7 @@ $( document ).ready(function() {
        				}
        			});
        		}
-       		
+       		//inserta el usuario
        		function insertUser() {
        			$.ajax({
        		       	type: "POST",
@@ -228,7 +230,7 @@ $( document ).ready(function() {
        		var fechaInicio="";
        		var fechaFin="";
        		var precioTotal="";
-       		
+       		//al hacer click carga los datos y los pone en un modal
        		$('.botonModificarReserva').click(function() {
        			idReserva=$(this).val();
 
@@ -253,7 +255,7 @@ $( document ).ready(function() {
        		$('#modalModificarReserva').appendTo("body").modal('show'); 
        		
        		});
-       		
+       		//recoge los datos nuevos y los manda al controlador que hace update
        		$('.botonExecuteModificarReservas').click(function(){
        			idReserva=$('#idReservaForm').val();
        			idHabitacion=$('#idHabitacionReservaForm').val();
@@ -279,7 +281,7 @@ $( document ).ready(function() {
        		   		}
        		       });
        		});
-       		
+       		//recoge la id y la manda al controlador que ejecuta un delete
        		$('.botonDeleteReserva').click(function(){
        			idReserva=$(this).val();
        			
@@ -342,7 +344,7 @@ $( document ).ready(function() {
 		  var imagen="";
 		  var precio="";
 
-		  
+		  //recoge la id y recorre la bbdd para coger los datos y ponerlos en el modal
   		$('.botonModificarHabitacion').click(function() {
   			idHabitacion=$(this).val();
 
@@ -363,7 +365,7 @@ $( document ).ready(function() {
   		$('#modalModificarHabitacion').appendTo("body").modal('show'); 
   		
   		});
-  		
+  		//coge los datos nuevos y los manda al controlador que ejecuta update
   		$('.botonExecuteModificarHabitaciones').click(function(){
   			idHabitacion=$('#idHabitacionForm').val();
   			tipo=$('#tipoForm').val();
@@ -420,7 +422,7 @@ $( document ).ready(function() {
 			   else{
 			       $('.tituloWeb').removeClass('display-5').addClass('display-3');
 			   }
-		
+		//Comprueba que el usuario existe
    function findUser(usuario) {
 		$.ajax({
 	       	type: "GET",
@@ -441,7 +443,7 @@ $( document ).ready(function() {
 			}
 		});
 	}
-   
+   	//inserta el usuario
    function insertUser() {
 	   $.ajax({
 		   	type: "GET",

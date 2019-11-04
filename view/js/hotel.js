@@ -50,7 +50,7 @@ $( document ).ready(function() {
 	});
 	
 	$(".labelPrecio").hide();
-	
+	//al cambiar la fecha de inicio comprueba si es una fecha anterior a la de hoy y si no lo es muestra fecha fin
 	$("#fechaInicio").change(function(){
 		idHabitacion="";
 
@@ -94,7 +94,7 @@ $( document ).ready(function() {
 			$("select[name=tipoHabitacion]").val("elige");
 		}	
 	});
-
+	//Al cambiar la fecha fin comprueba que no es anterior a la fecha inicio, si esta correcto muestra el tipo de habitacion
 	$("#fechaFin").change(function(){
 		idHabitacion="";
 		
@@ -131,7 +131,7 @@ $( document ).ready(function() {
 		disponibilidadReserva(fechaInicio, fechaFin); 	
 		}
 	});
-
+	//manda los datos de reserva a la bbdd para insertarlo
 	$("#reserva").click(function(){
 		var idUsuario=$("#nombreUsuario").data("id");
 		var precioTotal=$("#precioTotal").val();
@@ -155,7 +155,7 @@ $( document ).ready(function() {
 			}
 		});
 	});
-
+	//recorre la bbdd y oculta el tipo que no tenga habitaciones libres
 	function disponibilidadReserva(fechaInicio, fechaFin) {
 		$.ajax({
 			type: "POST",
@@ -194,7 +194,7 @@ $( document ).ready(function() {
 						}
 					}			
 				}
-
+				//al cambiar el tipo carga la funcion callTipo
 				$("select[name=tipoHabitacion]").change(function(){
 					var tipoHabitacion="";
 					tipoHabitacion=$("select[name=tipoHabitacion]").val();
@@ -207,7 +207,7 @@ $( document ).ready(function() {
 			}
 	 	});
 	}
-
+	//comprueba las habitaciones y si esta libre calcula el precio total
 	function callTipo(tipoHabitacion, habitacionesOcupadas) {
 		$.ajax({
 	       	type: "POST",
@@ -299,7 +299,7 @@ $( document ).ready(function() {
 			}
 		});
 	}
-
+	//calcula el precio total teniendo el cuenta el precio de la habitacion y los dias de estancia
 	function calcularTotal(precioHabitacion) {
 		fechaInicio=$("#fechaInicio").val();
 		fechaFin=$("#fechaFin").val();
