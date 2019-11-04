@@ -10,7 +10,7 @@ body {
 }
 .topnav{
     background: #343a40;
-    height:50pvh;
+    height:40pvh;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -67,10 +67,12 @@ li{
 .dropbtn {
     background-color: #f8f9fa;
     color: black;
-    padding: 20px;
+    padding: 10px;
     font-size: 16px;
     border: none;
+    border-radius:15px;
     cursor: pointer;
+    margin:5px;
 }
 .dropbtn:hover, .dropbtn:focus {
     background-color: #c4cbd1;
