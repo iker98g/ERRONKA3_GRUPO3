@@ -118,13 +118,6 @@ main{
 	
 }
 
-@media only screen and (max-width: 600px) {	
-	.list-group{
-		display:flex;
-	}
-   
-}
-
 @media only screen and (max-width: 1300px) {
 	
 	 #carouselExampleIndicators{
