@@ -46,6 +46,7 @@ $( document ).ready(function() {
 		}	
 	});
 	
+	//al hacer click en enter hace lo mismo que el boton de login
 	$(document).keypress(function(event) {
 	    var keycode = event.keyCode || event.which;
 	    if(keycode == '13') {
@@ -87,7 +88,7 @@ $( document ).ready(function() {
 		   }
 		})
 		.resize();
-	
+	//muestra el modal
 	$('.btnSignin').click(function(){
 		$('#modalInsertUser').appendTo("body").modal('show'); 
 	}); 
