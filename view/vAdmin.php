@@ -46,7 +46,7 @@ if ($_SESSION["admin"]==null) {
             </button>
            
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="vServicios.php">
+            <!-- <a class="dropdown-item" href="vServicios.php"> -->
             <a class="dropdown-item" href="vHotel.php">
                 <i class="fas fa-h-square"></i>
 						Hotel
