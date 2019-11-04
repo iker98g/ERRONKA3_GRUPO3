@@ -101,6 +101,12 @@ li{
     display: block;
 }
 
+.videoYt{
+	width:50vh;
+	height:30vh;
+	
+}
+
 @media only screen and (max-width: 600px) {	
 
 h2{
@@ -122,6 +128,12 @@ td{
 
 p{
 	font-size:10px;
+}
+
+.videoYt{
+	width:30vh;
+	height:10vh;
+	
 }
 
 
