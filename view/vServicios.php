@@ -78,8 +78,10 @@ if ($_SESSION["admin"]==null) {
             <td><i class="fas fa-coffee"></i> Cafetería</td>
             <td><i class="fas fa-tv"></i> Sala TV</td>
         </tr>
-    </table> 
-    <iframe width="560" height="315" class="text-center videoYt" src="https://www.youtube.com/embed/trPGZ7LMXmU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+    </table>
+    <div class="videoYt">
+    <iframe src="https://www.youtube.com/embed/trPGZ7LMXmU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+	</div> 
 </main>    
 <!-- FIN MAIN -->    
 <!-- FOOTER -->
