@@ -80,7 +80,7 @@ if ($_SESSION["admin"]==null) {
         </tr>
     </table>
     <div class="videoYt">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/trPGZ7LMXmU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+    <iframe src="https://www.youtube.com/embed/trPGZ7LMXmU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
 	</div> 
 </main>    
 <!-- FIN MAIN -->    
