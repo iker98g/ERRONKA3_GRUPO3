@@ -80,7 +80,7 @@ if ($_SESSION["admin"]==null) {
 <!-- FIN HEADER -->     
 <!-- MAIN -->
 		<main>
-<h1 class="text-center display-3 tituloWeb">MIS RESERVAS</h1>
+<h1 class="text-center display-3 tituloWeb mt-5">MIS RESERVAS</h1>
 		<div class="table-responsive">
 			<table class="table table-bordered mt-5">
 				<thead class="thead-dark">
