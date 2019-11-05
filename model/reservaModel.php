@@ -95,7 +95,7 @@ class reservaModel extends reservaClass{
         
         $idUser=$userId;
         
-        $sql = "CALL spAllReservasUser('$idUser')"; // SQL sententzia - sentencia SQL
+        $sql = "CALL spReservasPorUsuario('$idUser')"; // SQL sententzia - sentencia SQL
         
         $result = $this->link->query($sql); // result-en ddbb-ari eskatutako informazio dena gordetzen da
         // se guarda en result toda la información solicitada a la bbdd
