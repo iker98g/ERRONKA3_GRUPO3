@@ -80,9 +80,10 @@ if ($_SESSION["admin"]==null) {
 <!-- FIN HEADER -->     
 <!-- MAIN -->
 		<main>
+		<div class="container mb-5">
 <h1 class="text-center display-3 tituloWeb mt-5">MIS RESERVAS</h1>
-		<div class="table-responsive">
-			<table class="table table-bordered mt-5">
+		<div class="table-responsive mb-5">
+			<table class="table table-bordered mt-5 ">
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">ID</th>
@@ -98,7 +99,7 @@ if ($_SESSION["admin"]==null) {
 				</tbody>
 			</table>
 		</div>
-
+</div>
 		</main>
 		<!-- FIN MAIN -->    
 <!-- FOOTER -->
