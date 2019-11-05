@@ -79,7 +79,7 @@ if ($_SESSION["admin"]==null) {
 		<main>
 
 		<div class="table-responsive">
-			<table class="table table-bordered m-5">
+			<table class="table table-bordered mt-5">
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">ID</th>
