@@ -20,7 +20,7 @@ if ($_SESSION["admin"]==null) {
     <link href="css/admin.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div class="bg">
+<div id="vantaBG" class="fixed-bottom"></div>
 <!-- HEADER -->
 <header> 
     <!-- NAV -->
@@ -77,7 +77,7 @@ if ($_SESSION["admin"]==null) {
 <!-- FIN HEADER -->     
 <!-- MAIN -->
 		<main>
-
+<h1 class="text-center display-3 tituloWeb">MIS RESERVAS</h1>
 		<div class="table-responsive">
 			<table class="table table-bordered mt-5">
 				<thead class="thead-dark">
@@ -113,6 +113,16 @@ if ($_SESSION["admin"]==null) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
 <script src="js/reserva.js" type="text/javascript"></script>
-</div>
+
+<script>
+        VANTA.NET({
+          el: "#vantaBG",
+          color: 0x222222,
+          backgroundColor: 0xffffff,
+          points: 14.00,
+          maxDistance: 19.00,
+          spacing: 18.00
+        })
+        </script>
 </body>
 </html>
