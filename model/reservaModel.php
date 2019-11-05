@@ -89,6 +89,44 @@ class reservaModel extends reservaClass{
         $this->CloseConnect();
     }
     
+    public function setReservasUser($userId)
+    {
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $idUser=$userId;
+        
+        $sql = "CALL spAllReservasUser('$idUser')"; // SQL sententzia - sentencia SQL
+        
+        $result = $this->link->query($sql); // result-en ddbb-ari eskatutako informazio dena gordetzen da
+        // se guarda en result toda la información solicitada a la bbdd
+        
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            
+            $new=new reservaModel();
+            
+            $new->setIdReserva($row['idReserva']);
+            $new->setIdHabitacion($row['idHabitacion']);
+            $new->setIdUsuario($row['idUsuario']);
+            $new->setFechaInicio($row['fechaInicio']);
+            $new->setFechaFin($row['fechaFin']);
+            $new->setPrecioTotal($row['precioTotal']);
+            
+            $habitacion=new habitacionModel();
+            $habitacion->setIdHabitacion($row['idHabitacion']);
+            $new->objectHabitacion=$habitacion->findRoomById();
+            
+            $usuario=new usuarioModel();
+            $usuario->setIdUsuario($row['idUsuario']);
+            $new->objectUsuario=$usuario->findUserById();
+            
+            array_push($this->list, $new);
+        }
+        mysqli_free_result($result);
+        unset($habitacion);
+        unset($usuario);
+        $this->CloseConnect();
+    }
+    
     public function update()
     {
         $this->OpenConnect();
