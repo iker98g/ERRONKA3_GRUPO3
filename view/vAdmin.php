@@ -46,15 +46,17 @@ if ($_SESSION["admin"]==null) {
             </button>
            
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            	<a class="dropdown-item" href="vHotel.php">
-                	<i class="fas fa-h-square"></i>
-					Hotel
-				</a>
+            	
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="vServicios.php">
                 	<i class="fas fa-concierge-bell"></i>
 					Servicios
 				</a>
+				<a class="dropdown-item" href="vReservas.php">
+                    <i class="fas fa-book"></i>
+						Mis Reservas
+				</a>
+				<div class="dropdown-divider"></div> 
 				<div class="dropdown-divider"></div>	
                 <a class="dropdown-item cerrarSesion" href="javascript:void(0);">
                     <i class="fas fa-sign-out-alt"></i>    
