@@ -201,7 +201,7 @@ $( document ).ready(function() {
 
 	$.ajax({
        	type:"GET",
-       	url: "../controller/cReservasUser.php", 
+       	url: "../controller/cReservasAdmin.php", 
     	datatype: "json",  // type of the result
        	
     	success: function(result){  
