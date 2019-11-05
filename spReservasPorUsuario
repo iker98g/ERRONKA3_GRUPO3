@@ -1,0 +1,5 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spReservasPorUsuario`(IN `pIdUsuario` INT(11))
+    NO SQL
+SELECT * FROM reservas WHERE reservas.idUsuario = pIdUsuario$$
+DELIMITER ;
