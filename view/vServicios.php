@@ -52,7 +52,7 @@ if ($_SESSION["admin"]==null) {
            
            ?>
            <a class="dropdown-item" href="vReservas.php">
-                    <i class="fas fa-concierge-bell"></i>
+                    <i class="fas fa-book"></i>
 						Mis Reservas
 				</a>
 				<div class="dropdown-divider"></div> 
