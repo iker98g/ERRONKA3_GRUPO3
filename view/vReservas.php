@@ -78,7 +78,7 @@ if ($_SESSION["admin"]==null) {
 <!-- MAIN -->
 		<main>
 
-		<div class="table-responsive">
+		<div class="table-responsive m-5">
 			<table class="table table-bordered">
 				<thead class="thead-dark">
 					<tr>
