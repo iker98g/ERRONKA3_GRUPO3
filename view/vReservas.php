@@ -94,7 +94,7 @@ if ($_SESSION["admin"]==null) {
 						<th scope="col">Cancelar Reserva</th>
 					</tr>
 				</thead>
-				<tbody id="tablaReservas" class="text-center">
+				<tbody id="tablaReservas" class="text-center bg-light">
 				</tbody>
 			</table>
 		</div>
