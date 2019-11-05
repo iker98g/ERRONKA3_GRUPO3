@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/usuarioModel.php");
 
 $username=filter_input(INPUT_POST, 'username');
@@ -13,5 +12,4 @@ $listaReservasJSON=$registro->getListJsonString(); //attributes PRIVATEs or PROT
 echo $listaReservasJSON;
 
 unset ($registro);
-
 ?>

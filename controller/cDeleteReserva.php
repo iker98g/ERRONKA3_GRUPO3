@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/reservaModel.php");
 
 $reserva=new reservaModel();
@@ -14,6 +13,4 @@ if ($idReserva!=null)
     $resultado="No se ha pasado id";
 }
 echo $resultado;
-
-
 ?>

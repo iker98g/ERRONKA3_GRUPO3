@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/usuarioModel.php");
 
 $user=new usuarioModel();
@@ -38,5 +37,4 @@ $admin=filter_input(INPUT_POST,"admin");
     $resultado=$user->insert();
 
 echo $resultado;
-
 ?>

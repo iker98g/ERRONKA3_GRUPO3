@@ -14,7 +14,7 @@ if ($_SESSION["admin"]==null) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hotel LES</title>
     <link rel="icon" type="image/png" href="img/favicon.ico">
-    <script src="https://kit.fontawesome.com/661afcc94b.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/661afcc94b.js"></script>
     <link href="css/servicios.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -30,9 +30,8 @@ if ($_SESSION["admin"]==null) {
                 <i class="far fa-user-circle fa-lg"></i>
             </button>
                 <div id="myDropdown" class="dropdown-content">
-                 <?php 
-           if ($_SESSION["admin"]==1) {
-              ?>    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <?php if ($_SESSION["admin"]==1) {?>    
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="vAdmin.php">
                     <i class="fas fa-users-cog"></i>
 						Panel De Administrador
@@ -46,12 +45,8 @@ if ($_SESSION["admin"]==null) {
 				<a class="cerrarSesion" href="javascript:void(0);">
                         <i class="fas fa-sign-out-alt"></i>    
                         Cerrar sesión
-                    </a><?php ;
-           }else{
-           
-           
-           ?>
-           <a class="dropdown-item" href="vReservas.php">
+                    </a><?php ; }else{ ?>
+           		<a class="dropdown-item" href="vReservas.php">
                     <i class="fas fa-book"></i>
 						Mis Reservas
 				</a>
@@ -59,11 +54,11 @@ if ($_SESSION["admin"]==null) {
                     <a class="cerrarSesion" href="javascript:void(0);">
                         <i class="fas fa-sign-out-alt"></i>    
                         Cerrar sesión
-                    </a>
-                    
+                    </a>   
                     <?php }?>
                 </div>
             </div>
+    	</div>
     </div>
     <!-- FIN NAV -->
 </header> 

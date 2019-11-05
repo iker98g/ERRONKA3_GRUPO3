@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/habitacionModel.php");
 
 $tipo=filter_input(INPUT_POST,"tipo");
@@ -14,5 +13,4 @@ $listaHabitacionJSON=$habitacion->getListJsonString(); //attributes PRIVATEs or 
 echo $listaHabitacionJSON;
 
 unset ($habitacion);
-
 ?>

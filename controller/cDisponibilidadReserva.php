@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/reservaModel.php");
 
 $fechaInicio=filter_input(INPUT_POST, 'fechaInicio');
@@ -14,5 +13,4 @@ $listaReservasJSON=$reserva->getListJsonString(); //attributes PRIVATEs or PROTE
 echo $listaReservasJSON;
 
 unset ($reserva);
-
 ?>

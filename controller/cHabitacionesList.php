@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/habitacionModel.php");
 
 $habitaciones= new habitacionModel();
@@ -10,3 +9,4 @@ $listaHabitacionesJSON=$habitaciones->getListJsonString(); //attributes PRIVATEs
 echo $listaHabitacionesJSON;
 
 unset ($habitaciones);
+?>

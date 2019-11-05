@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/reservaModel.php");
 
 $reserva= new reservaModel();
@@ -10,5 +9,4 @@ $listaReservasJSON=$reserva->getListJsonStringObject(); //attributes PRIVATEs or
 echo $listaReservasJSON;
 
 unset ($reserva);
-
 ?>

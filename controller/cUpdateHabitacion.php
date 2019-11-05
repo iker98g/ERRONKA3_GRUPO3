@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/habitacionModel.php");
 
 $room=new habitacionModel();
@@ -34,5 +33,4 @@ if ($idHabitacion!=null)
     $resultado="No se ha pasado id";
 }
 echo $resultado;
-
 ?>

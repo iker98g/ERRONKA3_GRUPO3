@@ -10,22 +10,16 @@ if ($_SESSION["admin"] == null) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Hotel LES</title>
-<link rel="icon" type="image/png" href="img/favicon.ico">
-<script src="https://kit.fontawesome.com/661afcc94b.js"
-	crossorigin="anonymous"></script>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
-<link href="css/admin.css" rel="stylesheet" type="text/css" />
-
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
-<script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel LES</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <script src="https://kit.fontawesome.com/661afcc94b.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="css/admin.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+	<script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
 </head>
 <body>
 	<div id="vantaBG" class="fixed-bottom"></div>

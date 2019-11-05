@@ -17,30 +17,25 @@ class usuarioModel extends usuarioClass{
         return $this->list;
     }
     
-    public function OpenConnect()
-    {
+    public function OpenConnect() {
         $konDat=new connect_data();
-        try
-        {
+        try {
             $this->link=new mysqli($konDat->host,$konDat->userbbdd,$konDat->passbbdd,$konDat->ddbbname);
             // mysqli klaseko link objetua sortzen da dagokion konexio datuekin
             // se crea un nuevo objeto llamado link de la clase mysqli con los datos de conexión.
         }
-        catch(Exception $e)
-        {
+        catch(Exception $e) {
             echo $e->getMessage();
         }
         $this->link->set_charset("utf8"); // honek behartu egiten du aplikazio eta
         //                  //databasearen artean UTF -8 erabiltzera datuak trukatzeko
     }
     
-    public function CloseConnect()
-    {
+    public function CloseConnect() {
         mysqli_close ($this->link);
     }
     
-    public function setList()
-    {
+    public function setList() {
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
         $sql = "CALL spAllUsers()"; // SQL sententzia - sentencia SQL
@@ -65,8 +60,7 @@ class usuarioModel extends usuarioClass{
         $this->CloseConnect();
     }
 
-    public function delete()
-    {
+    public function delete() {
         $this->OpenConnect();
         
         $idUsuario=$this->getIdUsuario();
@@ -84,8 +78,7 @@ class usuarioModel extends usuarioClass{
         $this->CloseConnect();
     }
     
-    public function insert()
-    {
+    public function insert() {
         $this->OpenConnect();
         
         $nombre=$this->getNombre();
@@ -106,8 +99,7 @@ class usuarioModel extends usuarioClass{
         $this->CloseConnect();
     }
     
-    public function update()
-    {
+    public function update() {
         $this->OpenConnect();
         
         $idUsuario=$this->getIdUsuario();
@@ -129,8 +121,7 @@ class usuarioModel extends usuarioClass{
         $this->CloseConnect();
     }
     
-    public function comprobarUsuario($username)
-    {
+    public function comprobarUsuario($username) {
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
         $sql = "CALL spFindUser('$username')"; // SQL sententzia - sentencia SQL
@@ -155,8 +146,7 @@ class usuarioModel extends usuarioClass{
         $this->CloseConnect();
     }
     
-    public function findUserById()
-    {
+    public function findUserById() {
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
         $id=$this->getIdUsuario();

@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/usuarioModel.php");
 
 $user=new usuarioModel();
@@ -39,5 +38,4 @@ if ($idUsuario!=null)
     $resultado="No se ha pasado id";
 }
 echo $resultado;
-
 ?>

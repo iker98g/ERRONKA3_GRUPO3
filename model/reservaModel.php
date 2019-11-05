@@ -10,7 +10,7 @@ include_once ("reservaClass.php");
 include_once("habitacionModel.php");
 include_once("usuarioModel.php");
 
-class reservaModel extends reservaClass{
+class reservaModel extends reservaClass {
     
     private $link;
     private $list = array();
@@ -21,40 +21,33 @@ class reservaModel extends reservaClass{
         return $this->list;
     }
     
-    public function getObjectHabitacion()
-    {
+    public function getObjectHabitacion() {
         return $this->objectHabitacion;
     }
     
-    public function getObjectUsuario()
-    {
+    public function getObjectUsuario() {
         return $this->objectUsuario;
     }
     
-    public function OpenConnect()
-    {
+    public function OpenConnect() {
         $konDat=new connect_data();
-        try
-        {
+        try {
             $this->link=new mysqli($konDat->host,$konDat->userbbdd,$konDat->passbbdd,$konDat->ddbbname);
             // mysqli klaseko link objetua sortzen da dagokion konexio datuekin
             // se crea un nuevo objeto llamado link de la clase mysqli con los datos de conexión.
         }
-        catch(Exception $e)
-        {
+        catch(Exception $e) {
             echo $e->getMessage();
         }
         $this->link->set_charset("utf8"); // honek behartu egiten du aplikazio eta
         //                  //databasearen artean UTF -8 erabiltzera datuak trukatzeko
     }
     
-    public function CloseConnect()
-    {
+    public function CloseConnect() {
         mysqli_close ($this->link);
     }
     
-    public function setList()
-    {
+    public function setList() {
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
         $sql = "CALL spAllReservas()"; // SQL sententzia - sentencia SQL
@@ -89,8 +82,7 @@ class reservaModel extends reservaClass{
         $this->CloseConnect();
     }
     
-    public function setReservasUser($userId)
-    {
+    public function setReservasUser($userId) {
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
         $idUser=$userId;
@@ -127,8 +119,7 @@ class reservaModel extends reservaClass{
         $this->CloseConnect();
     }
     
-    public function update()
-    {
+    public function update() {
         $this->OpenConnect();
         
         $idReserva=$this->getIdReserva();
@@ -140,8 +131,7 @@ class reservaModel extends reservaClass{
         
         $sql = "CALL spModificarReserva('$idReserva','$idHabitacion', '$idUsuario', '$fechaInicio', '$fechaFin', '$precioTotal')";
         
-        if ($this->link->query($sql)>=1) // aldatu egiten da
-        {
+        if ($this->link->query($sql)>=1) { // aldatu egiten da
             return "La reserva se ha modificado con exito";
         } else {
             return "Fallo en la modificacion de la reserva: (" . $this->link->errno . ") " . $this->link->error;
@@ -150,8 +140,7 @@ class reservaModel extends reservaClass{
         $this->CloseConnect();
     }
     
-    public function delete()
-    {
+    public function delete() {
         $this->OpenConnect();
         
         $idReserva=$this->getIdReserva();
@@ -159,8 +148,7 @@ class reservaModel extends reservaClass{
         
         $sql = "CALL spBorrarReserva('$idReserva')";
         
-        if ($this->link->query($sql)>=1) // aldatu egiten da
-        {
+        if ($this->link->query($sql)>=1) { // aldatu egiten da
             return "La reserva se ha borrado con exito";
         } else {
             return "Fallo en el borrado de la reserva: (" . $this->link->errno . ") " . $this->link->error;
@@ -169,7 +157,7 @@ class reservaModel extends reservaClass{
         $this->CloseConnect();
     }
     
-    public function insertReserva(){
+    public function insertReserva() {
         
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
@@ -192,7 +180,7 @@ class reservaModel extends reservaClass{
         $this->CloseConnect();
     }
     
-    public function comprobarDisponibilidad($fechaInicio, $fechaFin){
+    public function comprobarDisponibilidad($fechaInicio, $fechaFin) {
         
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
@@ -218,8 +206,7 @@ class reservaModel extends reservaClass{
         
         $arr=array();
         
-        foreach ($this->list as $object)
-        {
+        foreach ($this->list as $object) {
             $vars = get_object_vars($object);
             
             array_push($arr, $vars);
@@ -232,8 +219,7 @@ class reservaModel extends reservaClass{
         // returns the list of objects in a srting with JSON format
         $arr=array();
         
-        foreach ($this->list as $object)
-        {
+        foreach ($this->list as $object) {
             $vars = $object->getObjectVars();
             
             $objHabitacion=$object->getObjectHabitacion()->getObjectVars();

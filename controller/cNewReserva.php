@@ -1,5 +1,4 @@
 <?php
-
 include_once ("../model/reservaModel.php");
 
 $idHabitacion=filter_input(INPUT_POST, 'idHabitacion');
@@ -17,5 +16,4 @@ $reserva->setFechaFin($fechaFin);
 $reserva->setPrecioTotal($precioTotal);
 
 $resultado=$reserva->insertReserva(); //function insert en reserva_model
-
 ?>

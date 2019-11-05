@@ -1,5 +1,4 @@
 <?php 
-
 include_once ("../model/usuarioModel.php");
 
 $login = new usuarioModel();
@@ -13,3 +12,4 @@ $login->setContrasena($contrasena);
 $resultado=$login->comprobarUser();
 
 echo $resultado;
+?>

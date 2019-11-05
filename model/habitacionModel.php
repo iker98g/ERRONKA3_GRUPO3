@@ -8,7 +8,7 @@ if ($_SERVER['SERVER_NAME']=="tres.fpz1920.com") {
 
 include_once ("habitacionClass.php");
 
-class habitacionModel extends habitacionClass{
+class habitacionModel extends habitacionClass {
     
     private $link;
     private $list = array();
@@ -17,30 +17,25 @@ class habitacionModel extends habitacionClass{
         return $this->list;
     }
     
-    public function OpenConnect()
-    {
+    public function OpenConnect() {
         $konDat=new connect_data();
-        try
-        {
+        try {
             $this->link=new mysqli($konDat->host,$konDat->userbbdd,$konDat->passbbdd,$konDat->ddbbname);
             // mysqli klaseko link objetua sortzen da dagokion konexio datuekin
             // se crea un nuevo objeto llamado link de la clase mysqli con los datos de conexión.
         }
-        catch(Exception $e)
-        {
+        catch(Exception $e) {
             echo $e->getMessage();
         }
         $this->link->set_charset("utf8"); // honek behartu egiten du aplikazio eta
         //                  //databasearen artean UTF -8 erabiltzera datuak trukatzeko
     }
     
-    public function CloseConnect()
-    {
+    public function CloseConnect() {
         mysqli_close ($this->link);
     }
     
-    public function setList()
-    {
+    public function setList() {
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
         $sql = "CALL spAllHabitaciones()"; // SQL sententzia - sentencia SQL
@@ -63,8 +58,7 @@ class habitacionModel extends habitacionClass{
         $this->CloseConnect();
     }
     
-    public function update()
-    {
+    public function update() {
         $this->OpenConnect();
         
         $idHabitacion=$this->getIdHabitacion();
@@ -75,8 +69,7 @@ class habitacionModel extends habitacionClass{
         
         $sql = "CALL spModificarHabitacion('$idHabitacion','$tipo', '$imagen', '$precio')";
         
-        if ($this->link->query($sql)>=1) // aldatu egiten da
-        {
+        if ($this->link->query($sql)>=1) { // aldatu egiten da
             return "La habitacion se ha modificado con exito";
         } else {
             return "Fallo en la modificacion de la habitacion: (" . $this->link->errno . ") " . $this->link->error;
@@ -85,8 +78,7 @@ class habitacionModel extends habitacionClass{
         $this->CloseConnect();
     }
     
-    public function findByType()
-    {
+    public function findByType() {
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
         $tipo=$this->getTipo();
@@ -111,8 +103,7 @@ class habitacionModel extends habitacionClass{
         $this->CloseConnect();
     }
     
-    public function findRoomById()
-    {
+    public function findRoomById() {
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
         
         $id=$this->getIdHabitacion();
@@ -137,14 +128,11 @@ class habitacionModel extends habitacionClass{
         
         $arr=array();
         
-        foreach ($this->list as $object)
-        {
+        foreach ($this->list as $object) {
             $vars = get_object_vars($object);
             
             array_push($arr, $vars);
         }
         return json_encode($arr);
-    }
-    
-    
+    }    
 }
