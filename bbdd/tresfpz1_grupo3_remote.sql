@@ -120,6 +120,57 @@ INSERT INTO `habitaciones` (`idHabitacion`, `tipo`, `imagen`, `precio`) VALUES
 (11, 'superior', 'img/superior3.jpg', '75.00'),
 (12, 'superior', 'img/superior4.jpg', '75.00');
 
+--
+-- Disparadores `habitaciones`
+--
+DELIMITER $$
+CREATE TRIGGER `spHabitacionesAfterDelete` AFTER DELETE ON `habitaciones` FOR EACH ROW INSERT INTO `historicohabitaciones`(`historicoIdHabitacion`, `historicoTipo`, `historicoImagen`, `historicoPrecio`) VALUES (old.idHabitacion,old.tipo,old.imagen,old.precio)
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `historicohabitaciones`
+--
+
+CREATE TABLE `historicohabitaciones` (
+  `historicoIdHabitacion` int(11) NOT NULL,
+  `historicoTipo` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `historicoImagen` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `historicoPrecio` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `historicoreservas`
+--
+
+CREATE TABLE `historicoreservas` (
+  `historicoIdReserva` int(11) NOT NULL,
+  `historicoIdHabitacion` int(11) NOT NULL,
+  `historicoIdUsuario` int(11) NOT NULL,
+  `historicoFechaInicio` date NOT NULL,
+  `historicoFechaFin` date NOT NULL,
+  `historicoPrecioTotal` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `historicousuarios`
+--
+
+CREATE TABLE `historicousuarios` (
+  `historicoIdUsuario` int(11) NOT NULL,
+  `historicoNombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `historicoApellido` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `historicoUsuario` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `historicoContrasena` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `historicoAdmin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 -- --------------------------------------------------------
 
 --
@@ -149,6 +200,14 @@ INSERT INTO `reservas` (`idReserva`, `idHabitacion`, `idUsuario`, `fechaInicio`,
 (38, 4, 11, '2019-10-29', '2019-11-09', '990.00'),
 (39, 2, 12, '2019-10-30', '2019-10-31', '90.00'),
 (40, 1, 5, '2019-11-15', '2019-11-27', '1080.00');
+
+--
+-- Disparadores `reservas`
+--
+DELIMITER $$
+CREATE TRIGGER `spResrvasAfterDelete` AFTER DELETE ON `reservas` FOR EACH ROW INSERT INTO `historicoreservas`(`historicoIdReserva`, `historicoIdHabitacion`, `historicoIdUsuario`, `historicoFechaInicio`, `historicoFechaFin`, `historicoPrecioTotal`) VALUES (old.idReserva, old.idHabitacion, old.idUsuario, old.fechaInicio, old.fechaFin, old.precioTotal)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -180,6 +239,14 @@ INSERT INTO `usuarios` (`idUsuario`, `nombre`, `apellido`, `usuario`, `contrasen
 (13, 'Asier', 'Gusmano', 'agusmano', '123', 0);
 
 --
+-- Disparadores `usuarios`
+--
+DELIMITER $$
+CREATE TRIGGER `spUsuariosAfterDelete` AFTER DELETE ON `usuarios` FOR EACH ROW INSERT INTO `historicousuarios`(`historicoIdUsuario`, `historicoNombre`, `historicoApellido`, `historicoUsuario`, `historicoContrasena`, `historicoAdmin`) VALUES (old.idUsuario,old.nombre,old.apellido,old.usuario,old.contrasena,old.Admin)
+$$
+DELIMITER ;
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -189,6 +256,26 @@ INSERT INTO `usuarios` (`idUsuario`, `nombre`, `apellido`, `usuario`, `contrasen
 ALTER TABLE `habitaciones`
   ADD PRIMARY KEY (`idHabitacion`);
 
+--
+-- Indices de la tabla `historicohabitaciones`
+--
+ALTER TABLE `historicohabitaciones`
+  ADD PRIMARY KEY (`historicoIdHabitacion`);
+
+--
+-- Indices de la tabla `historicoreservas`
+--
+ALTER TABLE `historicoreservas`
+  ADD PRIMARY KEY (`historicoIdReserva`),
+  ADD KEY `idHistoricoHabitacion` (`historicoIdHabitacion`),
+  ADD KEY `idHistoricoUsuario` (`historicoIdUsuario`);
+
+--
+-- Indices de la tabla `historicousuarios`
+--
+ALTER TABLE `historicousuarios`
+  ADD PRIMARY KEY (`historicoIdUsuario`);
+  
 --
 -- Indices de la tabla `reservas`
 --
@@ -235,6 +322,14 @@ ALTER TABLE `usuarios`
 ALTER TABLE `reservas`
   ADD CONSTRAINT `reservas_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `reservas_ibfk_2` FOREIGN KEY (`idHabitacion`) REFERENCES `habitaciones` (`idHabitacion`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+DELIMITER $$
+--
+-- Eventos
+--
+CREATE DEFINER=`tresfpz1_iker`@`localhost` EVENT `spHistoricoReservas` ON SCHEDULE EVERY 1 DAY STARTS '2019-11-05 23:59:59' ENDS '2019-11-06 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO DELETE FROM `reservas` WHERE reservas.fechaFin < NOW()$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
