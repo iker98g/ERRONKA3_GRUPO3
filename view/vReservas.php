@@ -102,7 +102,7 @@ if ($_SESSION["admin"]==null) {
 		</main>
 		<!-- FIN MAIN -->    
 <!-- FOOTER -->
-<footer class="text-muted text-center text-small">
+<footer class="text-muted text-center text-small fixed-bottom border-top bg-white shadow">
     <p class="mb-1">&copy; Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla maiores ipsam in inventore voluptatibus. Labore, provident. Quos ratione accusantium facere? Rem assumenda, a adipisci possimus repudiandae ipsam mollitia debitis architecto.</p>
     <ul class="list-inline">
         <li class="list-inline-item"><a href="https://www.instagram.com/?hl=es"><i class="fab fa-instagram"></i></a></li>
