@@ -17,7 +17,7 @@ if ($_SESSION["admin"]==null) {
     <link rel="icon" type="image/png" href="img/favicon.ico">
     <script src="https://kit.fontawesome.com/661afcc94b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="css/habitaciones.css" rel="stylesheet" type="text/css"/>
+    <link href="css/admin.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="bg">
@@ -79,7 +79,7 @@ if ($_SESSION["admin"]==null) {
 		<main>
 
 		<div class="table-responsive">
-			<table class="table table-bordered  m-5">
+			<table class="table table-bordered m-5">
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">ID</th>
