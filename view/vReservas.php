@@ -59,7 +59,7 @@ if ($_SESSION["admin"] == null) {
 
 				</div><?php
 
-;
+            ;
         } else {
 
             ?>
@@ -111,6 +111,10 @@ if ($_SESSION["admin"] == null) {
 	<br>
 	<br>
 	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<!-- FOOTER -->
 	<footer
 		class="text-muted text-center text-small fixed-bottom border-top bg-white shadow">
@@ -129,6 +133,7 @@ if ($_SESSION["admin"] == null) {
 				href="https://support.google.com/plus/?hl=es-419#topic=9259565"><i
 					class="fab fa-google-plus-g"></i></a></li>
 		</ul>
+
 	</footer>
 	<!-- FIN FOOTER -->
 	<script
