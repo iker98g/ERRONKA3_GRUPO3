@@ -16,14 +16,14 @@ foreach ($usuarios as $object){
         $_SESSION["admin"] = $object->getAdmin();
         
         if($object->getAdmin()==1){
-            echo "http://tres.fpz1920.com/view/vAdmin.php";
+            echo "view/vAdmin.php";
         }else {
             $habitaciones= new habitacionModel();
             $habitaciones->setList();
             
             $_SESSION["habitaciones"] = $habitaciones->getList();
             
-            echo "http://tres.fpz1920.com/view/vHotel.php";
+            echo "view/vHotel.php";
         }
     }
 }
