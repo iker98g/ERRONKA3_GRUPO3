@@ -39,8 +39,7 @@ if ($_SESSION["admin"]==null) {
             </button>
            
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            	
-				<div class="dropdown-divider"></div>
+
 				<a class="dropdown-item" href="vServicios.php">
                 	<i class="fas fa-concierge-bell"></i>
 					Servicios
